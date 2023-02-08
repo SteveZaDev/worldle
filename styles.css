@@ -21,9 +21,16 @@ body {
   align-items: center;
   flex-direction: column;
 }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid var(--header-border-color)
+}
 
-header{
-  border-bottom: 1px solid var(--header-border-color);
+header i{
+  font-size: 2rem;
+  color: var(--header-border-color);
 }
 
 #game{
@@ -131,3 +138,37 @@ header{
 .spacer-half2{
   flex-grow: 0.75;
 }
+
+
+
+.square.incorrect-letter {
+  background-color: rgb(58, 58, 60);
+  border-color: rgb(58, 58, 60);
+}
+
+.square.correct-letter {
+  background-color: rgb(181, 159, 59);
+  border-color: rgb(181, 159, 59);
+}
+
+.square.correct-letter-in-place {
+  background-color: rgb(83, 141, 78);
+  border-color: rgb(83, 141, 78);
+}
+
+button.incorrect-letter {
+  background-color: rgb(58, 58, 60);
+  border-color: rgb(58, 58, 60);
+}
+
+
+button.correct-letter {
+  background-color: rgb(181, 159, 59);
+  border-color: rgb(181, 159, 59);
+}
+
+button.correct-letter-in-place {
+  background-color: rgb(83, 141, 78);
+  border-color: rgb(83, 141, 78);
+}
+
