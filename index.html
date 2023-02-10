@@ -19,12 +19,22 @@
   <div id="container">
     <div id="game">
       <header>
-        <i class="far fa-question-circle" id="help"></i>
-        <h1 class="title">WORDLE</h1>
-        <i class="fas fa-chart-bar" id="stats"></i>
+        <div class="header-left">
+          <i class="far fa-question-circle" id="help"></i>
+          <i class="fas fa-chart-bar" id="stats"></i>
+        </div>
+        <div class="header-center">
+          <h1 class="title">WORDLE</h1>
+        </div>
+        <div class="header-right">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <i id="toggle-fullscreen" class="fa fa-desktop" aria-hidden="true"></i>
+        </div>
       </header>
-
+      <button id="start">Start Game</button>
       <div id="message-container">
+       
         <h2>Messages go here</h2>
       </div>  
 
@@ -78,6 +88,47 @@
 
     </div>
   </div>
+
+  <div id="help-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Help for WORDLE Variations</h2>
+       <span class="close" id="close-help">&times;</span>
+      </div>
+      <div class="modal-body">
+        This will contain detailed instructions for this version of WORDLE.
+      </div>
+
+    </div>
+  </div>
+
+  <div id="stats-modal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>WORDLE Stats</h2>
+       <span class="close" id="close-stats">&times;</span>
+      </div>
+
+  
+        <h2>STATISTICS</h2>
+  
+        <h3><strong>Total</strong>: <span id="total-played"></span></h3>
+  
+        <h3><strong>Wins</strong>: <span id="total-wins"></span></h3>
+  
+        <h3><strong>Win %</strong>: <span id="win-pct"></span></h3>
+  
+        <h3>
+          <strong>Current Streak</strong>: <span id="current-streak"></span>
+        </h3>
+
+    </div>
+  </div>
+
+</body>
+
   
   <script src="./main.js"></script>
 </body>

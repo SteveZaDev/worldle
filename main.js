@@ -3,8 +3,7 @@ const protoWordsArray = [
   { 
     cat: "Presidents",
     sel: true,
-    items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE",
-  "JOHN QUINCY ADAMS", "ANDREW JACKSON"]
+    items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON"]
   },
   { 
     cat: "States",
@@ -43,19 +42,87 @@ const protoWordsArray = [
   */
 ]
 
+notes = [
+	[659, 4],
+	[659, 4],
+	[659, 4],
+	[523, 8],
+	[0, 16],
+	[783, 16],
+	[659, 4],
+	[523, 8],
+	[0, 16],
+	[783, 16],
+	[659, 4],
+	[0, 4],
+	[987, 4],
+	[987, 4],
+	[987, 4],
+	[1046, 8],
+	[0, 16],
+	[783, 16],
+	[622, 4],
+	[523, 8],
+	[0, 16],
+	[783, 16],
+	[659, 4]
+];
 
-wordsArray=[]
+
+let fullScreen = false;
+let wordsArray=[]
+let keyboardClicks = false;
+
+let playButtonEl = ""
+const containerEl = document.getElementById('container')
+let currentWordIndex = 0;
+let guessedWordCount = 0;
+let guessedWords = [[]]
+let availableSpace = 1; 
+let numofLetters = 5
+let numofGuesses = 6
+let wordle = ""
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  //initHelpModal();
+    initHelpModal();
+    initStatsModal()
+    playButtonEl = document.getElementById("start")
+    toggleFullScreenEl = document.getElementById("toggle-fullscreen")
+
+    playButtonEl.addEventListener("click", ({ target }) => {
+       letsPlay()
+     })
+
+     toggleFullScreenEl.addEventListener("click", ({ target }) => {
+       console.log("clicked on full screen")
+      if (!fullScreen){        
+        containerEl.requestFullscreen();
+      }
+    })
+
+    });
+
+    function initLocalStorage() {
+      const storedCurrentWordIndex = window.localStorage.getItem('currentWordIndex')
+      if (!storedCurrentWordIndex){
+        window.localStorage.setItem('currentWordIndex', currentWordIndex)
+      } else {
+        currentWordIndex = Number(storedCurrentWordIndex) 
+      }
+    }
+
+function letsPlay() {
   //initStatsModal();
+  // initClasses();
+
+  playButtonEl.style.display = "none";  
+
 
   let messageContainerEl = document.getElementById('message-container')
 
-  let numofLetters = 5
-  let numofGuesses = 6
+  wordsArray = []
   for (i=0; i<protoWordsArray.length; i++){
     if (protoWordsArray[i].sel){
        wordsArray.push(protoWordsArray[i])
@@ -70,8 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
  // console.log(wordsArray[randomArray] + "length of array = " + wordsArray[randomArray].length)
   numofLetters = (wordsArray[randomArray].items[randomWordle]).length;
 //  console.log(wordsArray[randomArray][randomWordle] + " has " + numofLetters + " letters in it")
-  let wordle = wordsArray[randomArray].items[randomWordle];
-  console.log("wordle = " + wordle)
+  wordle = wordsArray[randomArray].items[randomWordle];
+  console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
   let guessedWordCount = 0;
   numofGuesses = 6;
   if (numofLetters > 10){
@@ -79,17 +146,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   createSquares();
-  addKeyboardClicks();
+  if (!keyboardClicks){
+    console.log("about to call addKeyboard")
+    addKeyboardClicks();
+    document.addEventListener('keydown', function(event) {
+      console.log ("key pressed was " + event.key)
+      handleKeystroke(event.key)
+      });
+  }
 
-  let guessedWords = [[]]
-  let availableSpace = 1; 
+  guessedWords = [[]]
+  availableSpace = 1; 
 
   const keys = document.querySelectorAll('.keyboard-row button')
 
-  document.addEventListener('keydown', function(event) {
-    console.log ("key pressed was " + event.key)
-    handleKeystroke(event.key)
-    });
 
   function getCurrentWordArr() {
     const numberOfGuessedWords = guessedWords.length;
@@ -97,8 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateGuessedLetters(letter){
+    console.log("updateGuessedLetter letter = " + letter)
     const currentWordArr = getCurrentWordArr()
     console.log('current array = ' + currentWordArr)
+    console.log("numofLetters = " + numofLetters )
     if (currentWordArr && currentWordArr.length < numofLetters){
       currentWordArr.push(letter)
       const availableSpaceEl = document.getElementById(availableSpace)
@@ -171,12 +243,123 @@ document.addEventListener("DOMContentLoaded", () => {
       messageContainerEl.innerText = (`current length = ${currentWordArr.length} which is less than ${numofLetters} letters.`);
       return;
     }
+    //flipTile();
 
+
+    let checkWordle = wordle;
+    const guess = [];
+  
+    currentWordArr.forEach(tile => {
+      console.log("pushing letter onto guess array - letter = " + tile)
+      guess.push({letter: tile, color: 'dontknow'});
+    })
+
+    console.log("");
+    console.log("");
+    console.log("About to loop thru to look for Greys")
+    guess.forEach(guess => {
+      if (!checkWordle.includes(guess.letter.toUpperCase())){
+        guess.color = 'incorrect-letter'
+        console.log ("set grey overlay")
+        }
+    })
+
+
+
+
+
+    console.log("About to loop thru to look for Greens")
+    guess.forEach((guess, index) => {
+      console.log("guess letter = " + guess.letter + "   wordle letter = " + wordle[index])
+      if (guess.letter == wordle[index].toLowerCase()){
+        guess.color = 'correct-letter-in-place'
+   //     console.log("guess letter2 = " + guess.letter + "   wordle letter = " + wordle[index])
+        console.log ("set green overlay")
+        checkWordle = checkWordle.replaceAll(guess.letter.toUpperCase(), '')
+        console.log ("guess array = " + guess + " checkWordle = " + checkWordle)
+        console.log (" ")
+      }
+    })
+
+    console.log("");
+    console.log("");
+    console.log("About to loop thru to look for Yellows")
+    guess.forEach(guess => {
+      console.log("guess letter = " + guess.letter);
+      if (checkWordle.includes(guess.letter.toUpperCase())){
+        guess.color = 'correct-letter'
+        console.log ("set yellow overlay")
+        checkWordle = checkWordle.replaceAll(guess.letter.toUpperCase(), '')
+        console.log ("guess array = " + guess + " checkWordle = " + checkWordle)
+        console.log (" ")
+      }
+    })
+
+    guess.forEach(guess => {
+      console.log("letter = " + guess.letter + " color = " + guess.color)
+    }
+    )
+
+
+
+  
     let result = guessedWord.toUpperCase();
 
     const firstLetterId = guessedWordCount * numofLetters + 1;
     let interval = 2500 / numofLetters;
 
+
+    currentWordArr.forEach((tile, index) => {
+    
+      setTimeout(() => {
+    //    tile.classList.add("animate__flipInX")
+    //    tile.classList.add(guess[index].color)
+        const letterId = firstLetterId + index;
+        const letterEl = document.getElementById(letterId);
+     //   if (letter === " "){
+     //     letter = "space"
+     //   }
+     //  let keyboardLetter = letter.toLowerCase();
+     //  const keyboardLetterEl = document.querySelector("[data-key=" + keyboardLetter + "]");
+ 
+
+     //   console.log("keyboard letter = " + keyboardLetterEl)
+        letterEl.classList.add(guess[index].color)
+        letterEl.classList.add("animate__flipInX")
+    //    addColorToKey(guess[index].letter, guess[index].color)
+        if (tile === " "){
+          tile = "space"
+        }
+
+    const keyboardEl = document.querySelector(`[data-key=${tile}]`);
+    console.log ("keyboardEl = " + keyboardEl + " tile = " + tile);
+    keyboardEl.classList.add(guess[index].color);
+
+      }, interval * index)
+  
+    })
+
+    guessedWordCount += 1;
+    console.log("guessed word = " + guessedWord + "  wordle = " + wordle)
+    let guessedWordUpper = guessedWord.toUpperCase();
+    if (guessedWordUpper === wordle){
+      messageContainerEl.innerText = "Congratulations!"
+      playButtonEl.innerText = "Play Again?";
+      playButtonEl.style.display = "block";
+     return;
+      
+    }
+
+    if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
+      messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
+    } 
+
+
+    guessedWords.push([]);
+    console.log("Guessedwords length = " + guessedWords.length)
+
+
+   /* 
     currentWordArr.forEach((letter, index) => {
       setTimeout(() => {
         const tileClass = getTileClass(letter, index, currentWordArr);
@@ -217,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     guessedWords.push([]);
-    console.log("Guessedwords length = " + guessedWords.length)
+    console.log("Guessedwords length = " + guessedWords.length)*/
   } // END OF handleSubmitWord
 
   function createSquares(){
@@ -228,6 +411,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let screenHeight = window.innerHeight;
     
     const gameBoard = document.getElementById("board")
+
+
+    // Clear out any elements of class "square"
+    let squares = document.getElementsByClassName('square');
+    /*
+    while(squares[0]) {
+     // squares[0].parentNode.removeChild(squares[0]);
+     console.log("hello")
+    }​*/
+    
+    let i = 0;
+    while (squares[0]){
+      squares[0].parentNode.removeChild(squares[0]);
+      console.log("i=" + i)
+      i++;
+    }
+
+
 
     for (let i = 0; i < (numofLetters*numofGuesses); i++) {
       let square = document.createElement("div");
@@ -270,13 +471,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   function addKeyboardClicks(){    
-
+      keyboardClicks = true;
       const keys = document.querySelectorAll(".keyboard-row button");
       for (let i = 0; i < keys.length; i++) {
         keys[i].addEventListener("click", ({ target }) => {
           messageContainerEl.innerText = ""
-          let containerEl = document.getElementById('container')
-          containerEl.requestFullscreen();
+
           let key = target.getAttribute("data-key");
   
  
@@ -363,4 +563,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-})
+}
+
+// THIS LOGIC IS TAKEN FROM ANIA KUBOWS WORDLE CLONE - ITS COLOR LOGIC WORKS CORRECTLY 
+const flipTile = () => {
+  // pick up at 
+  const rowTiles = document.querySelector('#guessRow-' + currentRow).childNodes;
+
+  let checkWordle = wordle;
+  const guess = [];
+
+  rowTiles.forEach(tile => {
+    guess.push({letter: tile.getAttribute('data'), color: 'grey-overlay'})
+  })
+
+  guess.forEach((guess, index) => {
+    if (guess.letter == wordle[index]){
+      guess.color = 'green-overlay'
+      checkWordle = checkWordle.replace(guess.letter, '')
+    }
+  })
+
+  guess.forEach(guess => {
+    if (checkWordle.includes(guess.letter)){
+      guess.color = 'yellow-overlay'
+      checkWordle = checkWordle.replace(guess.letter, '')
+    }
+  })
+
+  rowTiles.forEach((tile, index) => {
+    
+    setTimeout(() => {
+      tile.classList.add('flip')
+      tile.classList.add(guess[index].color)
+      addColorToKey(guess[index].letter, guess[index].color)
+    }, 500 * index)
+
+  })
+}
+
+
+function initHelpModal() {
+  const modal = document.getElementById("help-modal");
+ // modal.textContent = "Explanation of this version of WORDLE"
+  // Get the button that opens the modal
+  const btn = document.getElementById("help");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementById("close-help");
+
+
+  // When the user clicks on the button, open the modal
+  btn.addEventListener("click", function () {
+    console.log("just clicked on help button")
+    modal.style.display = "block";
+    helpEl = document.getElementById("help-modal")
+ //   helpEl.requestFullscreen();
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+function initStatsModal() {
+  const modal = document.getElementById("stats-modal");
+  // Get the button that opens the stats modal
+  const btn = document.getElementById("stats");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementById("close-stats");
+
+
+  // When the user clicks on the button, open the modal
+  btn.addEventListener("click", function () {
+    console.log("just clicked on stats button")
+    modal.style.display = "block";
+    helpEl = document.getElementById("stats-modal")
+ //   helpEl.requestFullscreen();
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
