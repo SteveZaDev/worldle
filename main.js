@@ -1,9 +1,10 @@
 // pick up video at 23:40
-const protoWordsArray = [
+let protoWordsArray = [
   { 
     cat: "Presidents",
     sel: true,
-    items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON"]
+    items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
+    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN"]
   },
   { 
     cat: "States",
@@ -42,31 +43,15 @@ const protoWordsArray = [
   */
 ]
 
-notes = [
-	[659, 4],
-	[659, 4],
-	[659, 4],
-	[523, 8],
-	[0, 16],
-	[783, 16],
-	[659, 4],
-	[523, 8],
-	[0, 16],
-	[783, 16],
-	[659, 4],
-	[0, 4],
-	[987, 4],
-	[987, 4],
-	[987, 4],
-	[1046, 8],
-	[0, 16],
-	[783, 16],
-	[622, 4],
-	[523, 8],
-	[0, 16],
-	[783, 16],
-	[659, 4]
-];
+const backgroundImages=[
+  "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
+  "https://cdn.pixabay.com/photo/2011/07/15/22/22/forest-8287__340.jpg",
+  "https://cdn.pixabay.com/photo/2012/10/26/09/39/forest-63275_960_720.jpg",
+  "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
+]
+
 
 
 let fullScreen = false;
@@ -82,20 +67,33 @@ let availableSpace = 1;
 let numofLetters = 5
 let numofGuesses = 6
 let wordle = ""
+let gameInProgress = false;
 
+let preferencesObj = {
+  presidents: true,
+  states: false,
+  cities: false,
+  countries: false,
+  worldCities: false,
+  actors: false,
+  movies: false
+};
 
 
 document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
-    initStatsModal()
+    initStatsModal();
+    let randomImg = Math.floor(Math.random()*backgroundImages.length)
+    const body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = "url(" + backgroundImages[randomImg] + ")";
     playButtonEl = document.getElementById("start")
-    toggleFullScreenEl = document.getElementById("toggle-fullscreen")
+    fullScreenEl = document.getElementById("fullscreen")
 
     playButtonEl.addEventListener("click", ({ target }) => {
        letsPlay()
      })
 
-     toggleFullScreenEl.addEventListener("click", ({ target }) => {
+     fullScreenEl.addEventListener("click", ({ target }) => {
        console.log("clicked on full screen")
       if (!fullScreen){        
         containerEl.requestFullscreen();
@@ -114,21 +112,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 function letsPlay() {
-  //initStatsModal();
-  // initClasses();
+  // Clear the classes of the keyboard that were set in any previous Wordle
+   initClasses();
 
+ 
+
+// INIT
+wordsArray=[]
+
+currentWordIndex = 0;
+guessedWordCount = 0;
+guessedWords = [[]]
+availableSpace = 1; 
+numofLetters = 5
+numofGuesses = 6
+wordle = ""
+gameInProgress = true;
+
+// END OF INIT
   playButtonEl.style.display = "none";  
-
+//
 
   let messageContainerEl = document.getElementById('message-container')
-
+  messageContainerEl.innerText = ""
   wordsArray = []
   for (i=0; i<protoWordsArray.length; i++){
     if (protoWordsArray[i].sel){
        wordsArray.push(protoWordsArray[i])
     }
   }
-  
   let randomArray = wordsArray[Math.floor(Math.random()*wordsArray.length)];
   randomArray = Math.floor(Math.random()*wordsArray.length);
   randomWordle = Math.floor(Math.random()*(wordsArray[randomArray].items).length);
@@ -139,13 +151,34 @@ function letsPlay() {
 //  console.log(wordsArray[randomArray][randomWordle] + " has " + numofLetters + " letters in it")
   wordle = wordsArray[randomArray].items[randomWordle];
   console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
-  let guessedWordCount = 0;
+ // let guessedWordCount = 0;
   numofGuesses = 6;
   if (numofLetters > 10){
     numofGuesses = 8;
   }
 
+  function initClasses(){
+  /*  let keys = document.getElementsByClassName('correct-letter-in-place');
+    if (keys){
+    keys.forEach(key => {
+      key.classList.remove("correct-letter-in-place")  
+    });
+    }
+*/
+    const allElements = document.querySelectorAll('*');
+    
+allElements.forEach((element) => {
+  element.classList.remove('correct-letter-in-place');
+  element.classList.remove('correct-letter');
+  element.classList.remove('incorrect-letter');
+});
+
+
+
+  }
+ 
   createSquares();
+  // Check to see if keyboard click event listener has already been set via the first game of the session  
   if (!keyboardClicks){
     console.log("about to call addKeyboard")
     addKeyboardClicks();
@@ -344,14 +377,29 @@ function letsPlay() {
     let guessedWordUpper = guessedWord.toUpperCase();
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
+      const audio = new Audio ("./auds/tada.mp3");
+      audio.play()
       playButtonEl.innerText = "Play Again?";
       playButtonEl.style.display = "block";
+      const totalWins = window.localStorage.getItem("totalWins") || 0;
+      window.localStorage.setItem("totalWins", Number(totalWins) + 1);
+
+      const currentStreak = window.localStorage.getItem("currentStreak") || 0;
+      window.localStorage.setItem("currentStreak", Number(currentStreak) + 1);
+      updateTotalGames();
+    //  removeKeyboardListeners();
      return;
       
     }
 
     if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
       messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
+      window.localStorage.setItem("currentStreak", 0);
+      updateTotalGames();
+      playButtonEl.innerText = "Play Again?";
+      playButtonEl.style.display = "block";
+    //  removeKeyboardListeners();
+      return;
     } 
 
 
@@ -403,6 +451,13 @@ function letsPlay() {
     console.log("Guessedwords length = " + guessedWords.length)*/
   } // END OF handleSubmitWord
 
+  function updateTotalGames(){
+    const totalGames = window.localStorage.getItem("totalGames") || 0;
+    window.localStorage.setItem("totalGames", Number(totalGames) + 1);
+    gameInProgress = false;
+  }
+
+
   function createSquares(){
     let screenWidth = window.innerWidth;
     if (screenWidth > 700){
@@ -415,20 +470,9 @@ function letsPlay() {
 
     // Clear out any elements of class "square"
     let squares = document.getElementsByClassName('square');
-    /*
-    while(squares[0]) {
-     // squares[0].parentNode.removeChild(squares[0]);
-     console.log("hello")
-    }​*/
-    
-    let i = 0;
     while (squares[0]){
       squares[0].parentNode.removeChild(squares[0]);
-      console.log("i=" + i)
-      i++;
     }
-
-
 
     for (let i = 0; i < (numofLetters*numofGuesses); i++) {
       let square = document.createElement("div");
@@ -446,6 +490,12 @@ function letsPlay() {
       square.style.width = (screenWidth / (numofLetters + 3) + 'px');
       square.style.height = ((screenHeight / 15) + 'px');
       square.style.height = (screenWidth / (numofLetters + 3) + 'px');
+      square.style.fontSize = (screenWidth / (numofLetters + 3) + 'px');
+      if (screenWidth > screenHeight){
+        square.style.height = ((screenHeight / 15) + 'px');
+        square.style.fontSize = ((screenHeight / 15) + 'px');
+
+      }
     });
     board.style.gridTemplateColumns = 'repeat(' + numofLetters + ', 1fr)'
   
@@ -470,30 +520,50 @@ function letsPlay() {
   } // END OF handleDelete
 
 
+  function removeKeyboardListeners(){
+    console.log("entered remove listeners")
+    const keys = document.querySelectorAll(".keyboard-row button");
+    for (let i = 0; i < keys.length; i++) {
+      console.log("keyboard count = " + i)
+      keys[i].removeEventListener("click")
+    }
+   }
+
   function addKeyboardClicks(){    
       keyboardClicks = true;
       const keys = document.querySelectorAll(".keyboard-row button");
       for (let i = 0; i < keys.length; i++) {
         keys[i].addEventListener("click", ({ target }) => {
+          if (!gameInProgress){
+            return;
+          }
+      
           messageContainerEl.innerText = ""
 
           let key = target.getAttribute("data-key");
   
  
           if (key === "enter") {
+            const audio = new Audio ("./auds/hard-keypress.wav");
+            audio.play()
             handleSubmitWord();
             return;
           }
   
           if (key === "del") {
+            const audio = new Audio ("./auds/hard-keypress.wav");
+            audio.play()
             handleDelete();
             return;
           }
 
           if (key === "space") {
+            const audio = new Audio ("./auds/keypress2.wav");
+            audio.play()
             key = " "
           }
-  
+          const audio = new Audio ("./auds/keypress2.wav");
+          audio.play()
           updateGuessedLetters(key);
         });
       }
@@ -531,6 +601,9 @@ function letsPlay() {
 
 
   function handleKeystroke(letter){
+    if (!gameInProgress){
+      return;
+    }
 
     console.log ("key in handleKeystroke function - "  + letter)
     messageContainerEl.innerText = "";
@@ -634,6 +707,20 @@ function initHelpModal() {
   });
 }
 
+function updateStatsModal(){
+  const currentStreak = window.localStorage.getItem("currentStreak");
+  const totalWins = window.localStorage.getItem("totalWins");
+  const totalGames = window.localStorage.getItem("totalGames");
+
+  document.getElementById('total-played').textContent = totalGames;
+  document.getElementById('total-wins').textContent = totalWins;
+  document.getElementById('current-streak').textContent = currentStreak;
+
+  const winPct = Math.round((totalWins / totalGames) * 100) || 0
+  document.getElementById('win-pct').textContent = winPct;
+
+}
+
 function initStatsModal() {
   const modal = document.getElementById("stats-modal");
   // Get the button that opens the stats modal
@@ -646,6 +733,7 @@ function initStatsModal() {
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
     console.log("just clicked on stats button")
+    updateStatsModal();
     modal.style.display = "block";
     helpEl = document.getElementById("stats-modal")
  //   helpEl.requestFullscreen();

@@ -6,18 +6,28 @@
   --keyboard-background-color: rgb(129, 131, 132);
   --keyboard-letter-color: rgb(215, 218, 220);
   --deepLightPurple: rgb(100, 11, 129);
+  --modalHeaderColor: hsl(290, 50%, 50%); 
 }
 
 html,
 body {
   height: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+
+
+      background-size: cover;
+      background-size: stretch;
+     
+      background-position: top;
+
+
+
 }
 
 #container{
   display: flex;
-  background: rgb(125,29,251);
-  background: linear-gradient(79deg, rgba(125,29,251,1) 0%, rgba(29,74,251,0.37857141147474616) 75%, rgba(137,20,220,1) 100%); 
+  background: rgb(125,29,251, .25);
+ /* background: linear-gradient(79deg, rgba(125,29,251,1) 0%, rgba(29,74,251,0.37857141147474616) 75%, rgba(137,20,220,1) 100%); */
   height: 100%;
   align-items: center;
   flex-direction: column;
@@ -31,7 +41,7 @@ header {
 
 .header-left{
   display: flex;
-  width: 25%;
+  width: 28%;
   justify-content: space-evenly;
 }
 
@@ -41,7 +51,7 @@ header {
 
 .header-right{
   display: flex;
-  width: 25%;
+  width: 28%;
   justify-content: space-evenly;
 }
 
@@ -101,7 +111,7 @@ header i{
   border: 1px solid green;
  /* width: 40px;
   height: 40px;*/
-  font-size: 2rem;
+  font-size: 2.9rem;
   font-weight: bold;
   color: var(--title-color);
   text-transform: uppercase;
@@ -213,6 +223,13 @@ button.correct-letter-in-place {
 
 }
 
+.stats-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
 
 #stats-modal {
   display: none;
@@ -248,7 +265,8 @@ button.correct-letter-in-place {
   padding: 2px 12px;
   background-color: var(--deepLightPurple);
   background: rgb(251,193,29);
-  background: radial-gradient(circle, rgba(251,193,29,1) 0%, rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); 
+/*  background: radial-gradient(circle, rgba(251,193,29,1) 0%, rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); */
+  background: radial-gradient(circle, var(--modalHeaderColor), rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); */
   color: rgb(201, 170, 113);
   color: black;
   border-bottom: 1px solid #e9ecef;
@@ -257,7 +275,7 @@ button.correct-letter-in-place {
   text-align: center;
 }
 .modal-header h2{
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-top: 14px;
   margin-bottom: 14px;
   position: relative;
