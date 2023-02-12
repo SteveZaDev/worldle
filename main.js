@@ -1,10 +1,15 @@
 // pick up video at 23:40
 let protoWordsArray = [
   { 
+    cat: "Actors",
+    sel: false,
+    items: ["CLARK GABLE", "MYRNA LOY", "CHARLES LAUGHTON"]
+    },
+  { 
     cat: "Presidents",
     sel: true,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
-    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN"]
+    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT"]
   },
   { 
     cat: "States",
@@ -12,30 +17,40 @@ let protoWordsArray = [
     items: ["ALABAMA", "ALASKA", "ARKANSAS", "CALIFORNIA"]
   },
   { 
-    cat: "Cities",
+    cat: "State Capitals",
     sel: false,
     items: ["MONTGOMERY", "JUNEAU", "LITTLE ROCK", "SACRAMENTO"]
     },
   { 
+    cat: "U.S. Cities",
+    sel: false,
+    items: ["MONTGOMERY", "JUNEAU", "LITTLE ROCK", "SACRAMENTO"]
+    },    
+  { 
     cat: "Countries",
-    sel: true,
+    sel: false,
     items: ["ALBANIA", "ANDORRA"]
   },
   { 
+    cat: "World Capitals",
+    sel: false,
+    items: ["ALBANIA", "ANDORRA"]
+  },  
+  { 
     cat: "World Cities",
-    sel: true,
+    sel: false,
     items: ["LONDON", "PARIS"]
     },
    { 
-  cat: "Actors",
-  sel: false,
-  items: ["CLARK GABLE", "MYRNA LOY", "CHARLES LAUGHTON"]
-  },
-   { 
   cat: "Movies",
-  sel: true,
+  sel: false,
   items: ["WINGS", "CAVALCADE", "CIMMARON", "GRAND HOTEL"]
-  }
+  },
+  { 
+ cat: "Geo Features",
+ sel: false,
+ items: ["AMAZON", "NILE"]
+ }  
   /*,
   , 
   ,
@@ -47,8 +62,6 @@ const backgroundImages=[
   "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
-  "https://cdn.pixabay.com/photo/2011/07/15/22/22/forest-8287__340.jpg",
-  "https://cdn.pixabay.com/photo/2012/10/26/09/39/forest-63275_960_720.jpg",
   "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
 ]
 
@@ -68,6 +81,8 @@ let numofLetters = 5
 let numofGuesses = 6
 let wordle = ""
 let gameInProgress = false;
+let randomArray = 0;
+const messageContainerEl = document.getElementById('message-container')
 
 let preferencesObj = {
   presidents: true,
@@ -88,17 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.getElementsByTagName('body')[0];
     body.style.backgroundImage = "url(" + backgroundImages[randomImg] + ")";
     playButtonEl = document.getElementById("start")
-    fullScreenEl = document.getElementById("fullscreen")
+    randCatEl = document.getElementById("randcat")
 
     playButtonEl.addEventListener("click", ({ target }) => {
        letsPlay()
      })
 
-     fullScreenEl.addEventListener("click", ({ target }) => {
-       console.log("clicked on full screen")
-      if (!fullScreen){        
-        containerEl.requestFullscreen();
-      }
+     randCatEl.addEventListener("click", ({ target }) => {
+       console.log("clicked on category display");
+       if (wordsArray){
+       messageContainerEl.innerText = wordsArray[randomArray].cat;
+       }
     })
 
     });
@@ -134,7 +149,7 @@ gameInProgress = true;
   playButtonEl.style.display = "none";  
 //
 
-  let messageContainerEl = document.getElementById('message-container')
+
   messageContainerEl.innerText = ""
   wordsArray = []
   for (i=0; i<protoWordsArray.length; i++){
@@ -142,7 +157,7 @@ gameInProgress = true;
        wordsArray.push(protoWordsArray[i])
     }
   }
-  let randomArray = wordsArray[Math.floor(Math.random()*wordsArray.length)];
+  randomArray = wordsArray[Math.floor(Math.random()*wordsArray.length)];
   randomArray = Math.floor(Math.random()*wordsArray.length);
   randomWordle = Math.floor(Math.random()*(wordsArray[randomArray].items).length);
   console.log("randomArray = " + randomArray) 
@@ -796,7 +811,13 @@ function initCategoriesModal() {
     let category = document.createElement("div");
     category.innerText = `${protoWordsArray[i].cat} ${protoWordsArray[i].items.length}`;
     category.classList.add("category")
+    category.id = i;
     categoriesContainerEl.appendChild(category);
+    category.addEventListener("click", ({ target }) => {
+       // window.alert(category.innerText + category.id)
+        protoWordsArray[category.id].sel = !(protoWordsArray[category.id].sel)
+        updateCategoriesModal()
+      });
   }
 
   // When the user clicks on the button, open the modal

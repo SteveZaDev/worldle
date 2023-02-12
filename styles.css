@@ -266,6 +266,10 @@ button.correct-letter-in-place {
   
 }
 
+.category{
+  cursor: pointer;
+}
+
 #categories-modal {
   display: none;
   position: fixed;
