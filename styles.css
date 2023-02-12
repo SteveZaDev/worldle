@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  --header-border-color: rgb(58, 58, 60);
+  --header-border-color: rgb(200, 200, 200);
   --title-color: gainsboro;
   --keyboard-background-color: rgb(129, 131, 132);
   --keyboard-letter-color: rgb(215, 218, 220);
@@ -26,7 +26,7 @@ body {
 
 #container{
   display: flex;
-  background: rgb(125,29,251, .25);
+  background: rgb(75,29,91, .65);
  /* background: linear-gradient(79deg, rgba(125,29,251,1) 0%, rgba(29,74,251,0.37857141147474616) 75%, rgba(137,20,220,1) 100%); */
   height: 100%;
   align-items: center;
@@ -48,6 +48,11 @@ header {
 .header-center{
   flex: 1;
 }
+
+h1{
+  font-family: 'Times New Roman', Times, serif;
+}
+
 
 .header-right{
   display: flex;
@@ -244,8 +249,40 @@ button.correct-letter-in-place {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
   font-family: 'Times New Roman', Times, serif;
-
 }
+
+/*
+.categories-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}*/
+
+#categories-body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+#categories-modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  padding-top: 25px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+
 .modal-content {
   position: relative;
   background-color: #eee;
@@ -266,7 +303,7 @@ button.correct-letter-in-place {
   background-color: var(--deepLightPurple);
   background: rgb(251,193,29);
 /*  background: radial-gradient(circle, rgba(251,193,29,1) 0%, rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); */
-  background: radial-gradient(circle, var(--modalHeaderColor), rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); */
+  background: radial-gradient(circle, var(--modalHeaderColor), rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); 
   color: rgb(201, 170, 113);
   color: black;
   border-bottom: 1px solid #e9ecef;

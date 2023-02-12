@@ -8,12 +8,12 @@ let protoWordsArray = [
   },
   { 
     cat: "States",
-    sel: true,
+    sel: false,
     items: ["ALABAMA", "ALASKA", "ARKANSAS", "CALIFORNIA"]
   },
   { 
     cat: "Cities",
-    sel: true,
+    sel: false,
     items: ["MONTGOMERY", "JUNEAU", "LITTLE ROCK", "SACRAMENTO"]
     },
   { 
@@ -28,7 +28,7 @@ let protoWordsArray = [
     },
    { 
   cat: "Actors",
-  sel: true,
+  sel: false,
   items: ["CLARK GABLE", "MYRNA LOY", "CHARLES LAUGHTON"]
   },
    { 
@@ -83,6 +83,7 @@ let preferencesObj = {
 document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
     initStatsModal();
+    initCategoriesModal();
     let randomImg = Math.floor(Math.random()*backgroundImages.length)
     const body = document.getElementsByTagName('body')[0];
     body.style.backgroundImage = "url(" + backgroundImages[randomImg] + ")";
@@ -737,6 +738,73 @@ function initStatsModal() {
     modal.style.display = "block";
     helpEl = document.getElementById("stats-modal")
  //   helpEl.requestFullscreen();
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+
+
+function updateCategoriesModal(){
+ /* const currentStreak = window.localStorage.getItem("currentStreak");
+  const totalWins = window.localStorage.getItem("totalWins");
+  const totalGames = window.localStorage.getItem("totalGames");
+
+  document.getElementById('total-played').textContent = totalGames;
+  document.getElementById('total-wins').textContent = totalWins;
+  document.getElementById('current-streak').textContent = currentStreak;
+
+  const winPct = Math.round((totalWins / totalGames) * 100) || 0
+  document.getElementById('win-pct').textContent = winPct;
+*/
+let categories = document.querySelectorAll(".category")
+for (i=0; i<categories.length; i++){
+  if (protoWordsArray[i].sel){
+    categories[i].style.color = "black";
+    categories[i].style.fontWeight = "bold";
+  } else {
+     categories[i].style.color = "grey";
+     categories[i].style.fontWeight = "normal";
+  }
+
+}
+}
+
+
+function initCategoriesModal() {
+  const modal = document.getElementById("categories-modal");
+  // Get the button that opens the categories modal
+  const btn = document.getElementById("categories");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementById("close-categories");
+
+
+  const categoriesContainerEl = document.getElementById("categories-body")
+
+  for (i=0; i<protoWordsArray.length; i++){
+    let category = document.createElement("div");
+    category.innerText = `${protoWordsArray[i].cat} ${protoWordsArray[i].items.length}`;
+    category.classList.add("category")
+    categoriesContainerEl.appendChild(category);
+  }
+
+  // When the user clicks on the button, open the modal
+  btn.addEventListener("click", function () {
+    console.log("just clicked on categories button")
+    updateCategoriesModal();
+    modal.style.display = "block";
+    helpEl = document.getElementById("categories-modal")
   });
 
   // When the user clicks on <span> (x), close the modal
