@@ -22,7 +22,7 @@ let protoWordsArray = [
     }, 
     { 
       cat: "Geo Features",
-      sel: false,
+      sel: true,
       items: ["AMAZON", "NILE"]
       },  
       { 
@@ -33,7 +33,7 @@ let protoWordsArray = [
       
   { 
     cat: "Presidents",
-    sel: true,
+    sel: false,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
     "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT", "RUTHERFORD B HAYES", "JAMES GARFIELD", "CHESTER A ARTHUR", "GROVER CLEVELAND", "BENJAMIN HARRISON", "WILLIAM MCKINLEY", "THEODORE ROOSEVELT", "WILLIAM HOWARD TAFT"]
   },
@@ -308,6 +308,7 @@ allElements.forEach((element) => {
       messageContainerEl.innerText = (`current length = ${currentWordArr.length} which is less than ${numofLetters} letters.`);
       return;
     }
+    window.navigator.vibrate(450);
     //flipTile();
 
 
@@ -407,8 +408,11 @@ allElements.forEach((element) => {
       messageContainerEl.innerText = "Congratulations!"
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
-      playButtonEl.innerText = "Play Again?";
-      playButtonEl.style.display = "block";
+ 
+      setTimeout(function(){
+        playButtonEl.innerText = "Play Again?";
+        playButtonEl.style.display = "block";
+    }, 4500);
       const totalWins = window.localStorage.getItem("totalWins") || 0;
       window.localStorage.setItem("totalWins", Number(totalWins) + 1);
 
@@ -425,9 +429,14 @@ allElements.forEach((element) => {
       window.localStorage.setItem("currentStreak", 0);
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
-      updateTotalGames();
-      playButtonEl.innerText = "Play Again?";
-      playButtonEl.style.display = "block";
+      updateTotalGames();     setTimeout(function(){
+        playButtonEl.innerText = "Play Again?";
+        playButtonEl.style.display = "block";
+    }, 4500);
+
+
+
+
     //  removeKeyboardListeners();
       return;
     } 
