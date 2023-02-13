@@ -3,54 +3,67 @@ let protoWordsArray = [
   { 
     cat: "Actors",
     sel: false,
-    items: ["CLARK GABLE", "MYRNA LOY", "CHARLES LAUGHTON"]
+    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD"]
     },
+  { 
+    cat: "Actresses",
+    sel: false,
+    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUND", "JANE WYMAN", "JUDY HOLLIDAY"]
+    },
+    {
+    cat: "Beatles Songs",
+    sel: false,
+    items: ["A DAY IN THE LIFE", "A HARD DAYS NIGHT"]
+    },  
+    { 
+      cat: "Countries",
+      sel: false,
+      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN"]
+    }, 
+    { 
+      cat: "Geo Features",
+      sel: false,
+      items: ["AMAZON", "NILE"]
+      },  
+      { 
+        cat: "Movies",
+        sel: false,
+        items: ["WINGS", "CAVALCADE", "CIMMARON", "GRAND HOTEL"]
+        },
+      
   { 
     cat: "Presidents",
     sel: true,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
-    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT"]
+    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT", "RUTHERFORD B HAYES", "JAMES GARFIELD", "CHESTER A ARTHUR", "GROVER CLEVELAND", "BENJAMIN HARRISON", "WILLIAM MCKINLEY", "THEODORE ROOSEVELT", "WILLIAM HOWARD TAFT"]
   },
   { 
     cat: "States",
     sel: false,
-    items: ["ALABAMA", "ALASKA", "ARKANSAS", "CALIFORNIA"]
+    items: ["ALABAMA", "ALASKA", "ARIZONA", "ARKANSAS", "CALIFORNIA", "COLORADO", "CONNECTICUT", "DELAWARE", "FLORIDA", "GEORGIA"]
   },
   { 
     cat: "State Capitals",
     sel: false,
-    items: ["MONTGOMERY", "JUNEAU", "LITTLE ROCK", "SACRAMENTO"]
+    items: ["MONTGOMERY", "JUNEAU", "PHOENIX", "LITTLE ROCK", "SACRAMENTO", "DENVER", "HARTFORD", "DOVER", "TALLAHASSEE", "ATLANTA"]
     },
   { 
     cat: "U.S. Cities",
     sel: false,
-    items: ["MONTGOMERY", "JUNEAU", "LITTLE ROCK", "SACRAMENTO"]
+    items: ["MOBILE", "ANCHORAGE", "SCOTTSDALE", "LOS ANGELES", "SAN DIEGO", "SAN FRANCISCO", "SAN JOSE", "BOULDER", "ASPEN", "VAIL", "DURANGO", "BETHLEHEM", "NEW LONDON", "NEW HAVEN", "WILMINGTON", "MIAMI", "TAMPA BAY", "ORLANDO", "AUGUSTA"]
     },    
   { 
-    cat: "Countries",
-    sel: false,
-    items: ["ALBANIA", "ANDORRA"]
-  },
-  { 
+  
     cat: "World Capitals",
     sel: false,
-    items: ["ALBANIA", "ANDORRA"]
+    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU"]
   },  
   { 
     cat: "World Cities",
     sel: false,
-    items: ["LONDON", "PARIS"]
-    },
-   { 
-  cat: "Movies",
-  sel: false,
-  items: ["WINGS", "CAVALCADE", "CIMMARON", "GRAND HOTEL"]
-  },
-  { 
- cat: "Geo Features",
- sel: false,
- items: ["AMAZON", "NILE"]
- }  
+    items: ["MELBOURNE", "SYDNEY", "ADELAIDE", "INNSBRUCK", "SALZBURG"]
+    }
+
   /*,
   , 
   ,
@@ -82,6 +95,7 @@ let numofGuesses = 6
 let wordle = ""
 let gameInProgress = false;
 let randomArray = 0;
+let revealLetterNum = 0;
 const messageContainerEl = document.getElementById('message-container')
 
 let preferencesObj = {
@@ -99,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
     initStatsModal();
     initCategoriesModal();
+    initCog();
     let randomImg = Math.floor(Math.random()*backgroundImages.length)
     const body = document.getElementsByTagName('body')[0];
     body.style.backgroundImage = "url(" + backgroundImages[randomImg] + ")";
@@ -138,6 +153,7 @@ wordsArray=[]
 
 currentWordIndex = 0;
 guessedWordCount = 0;
+revealLetterNum = 0;
 guessedWords = [[]]
 availableSpace = 1; 
 numofLetters = 5
@@ -344,10 +360,6 @@ allElements.forEach((element) => {
       }
     })
 
-    guess.forEach(guess => {
-      console.log("letter = " + guess.letter + " color = " + guess.color)
-    }
-    )
 
 
 
@@ -393,7 +405,7 @@ allElements.forEach((element) => {
     let guessedWordUpper = guessedWord.toUpperCase();
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
-      const audio = new Audio ("./auds/tada.mp3");
+      const audio = new Audio ("./auds/success.mp3");
       audio.play()
       playButtonEl.innerText = "Play Again?";
       playButtonEl.style.display = "block";
@@ -411,12 +423,23 @@ allElements.forEach((element) => {
     if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
       messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
       window.localStorage.setItem("currentStreak", 0);
+      const audio = new Audio ("./auds/negative.mp3");
+      audio.play()
       updateTotalGames();
       playButtonEl.innerText = "Play Again?";
       playButtonEl.style.display = "block";
     //  removeKeyboardListeners();
       return;
     } 
+
+    const audio = new Audio ("./auds/ascending.mp3");
+    audio.play()
+    guess.forEach(guess => {
+      console.log("letter = " + guess.letter + " color = " + guess.color)
+    }
+    )
+
+
 
 
     guessedWords.push([]);
@@ -707,6 +730,8 @@ function initHelpModal() {
     console.log("just clicked on help button")
     modal.style.display = "block";
     helpEl = document.getElementById("help-modal")
+    const audio = new Audio ("./auds/stats.mp3");
+    audio.play()
  //   helpEl.requestFullscreen();
   });
 
@@ -727,6 +752,8 @@ function updateStatsModal(){
   const currentStreak = window.localStorage.getItem("currentStreak");
   const totalWins = window.localStorage.getItem("totalWins");
   const totalGames = window.localStorage.getItem("totalGames");
+  const audio = new Audio ("./auds/stats.mp3");
+  audio.play()
 
   document.getElementById('total-played').textContent = totalGames;
   document.getElementById('total-wins').textContent = totalWins;
@@ -782,6 +809,8 @@ function updateCategoriesModal(){
   const winPct = Math.round((totalWins / totalGames) * 100) || 0
   document.getElementById('win-pct').textContent = winPct;
 */
+const audio = new Audio ("./auds/shortgood.mp3");
+audio.play()
 let categories = document.querySelectorAll(".category")
 for (i=0; i<categories.length; i++){
   if (protoWordsArray[i].sel){
@@ -839,4 +868,37 @@ function initCategoriesModal() {
       modal.style.display = "none";
     }
   });
+}
+
+function initCog() {
+  // Get the button that requests a letter
+  const btn = document.getElementById("reveal-letter");
+
+  
+  // When the user clicks on the button, call reveal letter function
+  btn.addEventListener("click", function () {
+    console.log("just clicked on cog button")
+    if (gameInProgress){
+  //  revealLetter();
+    }
+  });
+
+}
+
+function revealLetter(){
+  console.log ("entered reveal letter function")
+ // const currentWordArr = getCurrentWordArr()
+
+  const numberOfGuessedWords = guessedWords.length;
+  currentWordArr = guessedWords[numberOfGuessedWords - 1]
+  let letter = wordle[revealLetterNum]
+  console.log('current array = ' + currentWordArr)
+  console.log("numofLetters = " + numofLetters )
+    currentWordArr[revealLetterNum] = letter;
+    //const availableSpaceEl = document.getElementById(revealLetterNum)
+  //  availableSpaceEl.textContent = letter;
+    const availableSpaceEl = document.getElementById(revealLetterNum+1)
+    availableSpaceEl.textContent = letter;
+    revealLetterNum++
+
 }
