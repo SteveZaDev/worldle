@@ -13,7 +13,7 @@ let protoWordsArray = [
     {
     cat: "Beatles Songs",
     sel: false,
-    items: ["A DAY IN THE LIFE", "A HARD DAYS NIGHT"]
+    items: ["I SAW HER STANDING THERE", "MISERY", "LOVE ME DO", "PS I LOVE YOU", "DO YOU WANT TO KNOW A SECRET", "A TASTE OF HONEY", "TWIST AND SHOUT", "I WANT TO HOLD YOUR HAND", "I SAW HER STANDING THERE", "THIS BOY", "IT WONT BE LONG", "ALL IVE GOT TO DO", "ALL MY LOVING", "DONT BOTHER ME", "LITTLE CHILD", "TIL THERE WAS YOU", "HOLD ME TIGHT", "I WANNA BE YOUR MAN", "NOT A SECOND TIME", "THANK YOU GIRL", "YOU REALLY GOT A HOLD ON ME", "MONEY", "YOU CANT DO THAT", "LONG TALL SALLY", "I CALL YOUR NAME", "PLEASE MR POSTMAN", "ILL GET YOU", "SHE LOVES YOU", "A HARD DAYS NIGHT", "TELL ME WHY", "ILL CRY INSTEAD", "I SHOULD HAVE KNOWN BETTER", "AND I LOVE HER", "IF I FELL", "CANT BUY ME LOVE", "THINGS WE SAID TODAY", "ANY TIME AT ALL", "MATCHBOX", "IM HAPPY JUST TO DANCE WITH YOU", "IF I FELL"]
     },  
     { 
       cat: "Countries",
@@ -22,8 +22,9 @@ let protoWordsArray = [
     }, 
     { 
       cat: "Geo Features",
-      sel: true,
-      items: ["AMAZON", "NILE"]
+      sel: false,
+      items: ["AMAZON", "NILE"],
+      blurb: ["2nd longest in the world", "At over 4,000 miles, the longest river in the world"  ]
       },  
       { 
         cat: "Movies",
@@ -33,7 +34,7 @@ let protoWordsArray = [
       
   { 
     cat: "Presidents",
-    sel: false,
+    sel: true,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
     "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT", "RUTHERFORD B HAYES", "JAMES GARFIELD", "CHESTER A ARTHUR", "GROVER CLEVELAND", "BENJAMIN HARRISON", "WILLIAM MCKINLEY", "THEODORE ROOSEVELT", "WILLIAM HOWARD TAFT"]
   },
@@ -71,12 +72,19 @@ let protoWordsArray = [
   */
 ]
 
-const backgroundImages=[
+const backgroundImagesPortrait=[
   "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
   "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
 ]
+
+const backgroundImagesLandscape=[
+  "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1600",
+  "https://cdn.pixabay.com/photo/2021/01/09/20/23/road-5903402__340.jpg",
+  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600"
+]
+
 
 
 
@@ -95,28 +103,30 @@ let numofGuesses = 6
 let wordle = ""
 let gameInProgress = false;
 let randomArray = 0;
+let randomWordle = 0;
 let revealLetterNum = 0;
 const messageContainerEl = document.getElementById('message-container')
 
-let preferencesObj = {
-  presidents: true,
-  states: false,
-  cities: false,
-  countries: false,
-  worldCities: false,
-  actors: false,
-  movies: false
-};
-
+let categoryPreferences = [
+  false, false, false, false, false, false, true, false, false, false, false, false
+];
 
 document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
     initStatsModal();
     initCategoriesModal();
     initCog();
-    let randomImg = Math.floor(Math.random()*backgroundImages.length)
-    const body = document.getElementsByTagName('body')[0];
-    body.style.backgroundImage = "url(" + backgroundImages[randomImg] + ")";
+    // Select background image based on portrait or landscape mode
+    if (window.innerHeight > window.innerWidth){
+      let randomImg = Math.floor(Math.random()*backgroundImagesPortrait.length)
+      const body = document.getElementsByTagName('body')[0];
+      body.style.backgroundImage = "url(" + backgroundImagesPortrait[randomImg] + ")";
+    } else {  
+      let randomImg = Math.floor(Math.random()*backgroundImagesLandscape.length)
+      const body = document.getElementsByTagName('body')[0];
+      body.style.backgroundImage = "url(" + backgroundImagesLandscape[randomImg] + ")";
+    }
+    
     playButtonEl = document.getElementById("start")
     randCatEl = document.getElementById("randcat")
 
@@ -305,8 +315,8 @@ allElements.forEach((element) => {
     const currentWordArr = getCurrentWordArr();
     const guessedWord = currentWordArr.join("");
     if (guessedWord.length !== numofLetters){
-      messageContainerEl.innerText = (`current length = ${currentWordArr.length} which is less than ${numofLetters} letters.`);
-      return;
+      messageContainerEl.innerText = (`You entered ${currentWordArr.length} characters which is less than the ${numofLetters} needed`);
+      return;Yo
     }
     window.navigator.vibrate(450);
     //flipTile();
@@ -406,6 +416,7 @@ allElements.forEach((element) => {
     let guessedWordUpper = guessedWord.toUpperCase();
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
+   //   messageContainerEl.innerText = "Congratulations!" + "\n" +  wordsArray[randomArray].blurb[randomWordle]
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
  
@@ -535,10 +546,10 @@ allElements.forEach((element) => {
     const square = document.querySelectorAll(".square")
     console.log(square)
     square.forEach(square => {
-      square.style.width = (screenWidth / (numofLetters + 3) + 'px');
+      square.style.width = (screenWidth / (numofLetters + 4) + 'px');
       square.style.height = ((screenHeight / 15) + 'px');
-      square.style.height = (screenWidth / (numofLetters + 3) + 'px');
-      square.style.fontSize = (screenWidth / (numofLetters + 3) + 'px');
+      square.style.height = (screenWidth / (numofLetters + 4) + 'px');
+      square.style.fontSize = (screenWidth / (numofLetters + 4) + 'px');
       if (screenWidth > screenHeight){
         square.style.height = ((screenHeight / 15) + 'px');
         square.style.fontSize = ((screenHeight / 15) + 'px');
@@ -818,23 +829,37 @@ function updateCategoriesModal(){
   const winPct = Math.round((totalWins / totalGames) * 100) || 0
   document.getElementById('win-pct').textContent = winPct;
 */
-const audio = new Audio ("./auds/shortgood.mp3");
-audio.play()
+
 let categories = document.querySelectorAll(".category")
 for (i=0; i<categories.length; i++){
   if (protoWordsArray[i].sel){
     categories[i].style.color = "black";
     categories[i].style.fontWeight = "bold";
+
   } else {
      categories[i].style.color = "grey";
      categories[i].style.fontWeight = "normal";
+
   }
 
 }
+
 }
 
 
 function initCategoriesModal() {
+  // Look for category preferences in localstorage
+  // if found apply those values to the protoarray
+  console.log("add category local storage get logic")
+  let categoryPreferencesTemp = JSON.parse(window.localStorage.getItem('categoryPreferences'));
+
+  if (categoryPreferencesTemp) {
+    categoryPreferences = JSON.parse(window.localStorage.getItem('categoryPreferences'))
+    console.log("prefernces = " + categoryPreferences)
+    for (i=0; i<protoWordsArray.length; i++){
+      protoWordsArray[i].sel = categoryPreferences[i]
+    }
+}
   const modal = document.getElementById("categories-modal");
   // Get the button that opens the categories modal
   const btn = document.getElementById("categories");
@@ -854,6 +879,15 @@ function initCategoriesModal() {
     category.addEventListener("click", ({ target }) => {
        // window.alert(category.innerText + category.id)
         protoWordsArray[category.id].sel = !(protoWordsArray[category.id].sel)
+        if (protoWordsArray[category.id].sel){
+          const audio = new Audio ("./auds/shortgood.mp3");
+          audio.play()
+        } 
+        else {
+          const audio = new Audio ("./auds/pop39222.mp3");
+          audio.play()     
+        }
+
         updateCategoriesModal()
       });
   }
@@ -862,6 +896,8 @@ function initCategoriesModal() {
   btn.addEventListener("click", function () {
     console.log("just clicked on categories button")
     updateCategoriesModal();
+    const audio = new Audio ("./auds/shortgood.mp3");
+    audio.play()
     modal.style.display = "block";
     helpEl = document.getElementById("categories-modal")
   });
@@ -869,6 +905,8 @@ function initCategoriesModal() {
   // When the user clicks on <span> (x), close the modal
   span.addEventListener("click", function () {
     modal.style.display = "none";
+    preserveCategories();
+
   });
 
   // When the user clicks anywhere outside of the modal, close it
@@ -877,6 +915,16 @@ function initCategoriesModal() {
       modal.style.display = "none";
     }
   });
+}
+
+function preserveCategories(){
+  console.log("add category local storage update logic in preserve function")
+    for (i=0; i<protoWordsArray.length; i++){
+      console.log(protoWordsArray[i].sel)
+      console.log(categoryPreferences[i])
+      categoryPreferences[i] = protoWordsArray[i].sel
+    }
+    window.localStorage.setItem('categoryPreferences', JSON.stringify(categoryPreferences));
 }
 
 function initCog() {
@@ -889,6 +937,7 @@ function initCog() {
     console.log("just clicked on cog button")
     if (gameInProgress){
   //  revealLetter();
+//    updateGuessedLetters(wordle[availableSpace]);
     }
   });
 
@@ -911,3 +960,4 @@ function revealLetter(){
     revealLetterNum++
 
 }
+

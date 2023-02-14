@@ -26,7 +26,7 @@ body {
 
 #container{
   display: flex;
-  background: rgb(75,29,91, .48);
+  background: rgb(75,29,91, .4);
  /* background: linear-gradient(79deg, rgba(125,29,251,1) 0%, rgba(29,74,251,0.37857141147474616) 75%, rgba(137,20,220,1) 100%); */
   height: 100%;
   align-items: center;
@@ -71,7 +71,7 @@ i{
 
 
 header i{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--header-border-color);
 }
 
@@ -95,10 +95,14 @@ header i{
 
 #message-container {
   color: var(--title-color);
-  font-size: .9rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin: 0.4rem, 0 0.4rem 0;
   text-align: center;
+}
+
+h2{
+  font-size: 1.25rem;
 }
 
 #board-container{
@@ -139,7 +143,7 @@ header i{
 .keyboard-row{
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: 98%;
   margin: 0 auto 8px;
   touch-action: manipulation;
 }
@@ -157,18 +161,17 @@ header i{
   color: var(--keyboard-letter-color);
   flex-grow: 1;
   text-transform: uppercase;
-  margin-right: 6px;
+  margin-right: 4px;
   border-radius: 4px;
   user-select: none;
 }
 
 .keyboard-row button.wide-button{
-  flex-grow: 1.5;
+  flex-grow: 1.1;
 }
 
 .keyboard-row button.space-button{
   color: black;
-  border: 2px solid gold;
 }
 
 
@@ -381,4 +384,10 @@ right: 50%;
 @keyframes animatebottom {
 from {top:0; opacity:1}
 to {top:-300px; opacity:0}
+}
+
+@media (min-width: 750px){
+  .modal-body {
+    font-size: 20px;
+  }
 }
