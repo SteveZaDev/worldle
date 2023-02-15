@@ -26,12 +26,11 @@ let protoWordsArray = [
       items: ["AMAZON", "NILE"],
       blurb: ["2nd longest in the world", "At over 4,000 miles, the longest river in the world"  ]
       },  
-      { 
-        cat: "Movies",
-        sel: false,
-        items: ["WINGS", "CAVALCADE", "CIMMARON", "GRAND HOTEL"]
-        },
-      
+    { 
+    cat: "Movies",
+    sel: false,
+    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON"]
+    },
   { 
     cat: "Presidents",
     sel: true,
