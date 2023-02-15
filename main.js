@@ -3,22 +3,22 @@ let protoWordsArray = [
   { 
     cat: "Actors",
     sel: false,
-    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD"]
+    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN"]
     },
   { 
     cat: "Actresses",
     sel: false,
-    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUND", "JANE WYMAN", "JUDY HOLLIDAY"]
+    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUND", "JANE WYMAN", "JUDY HOLLIDAY", "SHIRLEY BOOTH", "AUDREY HEPBURN", "GRACE KELLY", "ANNA MAGNANI", "JOANNE WOODWARD", "SUSAN HAYWARD", "SIMONE SIGNORET", "ELIZABETH TAYLOR", "SOPHIA LOREN", "ANNE BANCROFT", "PATRICIA NEAL", "JULIE ANDREWS", "JULIE CHRISTIE", "BARBRA STREISAND", "MAGGIE SMITH"]
     },
     {
     cat: "Beatles Songs",
     sel: false,
-    items: ["I SAW HER STANDING THERE", "MISERY", "LOVE ME DO", "PS I LOVE YOU", "DO YOU WANT TO KNOW A SECRET", "A TASTE OF HONEY", "TWIST AND SHOUT", "I WANT TO HOLD YOUR HAND", "I SAW HER STANDING THERE", "THIS BOY", "IT WONT BE LONG", "ALL IVE GOT TO DO", "ALL MY LOVING", "DONT BOTHER ME", "LITTLE CHILD", "TIL THERE WAS YOU", "HOLD ME TIGHT", "I WANNA BE YOUR MAN", "NOT A SECOND TIME", "THANK YOU GIRL", "YOU REALLY GOT A HOLD ON ME", "MONEY", "YOU CANT DO THAT", "LONG TALL SALLY", "I CALL YOUR NAME", "PLEASE MR POSTMAN", "ILL GET YOU", "SHE LOVES YOU", "A HARD DAYS NIGHT", "TELL ME WHY", "ILL CRY INSTEAD", "I SHOULD HAVE KNOWN BETTER", "AND I LOVE HER", "IF I FELL", "CANT BUY ME LOVE", "THINGS WE SAID TODAY", "ANY TIME AT ALL", "MATCHBOX", "IM HAPPY JUST TO DANCE WITH YOU", "IF I FELL"]
+    items: ["I SAW HER STANDING THERE", "MISERY", "LOVE ME DO", "PS I LOVE YOU", "DO YOU WANT TO KNOW A SECRET", "A TASTE OF HONEY", "TWIST AND SHOUT", "I WANT TO HOLD YOUR HAND", "I SAW HER STANDING THERE", "THIS BOY", "IT WONT BE LONG", "ALL IVE GOT TO DO", "ALL MY LOVING", "DONT BOTHER ME", "LITTLE CHILD", "TIL THERE WAS YOU", "HOLD ME TIGHT", "I WANNA BE YOUR MAN", "NOT A SECOND TIME", "THANK YOU GIRL", "YOU REALLY GOT A HOLD ON ME", "MONEY", "YOU CANT DO THAT", "LONG TALL SALLY", "I CALL YOUR NAME", "PLEASE MR POSTMAN", "ILL GET YOU", "SHE LOVES YOU", "A HARD DAYS NIGHT", "TELL ME WHY", "ILL CRY INSTEAD", "I SHOULD HAVE KNOWN BETTER", "AND I LOVE HER", "IF I FELL", "CANT BUY ME LOVE", "THINGS WE SAID TODAY", "ANY TIME AT ALL", "MATCHBOX", "IF I FELL"]
     },  
     { 
       cat: "Countries",
       sel: false,
-      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN"]
+      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA"] 
     }, 
     { 
       cat: "Geo Features",
@@ -57,12 +57,12 @@ let protoWordsArray = [
   
     cat: "World Capitals",
     sel: false,
-    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU"]
+    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU", "NASSAU", "DHAKA", "MINSK", "BRUSSELS", "LA PAZ", "SARAJEVO", "BRASILIA", "SOFIA", "PHNOM PENH", "OTTAWA", "SANTIAGO", "BEIJING", "BOGOTA", "KINSHASA", "BRAZZAVILLE", "SAN JOSE", "ZAGREB", "HAVANA", "NICOSIA", "PRAGUE", "COPENHAGEN", "SANTO DOMINGO", "QUITO", "CAIRO", "SAN SALVADOR", "TALLINN", "ADDIS ABABA"]
   },  
   { 
     cat: "World Cities",
     sel: false,
-    items: ["MELBOURNE", "SYDNEY", "ADELAIDE", "INNSBRUCK", "SALZBURG"]
+    items: ["RIO DE JANEIRO", "MELBOURNE", "SYDNEY", "ADELAIDE", "PERTH", "INNSBRUCK", "SALZBURG", "GHENT", "BRUGES", "SAO PAOLO", "MONTREAL", "QUEBEC", "TORONTO", "CALGARY", "WINNIPEG", "VANCOUVER", "SHANGHAI", "ALEXANDRIA"]
     }
 
   /*,
@@ -82,10 +82,11 @@ const backgroundImagesPortrait=[
 const backgroundImagesLandscape=[
   "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1600",
   "https://cdn.pixabay.com/photo/2021/01/09/20/23/road-5903402__340.jpg",
-  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
-
+let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is."
 
 
 let fullScreen = false;
@@ -110,6 +111,13 @@ const messageContainerEl = document.getElementById('message-container')
 let categoryPreferences = [
   false, false, false, false, false, false, true, false, false, false, false, false
 ];
+
+let resultsArray = []
+let resultObj = {
+  date: 0,
+  wordle: "",
+  guesses: 0
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
@@ -172,7 +180,7 @@ wordle = ""
 gameInProgress = true;
 
 // END OF INIT
-  playButtonEl.style.display = "none";  
+  
 //
 
 
@@ -183,6 +191,14 @@ gameInProgress = true;
        wordsArray.push(protoWordsArray[i])
     }
   }
+  console.log("Checking wordsArray which is equal to " + wordsArray)
+  if (wordsArray.length === 0){
+    messageContainerEl.innerText = "Please select at least 1 category";
+    return;
+  }
+
+  playButtonEl.style.display = "none";
+  messageContainerEl.innerText = ""
   randomArray = wordsArray[Math.floor(Math.random()*wordsArray.length)];
   randomArray = Math.floor(Math.random()*wordsArray.length);
   randomWordle = Math.floor(Math.random()*(wordsArray[randomArray].items).length);
@@ -412,14 +428,28 @@ allElements.forEach((element) => {
     })
 
     guessedWordCount += 1;
+    let date = new  Date();
+    resultObj.date = date.toString()
+    resultObj.wordle = wordle;
     console.log("guessed word = " + guessedWord + "  wordle = " + wordle)
     let guessedWordUpper = guessedWord.toUpperCase();
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
-   //   messageContainerEl.innerText = "Congratulations!" + "\n" +  wordsArray[randomArray].blurb[randomWordle]
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
- 
+
+
+      resultObj.guesses = guessedWordCount;
+      let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
+      if (resultsArrayTemp){
+          resultsArray = JSON.parse(window.localStorage.getItem('results'));
+          resultsArray.push(resultObj);
+          window.localStorage.setItem('results', JSON.stringify(resultsArray));
+      } else {
+        resultsArray[0] = resultObj;
+        window.localStorage.setItem('results', JSON.stringify(resultsArray));
+      }
+
       setTimeout(function(){
         playButtonEl.innerText = "Play Again?";
         playButtonEl.style.display = "block";
@@ -436,6 +466,17 @@ allElements.forEach((element) => {
     }
 
     if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
+      resultObj.guesses = 10;
+      let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
+      if (resultsArrayTemp){
+          resultsArray = JSON.parse(window.localStorage.getItem('results'));
+          resultsArray.push(resultObj);
+          window.localStorage.setItem('results', JSON.stringify(resultsArray));
+      } else {
+        resultsArray[0] = resultObj;
+        window.localStorage.setItem('results', JSON.stringify(resultsArray));
+      }
+
       messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
       window.localStorage.setItem("currentStreak", 0);
       const audio = new Audio ("./auds/negative.mp3");
@@ -600,6 +641,7 @@ allElements.forEach((element) => {
           messageContainerEl.innerText = ""
 
           let key = target.getAttribute("data-key");
+          target.blur() 
   
  
           if (key === "enter") {
@@ -679,6 +721,7 @@ allElements.forEach((element) => {
       }
     }
     if (letter === "Enter" ){
+      console.log ("about to submitword")
       handleSubmitWord();
       return;
     }
@@ -690,7 +733,7 @@ allElements.forEach((element) => {
     }
 
 
-
+    console.log("dont want to reach here")
     updateGuessedLetters(letter);
 
   }
@@ -749,7 +792,8 @@ function initHelpModal() {
   btn.addEventListener("click", function () {
     console.log("just clicked on help button")
     modal.style.display = "block";
-    helpEl = document.getElementById("help-modal")
+    helpEl = document.querySelector(".modal-body")
+    helpEl.innerText = helpText + "\n" + "\n"
     const audio = new Audio ("./auds/stats.mp3");
     audio.play()
  //   helpEl.requestFullscreen();
@@ -792,6 +836,10 @@ function initStatsModal() {
   // Get the <span> element that closes the modal
   const span = document.getElementById("close-stats");
 
+  // Get the element that shows results
+  const resultsEl = document.querySelector(".results")
+  const resultsButton = document.getElementById("stats-info");
+
 
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
@@ -805,17 +853,46 @@ function initStatsModal() {
   // When the user clicks on <span> (x), close the modal
   span.addEventListener("click", function () {
     modal.style.display = "none";
+    resultsEl.style.display = "none";
   });
+
+    // When the user clicks on stats info (i) show results
+    resultsButton.addEventListener("click", function () {
+      console.log("just clicked on results button")
+      resultsEl.style.display = "block";
+      buildResults();
+    });
 
   // When the user clicks anywhere outside of the modal, close it
   window.addEventListener("click", function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+      resultsEl.style.display = "none";
     }
   });
 }
 
+function buildResults(){
+  console.log("entered build results")
+  const resultsTrayEl = document.getElementById("results-tray")
+  // LOOP THRU RESULTS IN REVERSE ORDER
 
+  let resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "here are where results will go"
+  resultsTrayEl.appendChild(resultItemEl)
+
+  let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
+  if (resultsArrayTemp){
+      resultsArray = JSON.parse(window.localStorage.getItem('results'));
+      resultsTrayEl.innerHTML = ""
+      for (i=resultsArray.length - 1; i>-1; i--){
+        let resultItemEl = document.createElement('div')
+        resultItemEl.innerText = resultsArray[i].wordle
+        resultsTrayEl.appendChild(resultItemEl)
+      }
+  }
+
+}
 
 function updateCategoriesModal(){
  /* const currentStreak = window.localStorage.getItem("currentStreak");
