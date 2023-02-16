@@ -21,11 +21,11 @@ let protoWordsArray = [
       items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA"] 
     }, 
     { 
-      cat: "Geo Features",
-      sel: false,
-      items: ["AMAZON", "NILE"],
-      blurb: ["2nd longest in the world", "At over 4,000 miles, the longest river in the world"  ]
-      },  
+    cat: "Geo Features",
+    sel: false,
+    items: ["THE AMAZON", "THE NILE", "THE HUDSON", "THE SAHARA", "MT EVEREST", "THE GREAT SALT LAKE", "HIGH POINT", "THE ATLANTIC OCEAN", "THE PACIFIC OCEAN", "THE INDIAN OCEAN", "NORTH AMERICA", "EUROPE", "ASIA", "SOUTH AMERICA", "AFRICA", "MT WASHINGTON", "THE GOBI DESERT", "PIKES PEAK", "CRATER LAKE", "MT SAINT HELENS", "MT FUJI", "MT KILIMANJARO", "MT KENYA", "ACONGAGUA", "AMAZON RAIN FOREST"],
+    blurb: ["2nd longest in the world", "At over 4,000 miles, the longest river in the world"  ]
+    },  
     { 
     cat: "Movies",
     sel: false,
@@ -35,22 +35,22 @@ let protoWordsArray = [
     cat: "Presidents",
     sel: true,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
-    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT", "RUTHERFORD B HAYES", "JAMES GARFIELD", "CHESTER A ARTHUR", "GROVER CLEVELAND", "BENJAMIN HARRISON", "WILLIAM MCKINLEY", "THEODORE ROOSEVELT", "WILLIAM HOWARD TAFT"]
+    "ZACHARY TAYLOR", "MILLARD FILLMORE", "FRANKLIN PIERCE", "JAMES BUCHANAN", "ABRAHAM LINCOLN", "ANDREW JOHNSON", "ULYSSES S GRANT", "RUTHERFORD B HAYES", "JAMES GARFIELD", "CHESTER A ARTHUR", "GROVER CLEVELAND", "BENJAMIN HARRISON", "WILLIAM MCKINLEY", "THEODORE ROOSEVELT", "WILLIAM HOWARD TAFT", "WOODROW WILSON", "WARREN G HARDING", "CALVIN COOLIDGE", "HERBERT HOOVER", "FRANKLIN D ROOSEVELT", "HARRY TRUMAN", "DWIGHT EISENHOWER", "JOHN F KENNEDY", "LYNDON JOHNSON", "RICHARD NIXON", "GERALD FORD", "JIMMY CARTER", "RONALD REAGAN", "GEORGE H W BUSH", "BILL CLINTON", "GEORGE W BUSH", "BARACK OBAMA", "DONALD TRUMP", "JOE BIDEN"]
   },
   { 
     cat: "States",
     sel: false,
-    items: ["ALABAMA", "ALASKA", "ARIZONA", "ARKANSAS", "CALIFORNIA", "COLORADO", "CONNECTICUT", "DELAWARE", "FLORIDA", "GEORGIA"]
+    items: ["ALABAMA", "ALASKA", "ARIZONA", "ARKANSAS", "CALIFORNIA", "COLORADO", "CONNECTICUT", "DELAWARE", "FLORIDA", "GEORGIA", "HAWAII", "IDAHO", "ILLINOIS", "INDIANA", "IOWA", "KANSAS", "KENTUCKY", "LOUISIANA"]
   },
   { 
     cat: "State Capitals",
     sel: false,
-    items: ["MONTGOMERY", "JUNEAU", "PHOENIX", "LITTLE ROCK", "SACRAMENTO", "DENVER", "HARTFORD", "DOVER", "TALLAHASSEE", "ATLANTA"]
+    items: ["MONTGOMERY", "JUNEAU", "PHOENIX", "LITTLE ROCK", "SACRAMENTO", "DENVER", "HARTFORD", "DOVER", "TALLAHASSEE", "ATLANTA", "HONOLULU", "BOISE", "SPRINGFIELD", "INDIANAPOLIS", "DES MOINES", "TOPEKA", "FRANKFORT", "BATON ROUGE"]
     },
   { 
     cat: "U.S. Cities",
     sel: false,
-    items: ["MOBILE", "ANCHORAGE", "SCOTTSDALE", "LOS ANGELES", "SAN DIEGO", "SAN FRANCISCO", "SAN JOSE", "BOULDER", "ASPEN", "VAIL", "DURANGO", "BETHLEHEM", "NEW LONDON", "NEW HAVEN", "WILMINGTON", "MIAMI", "TAMPA BAY", "ORLANDO", "AUGUSTA"]
+    items: ["MOBILE", "ANCHORAGE", "SCOTTSDALE", "LOS ANGELES", "SAN DIEGO", "SAN FRANCISCO", "SAN JOSE", "BOULDER", "ASPEN", "VAIL", "DURANGO", "BETHLEHEM", "NEW LONDON", "NEW HAVEN", "WILMINGTON", "MIAMI", "TAMPA BAY", "ORLANDO", "AUGUSTA", "HILO", "CHICAGO", "PEORIA", "GARY", "LEXINGTON", "NEW ORLEANS"]
     },    
   { 
   
@@ -62,7 +62,12 @@ let protoWordsArray = [
     cat: "World Cities",
     sel: false,
     items: ["RIO DE JANEIRO", "MELBOURNE", "SYDNEY", "ADELAIDE", "PERTH", "INNSBRUCK", "SALZBURG", "GHENT", "BRUGES", "SAO PAOLO", "MONTREAL", "QUEBEC", "TORONTO", "CALGARY", "WINNIPEG", "VANCOUVER", "SHANGHAI", "ALEXANDRIA"]
-    }
+    }, 
+    { 
+      cat: "Testing",
+      sel: false,
+      items: ["AMAZON", "NILE"],
+      }
 
   /*,
   , 
@@ -85,7 +90,7 @@ const backgroundImagesLandscape=[
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
-let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is."
+let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is. Warning - a known bug, if you enter letters via the keyboard, enter everything as lowercase, the game will convert to upper on its own."
 
 
 let fullScreen = false;
@@ -108,7 +113,7 @@ let revealLetterNum = 0;
 const messageContainerEl = document.getElementById('message-container')
 
 let categoryPreferences = [
-  false, false, false, false, false, false, true, false, false, false, false, false
+  false, false, false, false, false, false, true, false, false, false, false, false, false
 ];
 
 let resultsArray = []
@@ -428,7 +433,10 @@ allElements.forEach((element) => {
 
     guessedWordCount += 1;
     let date = new  Date();
-    resultObj.date = date.toString()
+//    resultObj.date = date.toString()
+    resultObj.date = new Date();
+    console.log("New date = " + resultObj.date)
+    console.log("New date is of type " + typeof(resultObj.date))
     resultObj.wordle = wordle;
     console.log("guessed word = " + guessedWord + "  wordle = " + wordle)
     let guessedWordUpper = guessedWord.toUpperCase();
@@ -442,7 +450,10 @@ allElements.forEach((element) => {
       let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
       if (resultsArrayTemp){
           resultsArray = JSON.parse(window.localStorage.getItem('results'));
+          console.log("New date right before push = " + resultObj.date)
           resultsArray.push(resultObj);
+          console.log("Array after push = " + resultsArray);
+          console.log ("item date just added = " + resultsArray[resultsArray.length-1].date);
           window.localStorage.setItem('results', JSON.stringify(resultsArray));
       } else {
         resultsArray[0] = resultObj;
@@ -834,6 +845,12 @@ function initStatsModal() {
 
   // Get the <span> element that closes the modal
   const span = document.getElementById("close-stats");
+  const delEl = document.getElementById("delete-stats");
+  const delBodyEl = document.getElementById("delete-body");
+  const delModal = document.getElementById("delete-modal");
+  const closeDel = document.getElementById("close-delete");
+  const yesEl = document.getElementById("yes");
+  const noEl = document.getElementById("no");
 
   // Get the element that shows results
   const resultsEl = document.querySelector(".results")
@@ -854,6 +871,37 @@ function initStatsModal() {
     modal.style.display = "none";
     resultsEl.style.display = "none";
   });
+
+
+    // When the user clicks on delete stats <span> (x), display confirmation box
+    delEl.addEventListener("click", function () {
+      delModal.style.display = "block";
+    });
+
+
+      // When the user clicks on <span> (x), close the delete modal
+    closeDel.addEventListener("click", function () {
+      delModal.style.display = "none";
+    });
+
+      // When the user clicks on Yes, clear history via localstorage clear the results tray and close delete modal
+      yesEl.addEventListener("click", function () {
+        localStorage.removeItem("results")
+        localStorage.removeItem("currentStreak")
+        localStorage.removeItem("totalWins")
+        localStorage.removeItem("totalGames")
+        const resultsTrayEl = document.getElementById("results-tray");
+        resultsTrayEl.innerHTML = ""
+        delModal.style.display = "none";
+      });
+
+      // When the user clicks on No, close delete modal
+      noEl.addEventListener("click", function () {
+        delModal.style.display = "none";
+      });
+      
+
+  
 
     // When the user clicks on stats info (i) show results
     resultsButton.addEventListener("click", function () {
@@ -877,16 +925,49 @@ function buildResults(){
   // LOOP THRU RESULTS IN REVERSE ORDER
 
   let resultItemEl = document.createElement('div')
-      resultItemEl.innerText = "here are where results will go"
-  resultsTrayEl.appendChild(resultItemEl)
+//      resultItemEl.innerText = "here are where results will go"
+//  resultsTrayEl.appendChild(resultItemEl)
 
   let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
   if (resultsArrayTemp){
       resultsArray = JSON.parse(window.localStorage.getItem('results'));
+      console.log("resultsArray =  " + resultsArray);
+      console.log("results array date = " + resultsArray[resultsArray.length-1].date)
+      date = new Date(resultsArray[resultsArray.length-1].date);
+      const year = date.getFullYear();
+      const hours = date.getHours();
+      console.log("after getfullyear function year = " + year + " hours = " + hours)
       resultsTrayEl.innerHTML = ""
+      let resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "Date"
+      resultsTrayEl.appendChild(resultItemEl)
+      resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "Wordle"
+      resultsTrayEl.appendChild(resultItemEl)
+      resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "Att"
+      resultsTrayEl.appendChild(resultItemEl)
+
       for (i=resultsArray.length - 1; i>-1; i--){
         let resultItemEl = document.createElement('div')
+        console.log ("date is of type " + typeof(resultsArray[i].date))
+        //const year = dateyy.getFullYear();
+        let date = new Date(resultsArray[i].date);
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        console.log("day = " + day)
+        let hours = date.getHours();
+        resultItemEl.innerText = month + "/" + day + "/" + year
+        resultsTrayEl.appendChild(resultItemEl)
+        resultItemEl = document.createElement('div')
         resultItemEl.innerText = resultsArray[i].wordle
+        resultsTrayEl.appendChild(resultItemEl)
+        resultItemEl = document.createElement('div')
+        resultItemEl.innerText = resultsArray[i].guesses
+        if (resultsArray[i].guesses === 10){
+          resultItemEl.innerText = "Loss"  
+        }
         resultsTrayEl.appendChild(resultItemEl)
       }
   }
