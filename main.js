@@ -3,22 +3,22 @@ let protoWordsArray = [
   { 
     cat: "Actors",
     sel: false,
-    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN"]
+    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN", "ROBERT DE NERO", "HENRY FONDA", "BEN KINGSLEY", "ROBERT DUVALL", "F MURRAY ABRAHAM", "WILLIAM HURT", "PAUL NEWMAN", "MICHAEL DOUGLAS", "DANIEL DAY LEWIS", "JEREMY IRONS", "ANTHONY HOPKINS", "AL PACINO", "TOM HANKS", "NICOLAS CAGE", "GEOFFREY RUSH", "ROBERTO BENIGNI", "KEVIN SPACEY"]
     },
   { 
     cat: "Actresses",
     sel: false,
-    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUND", "JANE WYMAN", "JUDY HOLLIDAY", "SHIRLEY BOOTH", "AUDREY HEPBURN", "GRACE KELLY", "ANNA MAGNANI", "JOANNE WOODWARD", "SUSAN HAYWARD", "SIMONE SIGNORET", "ELIZABETH TAYLOR", "SOPHIA LOREN", "ANNE BANCROFT", "PATRICIA NEAL", "JULIE ANDREWS", "JULIE CHRISTIE", "BARBRA STREISAND", "MAGGIE SMITH"]
+    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUNG", "JANE WYMAN", "JUDY HOLLIDAY", "SHIRLEY BOOTH", "AUDREY HEPBURN", "GRACE KELLY", "ANNA MAGNANI", "JOANNE WOODWARD", "SUSAN HAYWARD", "SIMONE SIGNORET", "ELIZABETH TAYLOR", "SOPHIA LOREN", "ANNE BANCROFT", "PATRICIA NEAL", "JULIE ANDREWS", "JULIE CHRISTIE", "BARBRA STREISAND", "MAGGIE SMITH", "GLENDA JACKSON", "JANE FONDA", "LIZA MINNELLI", "ELLEN BURSTYN", "LOUISE FLETCHER", "FAYE DUNAWAY", "DIANE KEATON", "SALLY FIELD", "SISSY SPACEK", "MERYL STREEP", "SHIRLEY MACLAINE", "GERALDINE PAGE", "MARLEE MATLIN", "CHER", "JODIE FOSTER", "JESSICA TANDY", "KATHY BATES", "EMMA THOMPSON", "HOLLY HUNTER", "JESSICA LANGE", "SUSAN SARANDON", "FRANCES MCDORMAND", "HELEN HUNT", "GWYNETH PALTROW", "HILARY SWANK"]
     },
     {
     cat: "Beatles Songs",
     sel: false,
-    items: ["I SAW HER STANDING THERE", "MISERY", "LOVE ME DO", "PS I LOVE YOU", "DO YOU WANT TO KNOW A SECRET", "A TASTE OF HONEY", "TWIST AND SHOUT", "I WANT TO HOLD YOUR HAND", "I SAW HER STANDING THERE", "THIS BOY", "IT WONT BE LONG", "ALL IVE GOT TO DO", "ALL MY LOVING", "DONT BOTHER ME", "LITTLE CHILD", "TIL THERE WAS YOU", "HOLD ME TIGHT", "I WANNA BE YOUR MAN", "NOT A SECOND TIME", "THANK YOU GIRL", "YOU REALLY GOT A HOLD ON ME", "MONEY", "YOU CANT DO THAT", "LONG TALL SALLY", "I CALL YOUR NAME", "PLEASE MR POSTMAN", "ILL GET YOU", "SHE LOVES YOU", "A HARD DAYS NIGHT", "TELL ME WHY", "ILL CRY INSTEAD", "I SHOULD HAVE KNOWN BETTER", "AND I LOVE HER", "IF I FELL", "CANT BUY ME LOVE", "THINGS WE SAID TODAY", "ANY TIME AT ALL", "MATCHBOX", "IF I FELL"]
+    items: ["I SAW HER STANDING THERE", "MISERY", "LOVE ME DO", "PS I LOVE YOU", "DO YOU WANT TO KNOW A SECRET", "A TASTE OF HONEY", "TWIST AND SHOUT", "I WANT TO HOLD YOUR HAND", "I SAW HER STANDING THERE", "THIS BOY", "IT WONT BE LONG", "ALL IVE GOT TO DO", "ALL MY LOVING", "DONT BOTHER ME", "LITTLE CHILD", "TIL THERE WAS YOU", "HOLD ME TIGHT", "I WANNA BE YOUR MAN", "NOT A SECOND TIME", "THANK YOU GIRL", "YOU REALLY GOT A HOLD ON ME", "MONEY", "YOU CANT DO THAT", "LONG TALL SALLY", "I CALL YOUR NAME", "PLEASE MR POSTMAN", "ILL GET YOU", "SHE LOVES YOU", "A HARD DAYS NIGHT", "TELL ME WHY", "ILL CRY INSTEAD", "I SHOULD HAVE KNOWN BETTER", "AND I LOVE HER", "IF I FELL", "CANT BUY ME LOVE", "THINGS WE SAID TODAY", "ANY TIME AT ALL", "MATCHBOX", "SLOW DOWN", "TELL ME WHY", "NO REPLY", "IM A LOSER", "BABYS IN BLACK", "ROCK AND ROLL MUSIC", "ILL FOLLOW THE SUN", "MR MOONLIGHT", "HONEY DONT", "ILL BE BACK", "SHES A WOMAN", "I FEEL FINE", "PLEASE PLEASE ME", "EIGHT DAYS A WEEK", "WORDS OF LOVE", "YES IT IS", "DIZZY MISS LIZZY", "HELP", "I NEED YOU", "ANOTHER GIRL", "TICKET TO RIDE", "YOURE GOING TO LOSE THAT GIRL", "IVE JUST SEEN A FACE", "NORWEGIAN WOOD", "THINK FOR YOURSELF", "MICHELLE", "GIRL", "IN MY LIFE", "WAIT", "DRIVE MY CAR", "NOWHERE MAN", "YESTERDAY", "ACT NATURALLY", "WE CAN WORK IT OUT", "DAY TRIPPER", "ELEANOR RIGBY", "YELLOW SUBMARINE", "GOOD DAY SUNSHINE", "SHES LEAVING HOME", "WHEN IM SIXTY FOUR", "LOVELY RITA", "A DAY IN THE LIFE", "MAGICAL MYSTERY TOUR", "THE FOOL ON THE HILL", "BLUE JAY WAY", "I AM THE WALRUS", "HELLO GOODBYE", "STRAWBERRY FIELDS FOREVER", "PENNY LANE", "BABY YOURE A RICH MAN", "ALL YOU NEED IS LOVE", "BACK IN THE USSR", "OB LA DI OB LA DA", "BLACKBIRD", "ROCKY RACCOON", "DONT PASS ME BY", "JULIA", "YELLOW SUBMARINE", "ALL TOGETHER NOW", "COME TOGETHER", "SOMETHING", "HERE COMES THE SUN", "REVOLUTION", "HEY JUDE", "ACROSS THE UNIVERSE", "LET IT BE"]
     },  
     { 
       cat: "Countries",
       sel: false,
-      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA"] 
+      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA", "FIJI", "FINLAND", "FRANCE", "GABON", "GAMBIA", "GEORGIA", "GERMANY", "GHANA", "GREECE", "GRENADA", "GUATEMALA", "GUYANA", "HAITI", "HONDURAS", "HUNGARY", "ICELAND", "INDONESIA", "INDIA", "IRAN", "IRAQ", "IRELAND", "ISRAEL", "ITALY", "JAMAICA", "JAPAN", "JORDAN","KAZAKHSTAN", "KENYA", "KOSOVO", "KUWAIT", "KYRGYZSTAN", "LAOS", "LATVIA", "LEBANON", "LESOTHO", "LIBERIA", "LIBYA", "LIECHTENSTEIN", "LITHUANIA", "LUXEMBOURG", "MADAGASCAR", "MALAWI", "MALAYSIA", "MALDIVES", "MALI", "MALTA", "MARSHALL ISLANDS", "MAURITANIA", "MAURITIUS", "MEXICO", "MICRONESIA", "MOLDOVA", "MONACO", "MONTENEGRO", "MOROCCO", "MOZAMBIQUE", "MYANMAR"] 
     }, 
     { 
     cat: "Geo Features",
@@ -29,7 +29,7 @@ let protoWordsArray = [
     { 
     cat: "Movies",
     sel: false,
-    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON"]
+    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON", "THE FRENCH CONNECTION", "THE GODFATHER", "THE STING", "THE GODFATHER PART II", "ROCKY", "ANNIE HALL", "THE DEER HUNTER", "KRAMER VS KRAMER", "ORDINARY PEOPLE", "CHARIOTS OF FIRE", "GANDHI", "TERMS OF ENDEARMENT", "AMADEUS", "OUT OF AFRICA", "PLATOON", "THE LAST EMPEROR", "RAIN MAN", "DRIVING MISS DAISY", "DANCES WITH WOLVES", "THE SILENCE OF THE LAMBS", "UNFORGIVEN", "SCHINDLERS LIST", "FORREST GUMP", "BRAVEHEART", "THE ENGLISH PATIENT", "TITANIC", "SHAKESPEARE IN LOVE"]
     },
   { 
     cat: "Presidents",
@@ -40,33 +40,33 @@ let protoWordsArray = [
   { 
     cat: "States",
     sel: false,
-    items: ["ALABAMA", "ALASKA", "ARIZONA", "ARKANSAS", "CALIFORNIA", "COLORADO", "CONNECTICUT", "DELAWARE", "FLORIDA", "GEORGIA", "HAWAII", "IDAHO", "ILLINOIS", "INDIANA", "IOWA", "KANSAS", "KENTUCKY", "LOUISIANA"]
+    items: ["ALABAMA", "ALASKA", "ARIZONA", "ARKANSAS", "CALIFORNIA", "COLORADO", "CONNECTICUT", "DELAWARE", "FLORIDA", "GEORGIA", "HAWAII", "IDAHO", "ILLINOIS", "INDIANA", "IOWA", "KANSAS", "KENTUCKY", "LOUISIANA", "MAINE", "MARYLAND", "MASSACHUSETTS", "MICHIGAN", "MINNESOTA", "MISSISSIPPI", "MISSOURI", "MONTANA", "NEBRASKA", "NEVADA", "NEW HAMPSHIRE", "NEW JERSEY", "NEW MEXICO", "NEW YORK", "NORTH CAROLINA", "NORTH DAKOTA", "OHIO", "OKLAHOMA", "OREGON", "PENNSYLVANIA", "RHODE ISLAND", "SOUTH CAROLINA", "SOUTH DAKOTA", "TENNESSEE", "TEXAS", "UTAH", "VERMONT", "VIRGINIA", "WASHINGTON", "WEST VIRGINIA", "WISCONSIN", "WYOMING"]
   },
   { 
     cat: "State Capitals",
     sel: false,
-    items: ["MONTGOMERY", "JUNEAU", "PHOENIX", "LITTLE ROCK", "SACRAMENTO", "DENVER", "HARTFORD", "DOVER", "TALLAHASSEE", "ATLANTA", "HONOLULU", "BOISE", "SPRINGFIELD", "INDIANAPOLIS", "DES MOINES", "TOPEKA", "FRANKFORT", "BATON ROUGE"]
+    items: ["MONTGOMERY", "JUNEAU", "PHOENIX", "LITTLE ROCK", "SACRAMENTO", "DENVER", "HARTFORD", "DOVER", "TALLAHASSEE", "ATLANTA", "HONOLULU", "BOISE", "SPRINGFIELD", "INDIANAPOLIS", "DES MOINES", "TOPEKA", "FRANKFORT", "BATON ROUGE", "AUGUSTA", "ANNAPOLIS", "BOSTON", "LANSING", "ST PAUL", "JACKSON", "JEFFERSON CITY", "HELENA", "LINCOLN", "CARSON CITY", "CONCORD", "TRENTON", "SANTA FE", "ALBANY", "RALEIGH", "BISMARK", "COLUMBUS", "OKLAHOMA CITY", "SALEM", "HARRISBURG", "PROVIDENCE", "COLUMBIA", "PIERRE", "NASHVILLE", "AUSTIN", "SALT LAKE CITY", "MONTPELIER", "RICHMOND", "OLYMPIA", "CHARLESTON", "MADISON", "CHEYENNE"]
     },
   { 
     cat: "U.S. Cities",
     sel: false,
-    items: ["MOBILE", "ANCHORAGE", "SCOTTSDALE", "LOS ANGELES", "SAN DIEGO", "SAN FRANCISCO", "SAN JOSE", "BOULDER", "ASPEN", "VAIL", "DURANGO", "BETHLEHEM", "NEW LONDON", "NEW HAVEN", "WILMINGTON", "MIAMI", "TAMPA BAY", "ORLANDO", "AUGUSTA", "HILO", "CHICAGO", "PEORIA", "GARY", "LEXINGTON", "NEW ORLEANS"]
+    items: ["MOBILE", "ANCHORAGE", "SCOTTSDALE", "LOS ANGELES", "SAN DIEGO", "SAN FRANCISCO", "SAN JOSE", "BOULDER", "ASPEN", "VAIL", "DURANGO", "BETHLEHEM", "NEW LONDON", "NEW HAVEN", "WILMINGTON", "MIAMI", "TAMPA BAY", "ORLANDO", "AUGUSTA", "HILO", "CHICAGO", "PEORIA", "GARY", "LEXINGTON", "NEW ORLEANS", "BANGOR", "PORTLAND", "KENNEBUNKPORT", "BALTIMORE", "SPRINGFIELD", "ANN ARBOR", "MINNEAPOLIS", "BILOXI", "KANSAS CITY", "ST LOUIS", "RENO", "LAS VEGAS", "MANCHESTER", "MORRISTOWN", "PARAMUS", "ALBUQUERQUE", "NEW YORK CITY", "SYRACUSE", "CHARLOTTE", "COLUMBUS", "CINCINNATI", "CLEVELAND", "PITTSBURGH", "PHILADELPHIA", "NEWPORT", "CHARLESTON", "NASHVILLE", "MEMPHIS", "HOUSTON", "DALLAS", "EL PASO", "PROVO", "ALEXANDRIA", "ROANOKE", "SEATTLE", "TACOMA", "WHEELING", "GREEN BAY", "MILWAUKEE", "JACKSON HOLE"]
     },    
   { 
   
     cat: "World Capitals",
     sel: false,
-    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU", "NASSAU", "DHAKA", "MINSK", "BRUSSELS", "LA PAZ", "SARAJEVO", "BRASILIA", "SOFIA", "PHNOM PENH", "OTTAWA", "SANTIAGO", "BEIJING", "BOGOTA", "KINSHASA", "BRAZZAVILLE", "SAN JOSE", "ZAGREB", "HAVANA", "NICOSIA", "PRAGUE", "COPENHAGEN", "SANTO DOMINGO", "QUITO", "CAIRO", "SAN SALVADOR", "TALLINN", "ADDIS ABABA"]
+    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU", "NASSAU", "DHAKA", "MINSK", "BRUSSELS", "LA PAZ", "SARAJEVO", "BRASILIA", "SOFIA", "PHNOM PENH", "OTTAWA", "SANTIAGO", "BEIJING", "BOGOTA", "KINSHASA", "BRAZZAVILLE", "SAN JOSE", "ZAGREB", "HAVANA", "NICOSIA", "PRAGUE", "COPENHAGEN", "SANTO DOMINGO", "QUITO", "CAIRO", "SAN SALVADOR", "TALLINN", "ADDIS ABABA","HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS", "GUATEMALA CITY", "PORT AU PRINCE", "BUDAPEST", "REYKJAVIK", "NEW DELHI", "JAKARTA", "TEHRAN", "BAGHAD", "DUBLIN", "JERUSALEM", "ROME", "KINGSTON", "TOKYO", "AMMAN", "NAIROBI", "PRISTINA", "KUWAIT CITY", "VIENTIANE", "RIGA", "BEIRUT", "MONROVIA", "TRIPOLI", "VADUZ", "VILNIUS", "LUXEMBOURG", "KUALA LUMPUR", "MEXICO CITY", "ULAANBAATAR", "RABAT"]
   },  
   { 
     cat: "World Cities",
     sel: false,
-    items: ["RIO DE JANEIRO", "MELBOURNE", "SYDNEY", "ADELAIDE", "PERTH", "INNSBRUCK", "SALZBURG", "GHENT", "BRUGES", "SAO PAOLO", "MONTREAL", "QUEBEC", "TORONTO", "CALGARY", "WINNIPEG", "VANCOUVER", "SHANGHAI", "ALEXANDRIA"]
+    items: ["RIO DE JANEIRO", "MELBOURNE", "SYDNEY", "ADELAIDE", "PERTH", "INNSBRUCK", "SALZBURG", "GHENT", "BRUGES", "SAO PAOLO", "MONTREAL", "QUEBEC", "TORONTO", "CALGARY", "WINNIPEG", "VANCOUVER", "SHANGHAI", "ALEXANDRIA", "MARSEILLES", "MUNICH", "POTSDAM", "DUSSELDORF", "HAMBURG", "FRANKFURT", "MUMBAI", "CALCUTTA", "TEL AVIV", "BETHLEHEM", "FLORENCE", "MILAN", "VENICE", "YOKOHAMA", "KYOTO", "ACAPULCO"]
     }, 
     { 
       cat: "Testing",
       sel: false,
-      items: ["AMAZON", "NILE"],
+      items: ["AMAZON", "NILE", "DO YOU WANT TO KNOW A SECRET"],
       }
 
   /*,
@@ -80,6 +80,7 @@ const backgroundImagesPortrait=[
   "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
+  "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
 ]
 
@@ -90,7 +91,9 @@ const backgroundImagesLandscape=[
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
-let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is. Warning - a known bug, if you enter letters via the keyboard, enter everything as lowercase, the game will convert to upper on its own."
+let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is. Warning - a known bug, if you enter letters via the keyboard, enter all letters in lower case, the game will convert to upper on its own."
+
+
 
 
 let fullScreen = false;
@@ -124,10 +127,13 @@ let resultObj = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    initHelpModal();
+
+  initHelpModal();
     initStatsModal();
     initCategoriesModal();
-    initCog();
+    
+    //initCog();
+  //  initAudio();
     // Select background image based on portrait or landscape mode
     if (window.innerHeight > window.innerWidth){
       let randomImg = Math.floor(Math.random()*backgroundImagesPortrait.length)
@@ -152,9 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
        messageContainerEl.innerText = wordsArray[randomArray].cat;
        }
     })
-
     });
 
+    /*
     function initLocalStorage() {
       const storedCurrentWordIndex = window.localStorage.getItem('currentWordIndex')
       if (!storedCurrentWordIndex){
@@ -162,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         currentWordIndex = Number(storedCurrentWordIndex) 
       }
-    }
+    }*/
 
 function letsPlay() {
   // Clear the classes of the keyboard that were set in any previous Wordle
@@ -859,7 +865,7 @@ function initStatsModal() {
 
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
-    console.log("just clicked on stats button")
+    console.log("just clicked on stats button classlist = " + btn.classList)
     updateStatsModal();
     modal.style.display = "block";
     helpEl = document.getElementById("stats-modal")
@@ -940,12 +946,15 @@ function buildResults(){
       resultsTrayEl.innerHTML = ""
       let resultItemEl = document.createElement('div')
       resultItemEl.innerText = "Date"
+      resultItemEl.style.fontWeight = "bold"
       resultsTrayEl.appendChild(resultItemEl)
       resultItemEl = document.createElement('div')
       resultItemEl.innerText = "Wordle"
+      resultItemEl.style.fontWeight = "bold"
       resultsTrayEl.appendChild(resultItemEl)
       resultItemEl = document.createElement('div')
       resultItemEl.innerText = "Att"
+      resultItemEl.style.fontWeight = "bold"
       resultsTrayEl.appendChild(resultItemEl)
 
       for (i=resultsArray.length - 1; i>-1; i--){
@@ -954,11 +963,13 @@ function buildResults(){
         //const year = dateyy.getFullYear();
         let date = new Date(resultsArray[i].date);
         let year = date.getFullYear();
+        console.log(" year is type " + typeof(year))
+        let yy = year.toString().slice(2);
         let month = date.getMonth() + 1;
         let day = date.getDate();
         console.log("day = " + day)
         let hours = date.getHours();
-        resultItemEl.innerText = month + "/" + day + "/" + year
+        resultItemEl.innerText = month + "/" + day + "/" + yy
         resultsTrayEl.appendChild(resultItemEl)
         resultItemEl = document.createElement('div')
         resultItemEl.innerText = resultsArray[i].wordle
@@ -1084,21 +1095,9 @@ function preserveCategories(){
     window.localStorage.setItem('categoryPreferences', JSON.stringify(categoryPreferences));
 }
 
-function initCog() {
-  // Get the button that requests a letter
-  const btn = document.getElementById("reveal-letter");
 
-  
-  // When the user clicks on the button, call reveal letter function
-  btn.addEventListener("click", function () {
-    console.log("just clicked on cog button")
-    if (gameInProgress){
-  //  revealLetter();
-//    updateGuessedLetters(wordle[availableSpace]);
-    }
-  });
 
-}
+
 
 function revealLetter(){
   console.log ("entered reveal letter function")

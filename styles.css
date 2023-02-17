@@ -63,6 +63,7 @@ h1{
 #start{
   font-size: 1.5rem;
   background-color: gold;
+  cursor: pointer;
 }
 
 i{
@@ -463,7 +464,7 @@ hr{
 
 #results-tray{
   display: grid;
-  grid-template-columns: 2fr 8fr 1fr;
-
+  grid-template-columns: 2fr 9fr 1fr;
+  font-size: .9rem;
 }
 
