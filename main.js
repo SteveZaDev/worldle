@@ -3,12 +3,12 @@ let protoWordsArray = [
   { 
     cat: "Actors",
     sel: false,
-    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN", "ROBERT DE NERO", "HENRY FONDA", "BEN KINGSLEY", "ROBERT DUVALL", "F MURRAY ABRAHAM", "WILLIAM HURT", "PAUL NEWMAN", "MICHAEL DOUGLAS", "DANIEL DAY LEWIS", "JEREMY IRONS", "ANTHONY HOPKINS", "AL PACINO", "TOM HANKS", "NICOLAS CAGE", "GEOFFREY RUSH", "ROBERTO BENIGNI", "KEVIN SPACEY"]
+    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN", "ROBERT DE NERO", "HENRY FONDA", "BEN KINGSLEY", "ROBERT DUVALL", "F MURRAY ABRAHAM", "WILLIAM HURT", "PAUL NEWMAN", "MICHAEL DOUGLAS", "DANIEL DAY LEWIS", "JEREMY IRONS", "ANTHONY HOPKINS", "AL PACINO", "TOM HANKS", "NICOLAS CAGE", "GEOFFREY RUSH", "ROBERTO BENIGNI", "KEVIN SPACEY", "RUSSELL CROWE", "DENZEL WASHINGTON", "ADRIEN BRODY", "SEAN PENN", "JAMIE FOXX", "PHILIP SEYMOUR HOFFMAN", "FOREST WHITAKER", "JEFF BRIDGES", "COLIN FIRTH", "JEAN DUJARDIN", "MATTHEW MCCONAUGHEY", "EDDIE REDMAYNE", "LEONARDO DICAPRIO", "CASEY AFFLECK", "GARY OLDMAN", "RAMI MALEK", "JOAQUIN PHOENIX", "ANTHONY HOPKINS", "WILL SMITH"]
     },
   { 
     cat: "Actresses",
     sel: false,
-    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUNG", "JANE WYMAN", "JUDY HOLLIDAY", "SHIRLEY BOOTH", "AUDREY HEPBURN", "GRACE KELLY", "ANNA MAGNANI", "JOANNE WOODWARD", "SUSAN HAYWARD", "SIMONE SIGNORET", "ELIZABETH TAYLOR", "SOPHIA LOREN", "ANNE BANCROFT", "PATRICIA NEAL", "JULIE ANDREWS", "JULIE CHRISTIE", "BARBRA STREISAND", "MAGGIE SMITH", "GLENDA JACKSON", "JANE FONDA", "LIZA MINNELLI", "ELLEN BURSTYN", "LOUISE FLETCHER", "FAYE DUNAWAY", "DIANE KEATON", "SALLY FIELD", "SISSY SPACEK", "MERYL STREEP", "SHIRLEY MACLAINE", "GERALDINE PAGE", "MARLEE MATLIN", "CHER", "JODIE FOSTER", "JESSICA TANDY", "KATHY BATES", "EMMA THOMPSON", "HOLLY HUNTER", "JESSICA LANGE", "SUSAN SARANDON", "FRANCES MCDORMAND", "HELEN HUNT", "GWYNETH PALTROW", "HILARY SWANK"]
+    items: ["JANET GAYNOR", "MARY PICKFORD", "NORMA SHEARER", "MARIE DRESSLER", "HELEN HAYES", "KATHARINE HEPBURN", "CLAUDETTE COLBERT", "BETTE DAVIS", "LUISE RAINER", "VIVIEN LEIGH", "GINGER ROGERS", "JOAN FONTAINE", "GREER GARSON", "JENNIFER JONES", "INGRID BERGMAN", "JOAN CRAWFORD", "OLIVIA DE HAVILLAND", "LORETTA YOUNG", "JANE WYMAN", "JUDY HOLLIDAY", "SHIRLEY BOOTH", "AUDREY HEPBURN", "GRACE KELLY", "ANNA MAGNANI", "JOANNE WOODWARD", "SUSAN HAYWARD", "SIMONE SIGNORET", "ELIZABETH TAYLOR", "SOPHIA LOREN", "ANNE BANCROFT", "PATRICIA NEAL", "JULIE ANDREWS", "JULIE CHRISTIE", "BARBRA STREISAND", "MAGGIE SMITH", "GLENDA JACKSON", "JANE FONDA", "LIZA MINNELLI", "ELLEN BURSTYN", "LOUISE FLETCHER", "FAYE DUNAWAY", "DIANE KEATON", "SALLY FIELD", "SISSY SPACEK", "MERYL STREEP", "SHIRLEY MACLAINE", "GERALDINE PAGE", "MARLEE MATLIN", "CHER", "JODIE FOSTER", "JESSICA TANDY", "KATHY BATES", "EMMA THOMPSON", "HOLLY HUNTER", "JESSICA LANGE", "SUSAN SARANDON", "FRANCES MCDORMAND", "HELEN HUNT", "GWYNETH PALTROW", "HILARY SWANK", "JULIA ROBERTS", "HALLE BERRY", "NICOLE KIDMAN", "CHARLIZE THERON", "REESE WITHERSPOON", "HELEN MIRREN", "MARION COTILLARD", "KATE WINSLET", "SANDRA BULLOCK", "NATALIE PORTMAN", "JENNIFER LAWRENCE", "CATE BLANCHETT", "JULIANNE MOORE", "BRIE LARSON", "EMMA STONE", "OLIVIA COLMAN", "RENEE ZELLWEGER", "JESSICA CHASTAIN"]
     },
     {
     cat: "Beatles Songs",
@@ -18,18 +18,27 @@ let protoWordsArray = [
     { 
       cat: "Countries",
       sel: false,
-      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA", "FIJI", "FINLAND", "FRANCE", "GABON", "GAMBIA", "GEORGIA", "GERMANY", "GHANA", "GREECE", "GRENADA", "GUATEMALA", "GUYANA", "HAITI", "HONDURAS", "HUNGARY", "ICELAND", "INDONESIA", "INDIA", "IRAN", "IRAQ", "IRELAND", "ISRAEL", "ITALY", "JAMAICA", "JAPAN", "JORDAN","KAZAKHSTAN", "KENYA", "KOSOVO", "KUWAIT", "KYRGYZSTAN", "LAOS", "LATVIA", "LEBANON", "LESOTHO", "LIBERIA", "LIBYA", "LIECHTENSTEIN", "LITHUANIA", "LUXEMBOURG", "MADAGASCAR", "MALAWI", "MALAYSIA", "MALDIVES", "MALI", "MALTA", "MARSHALL ISLANDS", "MAURITANIA", "MAURITIUS", "MEXICO", "MICRONESIA", "MOLDOVA", "MONACO", "MONTENEGRO", "MOROCCO", "MOZAMBIQUE", "MYANMAR"] 
+      items: ["AFGHANISTAN", "ALBANIA", "ALGERIA", "ANDORRA", "ANGOLA", "ARGENTINA", "ARMENIA", "AUSTRALIA", "AUSTRIA", "AZERBAIJAN", "BAHAMAS", "BAHRAIN", "BANGLADESH", "BARBADOS", "BELARUS", "BELGIUM", "BELIZE", "BENIN", "BHUTAN", "BOLIVIA", "BOSNIA AND HERZEGOVINA", "BOTSWANA", "BRAZIL", "BRUNEI", "BULGARIA", "BURKINA FASO", "BURUNDI", "CAMBODIA", "CAMEROON", "CANADA", "CENTRAL AFRICAN REPUBLIC", "CHAD", "CHILE", "CHINA", "COLUMBIA", "CONGO REPUBLIC OF THE", "COSTA RICA", "COTE DIVOIRE", "CROATIA", "CUBA", "CYPRUS", "CZECH REPUBLIC", "DENMARK", "DJIBOUTI", "DOMINICA", "DOMINICAN REPUBLIC", "ECUADOR", "EGYPT", "EL SALVADOR", "EQUATORIAL GUINEA", "ERITREA", "ESTONIA", "ETHIOPIA", "FIJI", "FINLAND", "FRANCE", "GABON", "GAMBIA", "GEORGIA", "GERMANY", "GHANA", "GREECE", "GRENADA", "GUATEMALA", "GUYANA", "HAITI", "HONDURAS", "HUNGARY", "ICELAND", "INDONESIA", "INDIA", "IRAN", "IRAQ", "IRELAND", "ISRAEL", "ITALY", "JAMAICA", "JAPAN", "JORDAN","KAZAKHSTAN", "KENYA", "KOSOVO", "KUWAIT", "KYRGYZSTAN", "LAOS", "LATVIA", "LEBANON", "LESOTHO", "LIBERIA", "LIBYA", "LIECHTENSTEIN", "LITHUANIA", "LUXEMBOURG", "MADAGASCAR", "MALAWI", "MALAYSIA", "MALDIVES", "MALI", "MALTA", "MARSHALL ISLANDS", "MAURITANIA", "MAURITIUS", "MEXICO", "MICRONESIA", "MOLDOVA", "MONACO", "MONTENEGRO", "MOROCCO", "MOZAMBIQUE", "MYANMAR", "NAMIBIA", "NEPAL", "NETHERLANDS", "NEW ZEALAND", "NICARAGUA", "NIGER", "NIGERIA", "NORTH KOREA", "NORTH MACEDONIA", "NORWAY", "OMAN", "PAKISTAN", "PALESTINE","PANAMA", "PAPUA NEW GUINEA", "PARAGUAY", "PERU", "PHILIPPINES", "POLAND", "PORTUGAL", "QATAR", "ROMANIA", "RUSSIA", "RWANDA", "SAINT KITTS AND NEVIS", "SAINT LUCIA", "SAINT VINCENT AND THE GRENADINES", "SAMOA", "SAN MARINO", "SAUDI ARABIA", "SENEGAL", "SERBIA", "SEYCHELLES", "SIERRA LEONE", "SINGAPORE", "SLOVAKIA", "SLOVENIA", "SOLOMON ISLANDS", "SOMALIA", "SOUTH AFRICA", "SOUTH KOREA", "SOUTH SUDAN", "SPAIN", "SRI LANKA", "SUDAN", "SURINAME", "SWEDEN", "SWITZERLAND", "SYRIA", "TAIWAN", "TAJIKISTAN", "TANZANIA", "THAILAND", "TOGO", "TONGA", "TRINIDAD AND TOBAGO", "TUNISIA", "TURKEY", "TURKMENISTAN", "TUVALU", "UGANDA","UKRAINE", "UNITED ARAB EMIRATES", "UNITED KINGDON", "UNITED STATES OF AMERICA", "URUGUAY", "UZBEKISTAN", "VATICAN CITY", "VENEZUELA", "VIETNAM", "YEMEN", "ZAMBIA", "ZIMBABWE"] 
     }, 
     { 
     cat: "Geo Features",
     sel: false,
-    items: ["THE AMAZON", "THE NILE", "THE HUDSON", "THE SAHARA", "MT EVEREST", "THE GREAT SALT LAKE", "HIGH POINT", "THE ATLANTIC OCEAN", "THE PACIFIC OCEAN", "THE INDIAN OCEAN", "NORTH AMERICA", "EUROPE", "ASIA", "SOUTH AMERICA", "AFRICA", "MT WASHINGTON", "THE GOBI DESERT", "PIKES PEAK", "CRATER LAKE", "MT SAINT HELENS", "MT FUJI", "MT KILIMANJARO", "MT KENYA", "ACONGAGUA", "AMAZON RAIN FOREST"],
-    blurb: ["2nd longest in the world", "At over 4,000 miles, the longest river in the world"  ]
+    items: ["THE AMAZON", "THE NILE", "THE HUDSON", "THE SAHARA", "MT EVEREST", "THE GREAT SALT LAKE", "HIGH POINT", "THE ATLANTIC OCEAN", "THE PACIFIC OCEAN", "THE INDIAN OCEAN", "NORTH AMERICA", "EUROPE", "ASIA", "SOUTH AMERICA", "AFRICA", "MT WASHINGTON", "THE GOBI DESERT", "PIKES PEAK", "CRATER LAKE", "MT SAINT HELENS", "MT FUJI", "MT KILIMANJARO", "MT KENYA", "ACONGAGUA", "AMAZON RAIN FOREST", "DENALI", "MONT BLANC", "THE MATTERHORN", "THE JUNGFRAU", "THE EIGER", "THE THAMES", "THE SEINE", "THE DANUBE", "THE DNEIPER", "THE VOLGA","THE RIO GRANDE", "THE MISSISSIPPI", "THE MISSOURI", "ANTARCTICA", "THE GREAT BARRIER REEF", "NIAGARA FALLS", "ANGEL FALLS", "EL CAPITAN", "HALF DOME", "DEVILS TOWER", "MT RUSHMORE", "CATSKILLS", "ADIRONDACKS", "ROCKIES","HIMALAYAS", "ANDES", "ALPS", "CARPATHIANS", "ATLAS", "AYERS ROCK", "EVERGLADES"]
     },  
+  { 
+    cat: "Hits of the 60's",
+    sel: false,
+    items: ["HEY JUDE"]
+    },  
+    { 
+      cat: "Hits of the 70's",
+      sel: false,
+      items: ["BOHEMIAN RHAPSODY"]
+      },  
     { 
     cat: "Movies",
     sel: false,
-    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON", "THE FRENCH CONNECTION", "THE GODFATHER", "THE STING", "THE GODFATHER PART II", "ROCKY", "ANNIE HALL", "THE DEER HUNTER", "KRAMER VS KRAMER", "ORDINARY PEOPLE", "CHARIOTS OF FIRE", "GANDHI", "TERMS OF ENDEARMENT", "AMADEUS", "OUT OF AFRICA", "PLATOON", "THE LAST EMPEROR", "RAIN MAN", "DRIVING MISS DAISY", "DANCES WITH WOLVES", "THE SILENCE OF THE LAMBS", "UNFORGIVEN", "SCHINDLERS LIST", "FORREST GUMP", "BRAVEHEART", "THE ENGLISH PATIENT", "TITANIC", "SHAKESPEARE IN LOVE"]
+    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON", "THE FRENCH CONNECTION", "THE GODFATHER", "THE STING", "THE GODFATHER PART II", "ROCKY", "ANNIE HALL", "THE DEER HUNTER", "KRAMER VS KRAMER", "ORDINARY PEOPLE", "CHARIOTS OF FIRE", "GANDHI", "TERMS OF ENDEARMENT", "AMADEUS", "OUT OF AFRICA", "PLATOON", "THE LAST EMPEROR", "RAIN MAN", "DRIVING MISS DAISY", "DANCES WITH WOLVES", "THE SILENCE OF THE LAMBS", "UNFORGIVEN", "SCHINDLERS LIST", "FORREST GUMP", "BRAVEHEART", "THE ENGLISH PATIENT", "TITANIC", "SHAKESPEARE IN LOVE", "AMERICAN BEAUTY", "GLADIATOR", "A BEAUTIFUL MIND", "CHICAGO", "LORD OF THE RINGS", "MILLION DOLLAR BABY", "CRASH", "THE DEPARTED", "NO COUNTRY FOR OLD MEN", "SLUMDOG MILLIONAIRE", "THE HURT LOCKER", "THE KINGS SPEECH", "THE ARTIST", "ARGO", "TWELVE YEARS A SLAVE", "BIRDMAN", "SPOTLIGHT", "MOONLIGHT", "THE SHAPE OF WATER", "GREEN BOOK", "PARASITE", "NOMADLAND", "CODA"]
     },
   { 
     cat: "Presidents",
@@ -56,7 +65,7 @@ let protoWordsArray = [
   
     cat: "World Capitals",
     sel: false,
-    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU", "NASSAU", "DHAKA", "MINSK", "BRUSSELS", "LA PAZ", "SARAJEVO", "BRASILIA", "SOFIA", "PHNOM PENH", "OTTAWA", "SANTIAGO", "BEIJING", "BOGOTA", "KINSHASA", "BRAZZAVILLE", "SAN JOSE", "ZAGREB", "HAVANA", "NICOSIA", "PRAGUE", "COPENHAGEN", "SANTO DOMINGO", "QUITO", "CAIRO", "SAN SALVADOR", "TALLINN", "ADDIS ABABA","HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS", "GUATEMALA CITY", "PORT AU PRINCE", "BUDAPEST", "REYKJAVIK", "NEW DELHI", "JAKARTA", "TEHRAN", "BAGHAD", "DUBLIN", "JERUSALEM", "ROME", "KINGSTON", "TOKYO", "AMMAN", "NAIROBI", "PRISTINA", "KUWAIT CITY", "VIENTIANE", "RIGA", "BEIRUT", "MONROVIA", "TRIPOLI", "VADUZ", "VILNIUS", "LUXEMBOURG", "KUALA LUMPUR", "MEXICO CITY", "ULAANBAATAR", "RABAT"]
+    items: ["KABUL", "TIRANA", "ALGIERS", "ANDORRA LA VELLA", "LUANDA", "BUENOS AIRES", "YEREVAN", "CANBERRA", "VIENNA", "BAKU", "NASSAU", "DHAKA", "MINSK", "BRUSSELS", "LA PAZ", "SARAJEVO", "BRASILIA", "SOFIA", "PHNOM PENH", "OTTAWA", "SANTIAGO", "BEIJING", "BOGOTA", "KINSHASA", "BRAZZAVILLE", "SAN JOSE", "ZAGREB", "HAVANA", "NICOSIA", "PRAGUE", "COPENHAGEN", "SANTO DOMINGO", "QUITO", "CAIRO", "SAN SALVADOR", "TALLINN", "ADDIS ABABA","HELSINKI", "PARIS", "TBILISI", "BERLIN", "ATHENS", "GUATEMALA CITY", "PORT AU PRINCE", "BUDAPEST", "REYKJAVIK", "NEW DELHI", "JAKARTA", "TEHRAN", "BAGHAD", "DUBLIN", "JERUSALEM", "ROME", "KINGSTON", "TOKYO", "AMMAN", "NAIROBI", "PRISTINA", "KUWAIT CITY", "VIENTIANE", "RIGA", "BEIRUT", "MONROVIA", "TRIPOLI", "VADUZ", "VILNIUS", "LUXEMBOURG", "KUALA LUMPUR", "MEXICO CITY", "ULAANBAATAR", "RABAT", "KATHMANDU", "AMSTERDAM", "WELLINGTON", "MANAGUA", "PYONGYANG", "OSLO", "MUSCAT", "ISLAMABAD", "PANAMA CITY", "ASUNCION", "LIMA", "MANILA", "WARSAW", "LISBON", "BUCHAREST", "MOSCOW", "RIYADH", "DAKAR", "BELGRADE", "BRATISLAVA", "LJUBLJANA", "MOGADISHU", "CAPE TOWN", "SEOUL", "MADRID", "KHARTOUM", "STOCKHOLM", "BERN", "DAMASCUS", "TAIPEI", "BANGKOK", "TUNIS", "ANKARA", "KAMPALA", "KYIV", "KIEV", "ABU DHABI", "LONDON", "WASHINGTON DC", "MONTEVIDEO", "TASHKENT","CARACAS", "HANOI", ""]
   },  
   { 
     cat: "World Cities",
@@ -91,9 +100,19 @@ const backgroundImagesLandscape=[
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
-let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is. Warning - a known bug, if you enter letters via the keyboard, enter all letters in lower case, the game will convert to upper on its own."
+const audios=[
+  "./auds/bgmusic.mp3", "./auds/crowning.mp4", "./auds/rubylove.mp4"
+]
 
+let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is."
 
+let sound = true;
+let soundPlayer = "";
+//soundPlayer = new Audio ("./auds/bgmusic.mp3");
+soundPlayer = new Audio (audios[Math.floor(Math.random()*audios.length)]);
+soundPlayer.loop = true;
+soundPlayer.volume = 0.065  ;
+soundPlayer.currentTime = 1;
 
 
 let fullScreen = false;
@@ -116,7 +135,7 @@ let revealLetterNum = 0;
 const messageContainerEl = document.getElementById('message-container')
 
 let categoryPreferences = [
-  false, false, false, false, false, false, true, false, false, false, false, false, false
+  false, false, false, false, false, false, false, false, true, false, false, false, false, false, false
 ];
 
 let resultsArray = []
@@ -133,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCategoriesModal();
     
     //initCog();
-  //  initAudio();
+    initAudio();
     // Select background image based on portrait or landscape mode
     if (window.innerHeight > window.innerWidth){
       let randomImg = Math.floor(Math.random()*backgroundImagesPortrait.length)
@@ -174,7 +193,7 @@ function letsPlay() {
   // Clear the classes of the keyboard that were set in any previous Wordle
    initClasses();
 
- 
+   playMusic();
 
 // INIT
 wordsArray=[]
@@ -750,6 +769,7 @@ allElements.forEach((element) => {
 
 
     console.log("dont want to reach here")
+    letter = letter.toLowerCase();
     updateGuessedLetters(letter);
 
   }
@@ -953,34 +973,56 @@ function buildResults(){
       resultItemEl.style.fontWeight = "bold"
       resultsTrayEl.appendChild(resultItemEl)
       resultItemEl = document.createElement('div')
-      resultItemEl.innerText = "Att"
+      resultItemEl.innerText = "#"
       resultItemEl.style.fontWeight = "bold"
       resultsTrayEl.appendChild(resultItemEl)
 
       for (i=resultsArray.length - 1; i>-1; i--){
         let resultItemEl = document.createElement('div')
-        console.log ("date is of type " + typeof(resultsArray[i].date))
-        //const year = dateyy.getFullYear();
         let date = new Date(resultsArray[i].date);
         let year = date.getFullYear();
-        console.log(" year is type " + typeof(year))
         let yy = year.toString().slice(2);
         let month = date.getMonth() + 1;
         let day = date.getDate();
-        console.log("day = " + day)
-        let hours = date.getHours();
         resultItemEl.innerText = month + "/" + day + "/" + yy
+        if (resultsArray[i].guesses === 10){
+          resultItemEl.style.color = "red";  
+        }
+        let screenWidth = window.innerWidth;
         resultsTrayEl.appendChild(resultItemEl)
         resultItemEl = document.createElement('div')
         resultItemEl.innerText = resultsArray[i].wordle
+        if (resultsArray[i].wordle.length > 20){
+          if (screenWidth < 400){
+             resultItemEl.innerText = resultsArray[i].wordle.slice(0, 18) + "..."
+          }
+        }
+        if (resultsArray[i].guesses === 10){
+          resultItemEl.style.color = "red";  
+        }
         resultsTrayEl.appendChild(resultItemEl)
         resultItemEl = document.createElement('div')
         resultItemEl.innerText = resultsArray[i].guesses
         if (resultsArray[i].guesses === 10){
-          resultItemEl.innerText = "Loss"  
+          resultItemEl.innerText = "-"  
+          resultItemEl.style.color = "red";
         }
         resultsTrayEl.appendChild(resultItemEl)
       }
+      // write out buffer for padding
+      resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "a"
+      resultItemEl.style.color = "transparent"
+      resultsTrayEl.appendChild(resultItemEl)
+      resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "a"
+      resultItemEl.style.color = "transparent"
+      resultsTrayEl.appendChild(resultItemEl)
+      resultItemEl = document.createElement('div')
+      resultItemEl.innerText = "a"
+      resultItemEl.style.color = "transparent"
+      resultsTrayEl.appendChild(resultItemEl)
+
   }
 
 }
@@ -1115,5 +1157,42 @@ function revealLetter(){
     availableSpaceEl.textContent = letter;
     revealLetterNum++
 
+}
+
+function initAudio(){
+ // let btn = document.querySelector(".toggle");
+let icon = document.querySelector(".fa-volume-up");
+
+icon.onclick = function (){
+    music();
+    console.log("classlist when clicked = " + icon.classList)
+    if(icon.classList.contains("fa-volume-up")){
+        icon.classList.replace("fa-volume-up", "fa-volume-off");
+    }
+    else{
+        icon.classList.replace("fa-volume-off", "fa-volume-up");
+    }
+}
+}
+
+
+function music(){
+  console.log("entered music toggle")
+  sound = !sound;
+  if (sound===false){
+    if (soundPlayer){
+      soundPlayer.pause();
+    }
+  }
+  if (sound===true){
+    if (soundPlayer){
+      soundPlayer.play();
+    }
+  }
+}
+
+
+function playMusic(){
+  soundPlayer.play();
 }
 
