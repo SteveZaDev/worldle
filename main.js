@@ -3,7 +3,7 @@ let protoWordsArray = [
   { 
     cat: "Actors",
     sel: false,
-    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN", "ROBERT DE NERO", "HENRY FONDA", "BEN KINGSLEY", "ROBERT DUVALL", "F MURRAY ABRAHAM", "WILLIAM HURT", "PAUL NEWMAN", "MICHAEL DOUGLAS", "DANIEL DAY LEWIS", "JEREMY IRONS", "ANTHONY HOPKINS", "AL PACINO", "TOM HANKS", "NICOLAS CAGE", "GEOFFREY RUSH", "ROBERTO BENIGNI", "KEVIN SPACEY", "RUSSELL CROWE", "DENZEL WASHINGTON", "ADRIEN BRODY", "SEAN PENN", "JAMIE FOXX", "PHILIP SEYMOUR HOFFMAN", "FOREST WHITAKER", "JEFF BRIDGES", "COLIN FIRTH", "JEAN DUJARDIN", "MATTHEW MCCONAUGHEY", "EDDIE REDMAYNE", "LEONARDO DICAPRIO", "CASEY AFFLECK", "GARY OLDMAN", "RAMI MALEK", "JOAQUIN PHOENIX", "ANTHONY HOPKINS", "WILL SMITH"]
+    items: ["EMIL JANNINGS", "WARNER BAXTER", "GEORGE ARLISS", "LIONEL BARRYMORE", "WALLACE BEERY", "FREDERIC MARCH", "CHARLES LAUGHTON", "CLARK GABLE", "VICTOR MCLAGLEN", "PAUL MUNI", "SPENCER TRACY", "ROBERT DONAT", "JAMES STEWART", "GARY COOPER", "JAMES CAGNEY", "PAUL LUKAS", "BING CROSBY", "RAY MILLAND", "RONALD COLEMAN", "LAURENCE OLIVIER", "BRODERICK CRAWFORD", "JOSE FERRER", "HUMPHREY BOGART", "GARY COOPER", "WILLIAM HOLDEN", "MARLON BRANDO", "ERNEST BORGNINE", "YUL BRYNNER", "ALEC GUINNESS", "DAVID NIVEN", "CHARLTON HESTON", "BURT LANCASTER", "MAXIMILLIAN SCHELL", "GREGORY PECK", "SIDNEY POITIER", "REX HARRISON", "LEE MARVIN", "PAUL SCOFIELD", "ROD STEIGER", "CLIFF ROBERTSON", "JOHN WAYNE", "GEORGE C SCOTT", "GENE HACKMAN", "JACK LEMMON", "ART CARNEY", "JACK NICHOLSON", "PETER FINCH", "RICHARD DREYFUSS", "JON VOIGHT", "DUSTIN HOFFMAN", "ROBERT DE NERO", "HENRY FONDA", "BEN KINGSLEY", "ROBERT DUVALL", "F MURRAY ABRAHAM", "WILLIAM HURT", "PAUL NEWMAN", "MICHAEL DOUGLAS", "DANIEL DAY LEWIS", "JEREMY IRONS", "ANTHONY HOPKINS", "AL PACINO", "TOM HANKS", "NICOLAS CAGE", "GEOFFREY RUSH", "ROBERTO BENIGNI", "KEVIN SPACEY", "RUSSELL CROWE", "DENZEL WASHINGTON", "ADRIEN BRODY", "SEAN PENN", "JAMIE FOXX", "PHILIP SEYMOUR HOFFMAN", "FOREST WHITAKER", "JEFF BRIDGES", "COLIN FIRTH", "JEAN DUJARDIN", "MATTHEW MCCONAUGHEY", "EDDIE REDMAYNE", "LEONARDO DICAPRIO", "CASEY AFFLECK", "GARY OLDMAN", "RAMI MALEK", "JOAQUIN PHOENIX", "ANTHONY HOPKINS", "WILL SMITH", "FRANCHOT TONE", "THOMAS MITCHELL", "CLAUDE RAINS", "PAUL HENRIED", "ERROL FLYNN", "CARY GRANT", "LEO G CARROLL", "JAMES MASON"]
     },
   { 
     cat: "Actresses",
@@ -28,17 +28,18 @@ let protoWordsArray = [
   { 
     cat: "Hits of the 60's",
     sel: false,
-    items: ["HEY JUDE"]
+    items: ["EL PASO", "RUNNING BEAR", "TEEN ANGEL", "THEME FROM A SUMMER PLACE", "CATHYS CLOWN", "ITS NOW OR NEVER", "THE TWIST", "SAVE THE LAST DANCE FOR ME", "GEORGIA ON MY MIND", "STAY", "ARE YOU LONESOME TONIGHT", "WILL YOU LOVE ME TOMORROW", "BLUE MOON", "RUNAWAY", "MOTHER IN LAW", "TRAVELIN MAN", "TOSSIN AND TURNIN", "MICHAEL", "TAKE GOOD CARE OF MY BABY", "HIT THE ROAD JACK", "RUNAROUND SUE", "BIG BAD JOHN", "PLEASE MR POSTMAN", "THE LION SLEEPS TONIGHT", "DUKE OF EARL", "JOHNNY ANGEL", "SOLDIER BOY", "I CANT STOP LOVING YOU", "ROSES ARE RED", "BREAKING UP IS HARD TO DO", "THE LOCO MOTION", "SHERRY", "MONSTER MASH", "HES A REBEL", "BIG GIRLS DONT CRY", "GO AWAY LITTLE GIRL", "WALK RIGHT IN", "HEY PAULA", "WALK LIKE A MAN", "OUR DAY WILL COME", "HES SO FINE", "I WILL FOLLOW HIM", "ITS MY PARTY", "EASIER SAID THAN DONE", "SURF CITY", "MY BOYFRIENDS BACK", "BLUE VELVET", "DOMINIQUE", "I WANT TO HOLD YOUR HAND", "SHE LOVES YOU", "CANT BUY ME LOVE", "HELLO DOLLY", "MY GUY", "LOVE ME DO", "CHAPEL OF LOVE", "A WORLD WITHOUT LOVE", "I GET AROUND", "RAG DOLL", "A HARD DAYS NIGHT", "EVERYBODY LOVES SOMEBODY", "WHERE DID OUR LOVE GO", "THE HOUSE OF THE RISING SUN", "OH PRETTY WOMAN", "DO WAH DIDDY DIDDY", "BABY LOVE", "LEADER OF THE PACK", "RINGO", "MR LONELY", "COME SEE ABOUT ME", "I FEEL FINE", "DOWNTOWN", "YOUVE LOST THAT LOVIN FEELING", "THIS DIAMOND RING", "MY GIRL", "EIGHT DAYS A WEEK", "STOP IN THE NAME OF LOVE", "IM TELLING YOU NOW", "MRS BROWN YOUVE GOT A LOVELY DAUGHTER", "TICKET TO RIDE",
+      "HELP ME RHONDA", "BACK IN MY ARMS AGAIN", "I CANT HELP MYSELF", "MR TAMBOURINE MAN", "SATISFACTION", "IM HENRY VIII I AM", "I GOT YOU BABE", "HELP", "EVE OF DESTRUCTION", "HANG ON SLOOPY", "YESTERDAY", "GET OFF MY CLOUD", "I HEAR A SYMPHONY", "TURN TURN TURN", "OVER AND OVER", "THE SOUND OF SILENCE", "WE CAN WORK IT OUT", "MY LOVE", "LIGHTNIN STRIKES", "THESE BOOTS ARE MADE FOR WALKIN", "THE BALLAD OF THE GREEN BERETS", "SOUL AND INSPIRATION", "GOOD LOVIN", "MONDAY MONDAY", "WHEN A MAN LOVES A WOMAN", "PAINT IT BLACK", "PAPERBACK WRITER", "STRANGERS IN THE NIGHT", "HANKY PANKY", "WILD THING", "SUMMER IN THE CITY", "SUNSHINE SUPERMAN", "YOU CANT HURRY LOVE", "CHERISH", "REACH OUT ILL BE THERE", "LAST TRAIN TO CLARKSVILLE", "YOU KEEP ME HANGIN ON", "WINCHESTER CATHEDRAL", "GOOD VIBRATIONS", "IM A BELIEVER", "KIND OF A DRAG", "PENNY LANE", "HAPPY TOGETHER", "SOMETHIN STUPID", "THE HAPPENING", "GROOVIN", "RESPECT", "WINDY", "LIGHT MY FIRE", "ALL YOU NEED IS LOVE", "ODE TO BILLIE JOE", "THE LETTER", "TO SIR WITH LOVE", "INCENSE AND PEPPERMINTS", "DAYDREAM BELIEVER", "HELLO GOODBYE", "JUDY IN DISGUISE", "GREEN TAMBOURINE", "LOVE IS BLUE", "THE DOCK OF THE BAY", "HONEY", "TIGHTEN UP", "MRS ROBINSON", "THIS GUYS IN LOVE WITH YOU", "GRAZING IN THE GRASS", "HELLO I LOVE YOU", "PEOPLE GOT TO BE FREE", "HARPER VALLEY PTA", "HEY JUDE", "LOVE CHILD", "I HEARD IT THROUGH THE GRAPEVINE", "CRIMSON AND CLOVER", "EVERYDAY PEOPLE", "DIZZY", "AQUARIUS", "GET BACK", "HONKY TONK WOMEN", "SUGAR SUGAR", "I CANT GET NEXT TO YOU", "SUSPICIOUS MINDS", "COME TOGETHER", "LEAVING ON A JET PLANE", "SOMEDAY WELL BE TOGETHER"]
     },  
     { 
       cat: "Hits of the 70's",
       sel: false,
-      items: ["BOHEMIAN RHAPSODY"]
+      items: ["VENUS", "BRIDGE OVER TROUBLED WATER", "LET IT BE", "AMERICAN WOMAN", "EVERYTHING IS BEAUTIFUL", "THE LONG AND WINDING ROAD", "MAMA TOLD ME", "CLOSE TO YOU", "MAKE IT WITH YOU", "AINT NO MOUNTAIN HIGH ENOUGH", "CRACKLIN ROSIE", "I THINK I LOVE YOU", "THE TEARS OF A CLOWN", "MY SWEET LORD", "KNOCK THREE TIMES", "ME AND BOBBY MCGEE", "JUST MY IMAGINATION", "JOY TO THE WORLD", "BROWN SUGAR", "ITS TOO LATE", "INDIAN RESERVATIOIN", "YOUVE GOT A FRIEND", "HOW CAN YOU MEND A BROKEN HEART", "UNCLE ALBERT ADMIRAL HALSEY", "MAGGIE MAY", "GYPSYS TRAMPS AND THIEVES", "THEME FROM SHAFT", "FAMILY AFFAIR", "BRAND NEW KEY", "AMERICAN PIE", "HEART OF GOLD", "A HORSE WITH NO NAME", "CANDY MAN", "BRANDY", "BABY DONT GET HOOKED ON ME","I CAN SEE CLEARLY NOW", "PAPA WAS A ROLLIN STONE", "I AM WOMAN", ""]
       },  
     { 
     cat: "Movies",
     sel: false,
-    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON", "THE FRENCH CONNECTION", "THE GODFATHER", "THE STING", "THE GODFATHER PART II", "ROCKY", "ANNIE HALL", "THE DEER HUNTER", "KRAMER VS KRAMER", "ORDINARY PEOPLE", "CHARIOTS OF FIRE", "GANDHI", "TERMS OF ENDEARMENT", "AMADEUS", "OUT OF AFRICA", "PLATOON", "THE LAST EMPEROR", "RAIN MAN", "DRIVING MISS DAISY", "DANCES WITH WOLVES", "THE SILENCE OF THE LAMBS", "UNFORGIVEN", "SCHINDLERS LIST", "FORREST GUMP", "BRAVEHEART", "THE ENGLISH PATIENT", "TITANIC", "SHAKESPEARE IN LOVE", "AMERICAN BEAUTY", "GLADIATOR", "A BEAUTIFUL MIND", "CHICAGO", "LORD OF THE RINGS", "MILLION DOLLAR BABY", "CRASH", "THE DEPARTED", "NO COUNTRY FOR OLD MEN", "SLUMDOG MILLIONAIRE", "THE HURT LOCKER", "THE KINGS SPEECH", "THE ARTIST", "ARGO", "TWELVE YEARS A SLAVE", "BIRDMAN", "SPOTLIGHT", "MOONLIGHT", "THE SHAPE OF WATER", "GREEN BOOK", "PARASITE", "NOMADLAND", "CODA"]
+    items: ["WINGS", "THE BROADWAY MELODY", "CIMMARON", "GRAND HOTEL",  "CAVALCADE", "IT HAPPENED ONE NIGHT", "MUTINY ON THE BOUNTY", "THE GREAT ZIEGFELD", "THE LIFE OF EMILE ZOLA", "GONE WITH THE WIND", "REBECCA", "HOW GREEN WAS VALLEY", "MRS MINIVER", "CASABLANCA", "GOING MY WAY", "THE LOST WEEKEND", "GENTLEMANS AGREEMENT", "HAMLET", "ALL THE KINGS MEN", "ALL ABOUT EVE", "AN AMERICAN IN PARIS", "THE GREATEST SHOW ON EARTH", "FROM HERE TO ETERNITY", "ON THE WATERFRONT", "MARTY", "THE BRIDGE ON THE RIVER KWAI", "GIGI", "BEN HUR", "THE APARTMENT", "WEST SIDE STORY", "LAWRENCE OF ARABIA", "TOM JONES", "MY FAIR LADY", "THE SOUND OF MUSIC", "A MAN FOR ALL SEASONS", "IN THE HEAT OF THE NIGHT", "OLIVER", "MIDNIGHT COWBOY", "PATTON", "THE FRENCH CONNECTION", "THE GODFATHER", "THE STING", "THE GODFATHER PART II", "ROCKY", "ANNIE HALL", "THE DEER HUNTER", "KRAMER VS KRAMER", "ORDINARY PEOPLE", "CHARIOTS OF FIRE", "GANDHI", "TERMS OF ENDEARMENT", "AMADEUS", "OUT OF AFRICA", "PLATOON", "THE LAST EMPEROR", "RAIN MAN", "DRIVING MISS DAISY", "DANCES WITH WOLVES", "THE SILENCE OF THE LAMBS", "UNFORGIVEN", "SCHINDLERS LIST", "FORREST GUMP", "BRAVEHEART", "THE ENGLISH PATIENT", "TITANIC", "SHAKESPEARE IN LOVE", "AMERICAN BEAUTY", "GLADIATOR", "A BEAUTIFUL MIND", "CHICAGO", "LORD OF THE RINGS", "MILLION DOLLAR BABY", "CRASH", "THE DEPARTED", "NO COUNTRY FOR OLD MEN", "SLUMDOG MILLIONAIRE", "THE HURT LOCKER", "THE KINGS SPEECH", "THE ARTIST", "ARGO", "TWELVE YEARS A SLAVE", "BIRDMAN", "SPOTLIGHT", "MOONLIGHT", "THE SHAPE OF WATER", "GREEN BOOK", "PARASITE", "NOMADLAND", "CODA", "MODERN TIMES", "THE PETRIFIED FOREST", "THE GOOD EARTH", "LOST HORIZON", "THE PRISONER OF ZENDA", "TOPPER", "THE ADVENTURES OF ROBIN HOOD", "BRINGING UP BABY", "THE LADY VANISHES", "YOU CANT TAKE IT WITH YOU", "DESTRY RIDES AGAIN", "THE FOUR FEATHERS", "GOODBYE MR CHIPS", "GUNGA DIN", "THE HUNCHBACK OF NOTRE DAME", "MR SMITH GOES TO WASHINGTON", "NINOTCHKA", "STAGECOACH", "THE WIZARD OF OZ", "WUTHERING HEIGHTS", "ABE LINCOLN IN ILLINOIS", "FANTASIA", "FOREIGN CORRESPONDENT", "THE GRAPES OF WRATH", "THE GREAT DICTATOR", "HIS GIRL FRIDAY", "THE MARK OF ZORRO", "THE PHILADELPHIA STORY", "PRIDE AND PREJUDICE", "REBECCA", "THE SEA HAWK", "THE SHOP AROUND THE CORNER", "THE THIEF OF BAGHAD"]
     },
   { 
     cat: "Presidents",
@@ -101,7 +102,7 @@ const backgroundImagesLandscape=[
 ]
 
 const audios=[
-  "./auds/bgmusic.mp3", "./auds/crowning.mp4", "./auds/rubylove.mp4"
+  "./auds/bgmusic.mp3", "./auds/app1.wav"
 ]
 
 let helpText = "In this version of WORDLE, instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but that can be changed. Click on the 2nd icon from the right and all available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in grey. Click to toggle each category. As in the original WORDLE, stats are provided, click on the bar-graph icon for a summary, then i, for info, for more details. TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories, things will be very difficult for you. But, you can give it a try and then if flummoxed, click on the mag glass icon to display what the random category chosen by the game is."
@@ -703,8 +704,133 @@ allElements.forEach((element) => {
           updateGuessedLetters(key);
         });
       }
+
+      holdSpace();
+
+
+
+
     } // END OF Ians addKeyboardClicks 
 
+
+    function holdSpace(){
+          // The item (or items) to press and hold on
+    let itemSpace = document.querySelector(".space-button");
+    let itemDel = document.querySelector(".del-button");
+
+    let timerID;
+    let counter = 0;
+
+    let spaceHoldEvent = new CustomEvent("spaceHold");
+    let delHoldEvent = new CustomEvent("delHold");  
+
+    // Increase or decreae value to adjust how long
+    // one should keep pressing down before the pressHold
+    // event fires
+    let pressHoldDuration = 50;
+
+    // Listening for the mouse and touch events    
+    itemSpace.addEventListener("mousedown", pressingDown, false);
+    itemSpace.addEventListener("mouseup", notPressingDown, false);
+    itemSpace.addEventListener("mouseleave", notPressingDown, false);
+
+    itemSpace.addEventListener("touchstart", pressingDown, false);
+    itemSpace.addEventListener("touchend", notPressingDown, false);
+    // Listening for our custom pressHold event
+    itemSpace.addEventListener("spaceHold", spaces, false);
+
+        // Listening for the mouse and touch events on Delete    
+        itemDel.addEventListener("mousedown", pressingDown2, false);
+        itemDel.addEventListener("mouseup", notPressingDown2, false);
+        itemDel.addEventListener("mouseleave", notPressingDown2, false);
+    
+        itemDel.addEventListener("touchstart", pressingDown2, false);
+        itemDel.addEventListener("touchend", notPressingDown2, false);
+        // Listening for our custom pressHold event
+        itemDel.addEventListener("delHold", deletes, false);
+
+    function pressingDown(e) {
+      // Start the timer
+      requestAnimationFrame(timer);
+      console.log ("e key = " + e.key)
+      e.preventDefault();
+
+      console.log("Pressing!");
+    }
+
+    function notPressingDown(e) {
+      // Stop the timer
+      cancelAnimationFrame(timerID);
+      counter = 0;
+
+      console.log("Not pressing!");
+    }
+
+    //
+    // Runs at 60fps when you are pressing down
+    //
+    function timer() {
+      console.log("Timer tick!");
+
+      if (counter < pressHoldDuration) {
+        timerID = requestAnimationFrame(timer);
+        counter++;
+      } else {
+        console.log("Press threshold reached!");
+        itemSpace.dispatchEvent(spaceHoldEvent);
+      }
+    }
+
+
+
+
+    function pressingDown2(e) {
+      // Start the timer
+      requestAnimationFrame(timer2);
+      e.preventDefault();
+
+      console.log("Pressing del!");
+    }
+
+    function notPressingDown2(e) {
+      // Stop the timer
+      cancelAnimationFrame(timerID);
+      counter = 0;
+
+      console.log("Not pressing del!");
+    }
+
+    //
+    // Runs at 60fps when you are pressing down
+    //
+    function timer2() {
+      console.log("Timer2 tick!");
+
+      if (counter < pressHoldDuration) {
+        timerID = requestAnimationFrame(timer2);
+        counter++;
+      } else {
+        console.log("Del Press threshold reached!");
+        itemDel.dispatchEvent(delHoldEvent);
+      }
+    }
+
+    function spaces(e) {
+      console.log("pressHold event fired on spaces!");
+      for (i=1; i<30; i++){
+        updateGuessedLetters(' ');
+      }
+     }
+
+     function deletes(e) {
+      console.log("pressHold event fired on delete!");
+      for (i=1; i<30; i++){
+       handleDelete();
+      }
+     }
+
+
+    }
 
 
 
@@ -919,6 +1045,7 @@ function initStatsModal() {
         const resultsTrayEl = document.getElementById("results-tray");
         resultsTrayEl.innerHTML = ""
         delModal.style.display = "none";
+        resultsArray = [];
       });
 
       // When the user clicks on No, close delete modal
@@ -1193,6 +1320,8 @@ function music(){
 
 
 function playMusic(){
+  if (sound){
   soundPlayer.play();
+  }
 }
 
