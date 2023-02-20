@@ -92,6 +92,7 @@ header i{
   font-weight: bold;
   margin: 0.4rem, 0 0.4rem 0;
   text-align: center;
+  cursor: pointer;
 }
 
 #message-container {
