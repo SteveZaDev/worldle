@@ -7,6 +7,7 @@
   --keyboard-letter-color: rgb(215, 218, 220);
   --deepLightPurple: rgb(100, 11, 129);
   --modalHeaderColor: hsl(290, 50%, 50%); 
+  --modalHeaderBackground: rgb(11, 99, 37);
 }
 
 html,
@@ -338,7 +339,7 @@ button.correct-letter-in-place {
   background-color: var(--deepLightPurple);
   background: rgb(251,193,29);
 /*  background: radial-gradient(circle, rgba(251,193,29,1) 0%, rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); */
-  background: radial-gradient(circle, var(--modalHeaderColor), rgba(251,193,29,1) 25%, rgba(220,20,60,1) 100%); 
+  background: radial-gradient(circle, var(--modalHeaderBackground), rgba(251,193,29,1) 25%, var(--modalHeaderBackground) 100%); 
   color: rgb(201, 170, 113);
   color: black;
   border-bottom: 1px solid #e9ecef;
@@ -381,7 +382,7 @@ h3:last-child{
   position: absolute;
   right: 10px;
   top: 10px;
-  color: #888;
+  color: #eee;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -448,7 +449,7 @@ to {top:-300px; opacity:0}
 
 @media (min-width: 750px){
   .modal-body {
-    font-size: 20px;
+    font-size: 16px;
    }
 }
 
@@ -469,3 +470,6 @@ hr{
   font-size: .9rem;
 }
 
+#delete-stats{
+  margin-left: 30px;
+}
