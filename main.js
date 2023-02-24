@@ -475,7 +475,6 @@ allElements.forEach((element) => {
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
 
-
       resultObj.guesses = guessedWordCount;
       let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
       if (resultsArrayTemp){
@@ -498,12 +497,15 @@ allElements.forEach((element) => {
       window.localStorage.setItem("totalWins", Number(totalWins) + 1);
 
       const currentStreak = window.localStorage.getItem("currentStreak") || 0;
+      const maxStreak = window.localStorage.getItem("maxStreak") || 0;
       window.localStorage.setItem("currentStreak", Number(currentStreak) + 1);
+      if ((currentStreak+1) > maxStreak){
+        window.localStorage.setItem("maxStreak", Number(currentStreak) + 1);
+      }
       updateTotalGames();
     //  removeKeyboardListeners();
      return;
-      
-    }
+    } // END OF CORRECT WORD LOGID
 
     if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
       resultObj.guesses = 10;
@@ -1053,6 +1055,7 @@ function initHelpModal() {
 
 function updateStatsModal(){
   const currentStreak = window.localStorage.getItem("currentStreak");
+  const maxStreak = window.localStorage.getItem("maxStreak");
   const totalWins = window.localStorage.getItem("totalWins");
   const totalGames = window.localStorage.getItem("totalGames");
   const audio = new Audio ("./auds/stats.mp3");
@@ -1061,6 +1064,7 @@ function updateStatsModal(){
   document.getElementById('total-played').textContent = totalGames;
   document.getElementById('total-wins').textContent = totalWins;
   document.getElementById('current-streak').textContent = currentStreak;
+  document.getElementById('max-streak').textContent = maxStreak;
 
   const winPct = Math.round((totalWins / totalGames) * 100) || 0
   document.getElementById('win-pct').textContent = winPct;
@@ -1117,6 +1121,7 @@ function initStatsModal() {
       yesEl.addEventListener("click", function () {
         localStorage.removeItem("results")
         localStorage.removeItem("currentStreak")
+        localStorage.removeItem("maxStreak")
         localStorage.removeItem("totalWins")
         localStorage.removeItem("totalGames")
         const resultsTrayEl = document.getElementById("results-tray");
