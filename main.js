@@ -87,17 +87,20 @@ let protoWordsArray = [
 ]
 
 const backgroundImagesPortrait=[
-  "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
+ // "https://images.pexels.com/photos/1834407/pexels-photo-1834407.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg",
   "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
+  "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
+  "https://images.unsplash.com/photo-1543837173-6c26bc89937b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXV0dW1ufGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+//  "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
 ]
 
 const backgroundImagesLandscape=[
   "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=1600",
   "https://cdn.pixabay.com/photo/2021/01/09/20/23/road-5903402__340.jpg",
   "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
   "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
@@ -106,17 +109,17 @@ const audios=[
 ]
 
 let helpText = `This version of WORDLE, plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but you can select your own by clicking on the 2nd icon from the right. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
-TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
-Solving tip - On especially long wordles, after several guesses have been made, the game board can look quite busy. Click or tap the title 'WORLDLE', and the current row will be filled with all of the letters that you have correctly guessed. This often results in an a-ha moment when the solution jumps out at you. Then backup thru the word via the delete key and fill in the blanks. Note - on narrow screens, wordles over 24 letters will be cut off at 24.`
+TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
+Solving tip - On especially long wordles, after several guesses have been made, the game board can look quite busy. Click or tap the title 'WORLDLE', and the current row will be filled with all of the letters that you have correctly guessed. This often results in an a-ha moment when the solution jumps out at you. Then backup thru the word via the delete key and fill in the blanks. Note - on narrow screens, wordles over 21 letters will be cut off at 21.`
 
 
 let sound = true;
 let soundPlayer = "";
-//soundPlayer = new Audio ("./auds/bgmusic.mp3");
 soundPlayer = new Audio (audios[Math.floor(Math.random()*audios.length)]);
 soundPlayer.loop = true;
 soundPlayer.volume = 0.065  ;
 soundPlayer.currentTime = 1;
+const maxLettersNarrowScreen = 21;
 
 
 let fullScreen = false;
@@ -153,23 +156,11 @@ let resultObj = {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  initHelpModal();
+    initHelpModal();
     initStatsModal();
     initCategoriesModal();
-    
-    //initCog();
-    initAudio();
-    // Select background image based on portrait or landscape mode
-    if (window.innerHeight > window.innerWidth){
-      let randomImg = Math.floor(Math.random()*backgroundImagesPortrait.length)
-      const body = document.getElementsByTagName('body')[0];
-      body.style.backgroundImage = "url(" + backgroundImagesPortrait[randomImg] + ")";
-    } else {  
-      let randomImg = Math.floor(Math.random()*backgroundImagesLandscape.length)
-      const body = document.getElementsByTagName('body')[0];
-      body.style.backgroundImage = "url(" + backgroundImagesLandscape[randomImg] + ")";
-    }
-    
+    initLook();
+   
     playButtonEl = document.getElementById("start")
     randCatEl = document.getElementById("randcat")
 
@@ -180,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
      randCatEl.addEventListener("click", ({ target }) => {
        console.log("clicked on category display");
        if (wordsArray){
-       messageContainerEl.innerText = wordsArray[randomArray].cat;
+       messageContainerEl.innerText = "Current category is " + wordsArray[randomArray].cat;
        }
     })
     });
@@ -202,7 +193,7 @@ function letsPlay() {
    playMusic();
 
 // INIT
-wordsArray=[]
+// 230223wordsArray=[]
 
 currentWordIndex = 0;
 guessedWordCount = 0;
@@ -244,9 +235,9 @@ gameInProgress = true;
 //  console.log(wordsArray[randomArray][randomWordle] + " has " + numofLetters + " letters in it")
   wordle = wordsArray[randomArray].items[randomWordle];
   if(window.innerWidth < 900){
-    if (numofLetters > 24){
-      numofLetters = 24;
-      wordle = wordle.slice(0, 24);
+    if (numofLetters > maxLettersNarrowScreen){
+      numofLetters = maxLettersNarrowScreen;
+      wordle = wordle.slice(0, maxLettersNarrowScreen);
     }
   }
   console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
@@ -732,6 +723,7 @@ allElements.forEach((element) => {
 
 
    //   holdSpace();
+        initMisc();
 
 
 
@@ -774,6 +766,25 @@ function populateRow(){
     }
   }
 } //END OF POPULATE ROW
+
+
+function initMisc(){
+  duplicateEl = document.getElementById("duplicate")
+  duplicateEl.addEventListener("click", dupSpaces, false);
+
+  function dupSpaces(e) {
+    console.log("duping spaces");
+    for (i=1; i<30; i++){
+      updateGuessedLetters(' ');
+    }
+    console.log("done with loop of spaces");
+    // submit all the spaces
+//     handleSubmitWord();
+
+  }
+}
+
+
 
 
     function holdSpace(){
@@ -1185,9 +1196,9 @@ function buildResults(){
         resultsTrayEl.appendChild(resultItemEl)
         resultItemEl = document.createElement('div')
         resultItemEl.innerText = resultsArray[i].wordle
-        if (resultsArray[i].wordle.length > 20){
+        if (resultsArray[i].wordle.length > maxLettersNarrowScreen){
           if (screenWidth < 400){
-             resultItemEl.innerText = resultsArray[i].wordle.slice(0, 18) + "..."
+             resultItemEl.innerText = resultsArray[i].wordle.slice(0, maxLettersNarrowScreen - 1) + ".."
           }
         }
         if (resultsArray[i].guesses === 10){
@@ -1352,8 +1363,23 @@ function revealLetter(){
 
 }
 
+function initLook(){
+      // Select background image based on portrait or landscape mode
+      if (window.innerHeight > window.innerWidth){
+        let randomImg = Math.floor(Math.random()*backgroundImagesPortrait.length)
+        const body = document.getElementsByTagName('body')[0];
+        body.style.backgroundImage = "url(" + backgroundImagesPortrait[randomImg] + ")";
+      } else {  
+        let randomImg = Math.floor(Math.random()*backgroundImagesLandscape.length)
+        const body = document.getElementsByTagName('body')[0];
+        body.style.backgroundImage = "url(" + backgroundImagesLandscape[randomImg] + ")";
+      }
+      initAudio()
+    }
+
+
+
 function initAudio(){
- // let btn = document.querySelector(".toggle");
 let icon = document.querySelector(".fa-volume-up");
 
 icon.onclick = function (){
