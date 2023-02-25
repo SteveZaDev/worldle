@@ -480,5 +480,7 @@ hr{
   color: gold;
   top: 0px;
   left: 0px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   cursor: pointer;
 }

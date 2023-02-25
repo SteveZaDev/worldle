@@ -109,7 +109,7 @@ const audios=[
 ]
 
 let helpText = `This version of WORDLE, plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but you can select your own by clicking on the 2nd icon from the right. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
-TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
+TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon and spaces will be filled in from your current position in the row). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
 Solving tip - On especially long wordles, after several guesses have been made, the game board can look quite busy. Click or tap the title 'WORLDLE', and the current row will be filled with all of the letters that you have correctly guessed. This often results in an a-ha moment when the solution jumps out at you. Then backup thru the word via the delete key and fill in the blanks. Note - on narrow screens, wordles over 21 letters will be cut off at 21.`
 
 
@@ -776,12 +776,14 @@ function initMisc(){
 
   function dupSpaces(e) {
     console.log("duping spaces");
+    const audio = new Audio ("./auds/hard-keypress.wav");
+    audio.play()
     for (i=1; i<30; i++){
       updateGuessedLetters(' ');
     }
     console.log("done with loop of spaces");
     // submit all the spaces
-//     handleSubmitWord();
+    handleSubmitWord();
 
   }
 }
