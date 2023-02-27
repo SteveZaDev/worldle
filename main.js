@@ -493,6 +493,7 @@ allElements.forEach((element) => {
       setTimeout(function(){
         playButtonEl.innerText = "Play Again?";
         playButtonEl.style.display = "block";
+        messageContainerEl.innerText = ""
     }, 4500);
       const totalWins = window.localStorage.getItem("totalWins") || 0;
       window.localStorage.setItem("totalWins", Number(totalWins) + 1);
