@@ -105,7 +105,7 @@ const backgroundImagesLandscape=[
 ]
 
 const audios=[
-  "./auds/bgmusic.mp3", "./auds/app1.wav"
+  "./auds/bgmusic.mp3", "./auds/app1.wav", "./auds/app2.wav", "./auds/mahoroba.mp3", "./auds/mixkitdowntownrags.mp3", "./auds/mixkitdrivingambition.mp3" 
 ]
 
 let helpText = `This version of WORDLE, plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is U.S. Presidents, but you can select your own by clicking on the 2nd icon from the right. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHelpModal();
     initStatsModal();
     initCategoriesModal();
+    initPreferencesModal();
     initLook();
    
     playButtonEl = document.getElementById("start")
@@ -1317,7 +1318,7 @@ function initCategoriesModal() {
   btn.addEventListener("click", function () {
     console.log("just clicked on categories button")
     updateCategoriesModal();
-    const audio = new Audio ("./auds/shortgood.mp3");
+    const audio = new Audio ("./auds/stats.mp3");
     audio.play()
     modal.style.display = "block";
     helpEl = document.getElementById("categories-modal")
@@ -1424,3 +1425,40 @@ function playMusic(){
   }
 }
 
+
+function initPreferencesModal() {
+
+
+  const modal = document.getElementById("preferences-modal");
+  // Get the button that opens the preferences modal
+  const btn = document.getElementById("preferences");
+
+  // Get the <span> element that closes the modal
+  const span = document.getElementById("close-preferences");
+
+
+  const preferencesContainerEl = document.getElementById("preferences-body")
+
+
+
+  // When the user clicks on the button, open the modal
+  btn.addEventListener("click", function () {
+    console.log("just clicked on preferences button")
+    const audio = new Audio ("./auds/stats.mp3");
+    audio.play()
+    modal.style.display = "block";
+    helpEl = document.getElementById("preferences-modal")
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
