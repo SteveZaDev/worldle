@@ -171,10 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
      randCatEl.addEventListener("click", ({ target }) => {
        console.log("clicked on category display");
-       if (wordsArray){
-       messageContainerEl.innerText = "Current category is " + wordsArray[randomArray].cat;
-       }
-    })
+       if (gameInProgress){
+        if (wordsArray){
+        messageContainerEl.innerText = "Current category is " + wordsArray[randomArray].cat;
+        }
+      }
+     })
     });
 
     /*
