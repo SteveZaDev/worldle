@@ -528,6 +528,7 @@ allElements.forEach((element) => {
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
       updateTotalGames();     setTimeout(function(){
+        messageContainerEl.innerText = ""
         playButtonEl.innerText = "Play Again?";
         playButtonEl.style.display = "block";
     }, 4500);
