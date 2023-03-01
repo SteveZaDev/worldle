@@ -1580,7 +1580,7 @@ function initPreferencesModal() {
 
   const preferencesContainerEl = document.getElementById("preferences-body")
 
-
+  const textAreaEl = document.querySelector("textarea");
 
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
@@ -1602,6 +1602,17 @@ function initPreferencesModal() {
       modal.style.display = "none";
     }
   });
+
+    // When the user clicks anywhere outside of the modal, close it
+    textAreaEl.addEventListener("keydown", function (event) {
+      var key = event.keyCode;
+      // If the user has pressed enter
+      if (key === 13) {
+        console.log("enter key pressed " + textAreaEl.value)
+        const body = document.getElementsByTagName('body')[0];
+        body.style.backgroundImage = "url(" + textAreaEl.value + ")"
+      }
+    });
 
 
     // When the user clicks on the random landscpape - randomly change the background
