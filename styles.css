@@ -515,3 +515,63 @@ hr{
   margin-left: 20px;
   display: none;
 }
+
+#backgrounds{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: darkslateblue;
+  background: radial-gradient(circle, var(--modalHeaderBackground), rgba(251,193,29,1) 25%, var(--modalHeaderBackground) 100%);
+
+}
+#random-bg-container{
+  width: 35%;
+  height: 34%;
+  background-color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid darkgray;
+  cursor: pointer;
+}
+#random-bg-container:hover{
+  background-color: lightgray;
+
+}
+
+.mini-img{
+  width: 31%;
+  height: 35%;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+#one-bg-container{
+  width: 95%;
+  height: 55%;
+  border: 1px solid darkgray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+
+}
+
+.maxi-img{
+  width: 31%;
+  height: 40%;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.maxi-img:hover{
+  border: 2px rgb(29, 26, 26) solid;
+}

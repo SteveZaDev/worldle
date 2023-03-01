@@ -45,13 +45,13 @@ let protoWordsArray = [
       cat: "Broadway",
       sel: false,
       parent: "Music",
-      items: ["WEST SIDE STORY", "LES MISERABLES", "MARIA", "CAMELOT", "OKLAHOMA", "OH WHAT A BEAUTIFUL MORNING"],
+      items: ["WEST SIDE STORY", "LES MISERABLES", "MARIA", "CAMELOT", "OKLAHOMA", "OH WHAT A BEAUTIFUL MORNING", "CAMELOT", "SWEENY TODD", "THE LION KING", "CATS", "GODSPELL", "MAN OF LA MANCHA", "THE UNSINKABLE MOLLY BROWN", "INTO THE WOODS", "RAGTIME", "ANYTHING GOES", "RENT", "THE PHANTOM OF THE OPERA", "THE SOUND OF MUSIC", "HELLO DOLLY", "CHICAGO", "THE MUSIC MAN", "SOUTH PACIFIC", "CABARET", "WICKED", "A LITTLE NIGHT MUSIC", "MY FAIR LADY", "A CHORUS LINE", "GYPSY", "FIDDLER ON THE ROOF", "THEY CALL THE WIND MARIAH", "THE MUSIC OF THE NIGHT", "BIG SPENDER", "POPULAR", "COMEDY TONIGHT", "TRADITION", "MY FAVORITE THINGS", "EDELWEISS", "IF EVER I WOULD LEAVE YOU", "GET ME TO THE CHURCH ON TIME", "NIGHT AND DAY", "PINBALL WIZARD", "TRY TO REMEMBER", "BRING HIM HOME", "MATCHMAKER MATCHMAKER", "SHALL WE DANCE", "ALL THAT JAZZ", "AMERICA", "WILKOMMEN", "DONT CRY FOR ME ARGENTINA", "TONIGHT", "ON THE STREET WHERE YOU LIVE", "MEMORY", "I DREAMED A DREAM", "SOME ENCHANTED EVENING", "IF I WERE A RICH MAN", "SEND IN THE CLOWNS", "YOULL NEVER WALK ALONE", "ONE DAY MORE", "THE IMPOSSIBLE DREAM", "ANDREW LLOYD WEBER", "STEPHEN SONDHEIM", "RICHARD RODGERS", "OSCAR HAMMERSTEIN", "ALAN JAY LERNER", "WOULDNT IT BE LOVERLY"]
     },  
   { 
       cat: "Classical",
       sel: false,
       parent: "Music",
-      items: ["JOHAN SEBASTIAN BACH", "FRANZ JOSEPH HAYDN", "GEORGE FREDICK HANDEL"],
+      items: ["JOHAN SEBASTIAN BACH", "FRANZ JOSEPH HAYDN", "GEORGE FREDRICK HANDEL"],
     },       
   { 
     cat: "Hits of the 60's",
@@ -70,13 +70,13 @@ let protoWordsArray = [
         cat: "Popular",
           sel: false,
           parent: "Music",
-          items: ["THE BEATLES", "THE ROLLING STONES", "BUDDY HOLLY", "ROY ORBISON", "DION", "SIMON AND GARFUNKLE"],
+          items: ["THE BEATLES", "THE ROLLING STONES", "BUDDY HOLLY", "ROY ORBISON", "DION", "SIMON AND GARFUNKLE", "CAT STEVENS", "ELTON JOHN", "NEIL DIAMOND", "JUDY COLLINS", "THE FOUR TOPS", "THE TEMPTATIONS", "THE SUPREMES", "STRAWBERRY ALARM CLOCK", "DRIFTERS", "COASTERS", "IN THE STILL OF THE NIGHT", "THE BEACH BOYS", "THE DAVE CLARK FIVE", "THE HOLLIES"],
         }, 
         { 
           cat: "Others",
             sel: false,
             parent: "Music",
-            items: ["ELMER BERNSTEIN", "MIKLOS ROZSA", "MAX STEINER", "ELLA FITZGERALD", "FRANK SINATRA"],
+            items: ["ELMER BERNSTEIN", "MIKLOS ROZSA", "MAX STEINER", "ELLA FITZGERALD", "FRANK SINATRA", "TONY BENNET", "ENNIO MORRICONE", "BERNARD HERRMANN", "BEGIN THE BEGUINE", "HEART AND SOUL", "HOAGY CARMICHAEL", "STARDUST", "TAKE THE A TRAIN", "CHATTANOOGA CHOO CHOO", "GLENN MILLER"],
           }, 
   
 
@@ -159,6 +159,7 @@ const backgroundImagesPortrait=[
   "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
   "https://images.unsplash.com/photo-1543837173-6c26bc89937b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXV0dW1ufGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  "https://images.unsplash.com/photo-1553114836-026cecec9778?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG5hdHVyZXxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
 //  "https://cdn.pixabay.com/photo/2023/01/22/12/17/flower-7736238__340.jpg"
 ]
 
@@ -167,7 +168,8 @@ const backgroundImagesLandscape=[
   "https://cdn.pixabay.com/photo/2021/01/09/20/23/road-5903402__340.jpg",
   "https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "https://cdn.pixabay.com/photo/2017/08/31/11/35/alps-2700403_960_720.jpg",
-  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  "https://images.pexels.com/photos/302743/pexels-photo-302743.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "https://images.unsplash.com/photo-1566155119454-2b581dd44c59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fHNwcmluZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60"
 ]
 
 const audios=[
@@ -1341,12 +1343,33 @@ for (i=0; i<categories.length; i++){
   if (protoWordsArray[i].parent==="parent"){
     categories[i].style.color = "green";
     categories[i].style.fontWeight = "normal";
+    calcTotalParentItems(protoWordsArray[i].cat, i)
+  }
+ }
+}
 
+function calcTotalParentItems(parentCat, i){
+  console.log("total all of the children of " + parentCat)
+  let childClass = (".child" + parentCat)
+  const childEls = document.querySelectorAll(childClass)
+  console.log("lenght of children = " + childEls.length)
+  let total = 0; 
+  for (j=0; j<childEls.length; j++){
+    if(protoWordsArray[i+j+1].sel){
+      total = total + protoWordsArray[i+j+1].items.length;
+      console.log("total = " + total)
+    }
+  }
+  const category = document.querySelector("."+parentCat)
+  category.innerText = `${protoWordsArray[i].cat} ${total}...`;
+  if(total>0){
+    category.innerText = `${protoWordsArray[i].cat} ${total}...`;
+    category.style.fontWeight = "bold";
+  } else {
+    category.innerText = `${protoWordsArray[i].cat}...`;
+    category.style.fontWeight = "normal";
   }
 }
-
-}
-
 
 function initCategoriesModal() {
   // Look for category preferences in localstorage
@@ -1363,6 +1386,7 @@ function initCategoriesModal() {
         protoWordsArray[i].sel = false; 
       }
     }
+    
 }
   const modal = document.getElementById("categories-modal");
   // Get the button that opens the categories modal
@@ -1385,6 +1409,7 @@ function initCategoriesModal() {
     // Add class of parent or child
     if (protoWordsArray[i].parent === "parent"){
       category.classList.add("parent")
+      category.classList.add(protoWordsArray[i].cat)
       console.log("parent")
     }
     if (protoWordsArray[i].parent === "Music"){
@@ -1547,6 +1572,7 @@ function initPreferencesModal() {
   const modal = document.getElementById("preferences-modal");
   // Get the button that opens the preferences modal
   const btn = document.getElementById("preferences");
+  const rndLandscapeEl = document.getElementById("random-bg-container");
 
   // Get the <span> element that closes the modal
   const span = document.getElementById("close-preferences");
@@ -1576,4 +1602,25 @@ function initPreferencesModal() {
       modal.style.display = "none";
     }
   });
-}
+
+
+    // When the user clicks on the random landscpape - randomly change the background
+    rndLandscapeEl.addEventListener("click", function (event) {
+      console.log("add code to randomly change background")
+      let randomImg = Math.floor(Math.random()*backgroundImagesLandscape.length)
+      const body = document.getElementsByTagName('body')[0];
+      body.style.backgroundImage = "url(" + backgroundImagesLandscape[randomImg] + ")"
+    });
+
+
+    const bgs = document.querySelectorAll(".maxi-img");
+    for (let i = 0; i < bgs.length; i++) {
+      bgs[i].addEventListener("click", ({ target }) => {
+
+        let bg = target.getAttribute("src");
+        const body = document.getElementsByTagName('body')[0];
+        body.style.backgroundImage = "url(" + bg + ")"
+
+      });
+      }
+    }
