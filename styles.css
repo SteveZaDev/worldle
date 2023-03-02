@@ -27,7 +27,7 @@ body {
 
 #container{
   display: flex;
-  background: rgb(75,29,91, .4);
+  background: rgb(75,29,91, .14);
  /* background: linear-gradient(79deg, rgba(125,29,251,1) 0%, rgba(29,74,251,0.37857141147474616) 75%, rgba(137,20,220,1) 100%); */
   height: 100%;
   align-items: center;
@@ -381,6 +381,17 @@ button.correct-letter-in-place {
   justify-content: center;
   font-size: 16px;
 }
+.portrait-modal-body {
+  padding: 2px 12px;
+  color: black;
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  border: 2px solid green;
+}
+
 .modal-footer {
   padding: 1rem;
   background-color: #ffffff;
@@ -523,8 +534,17 @@ hr{
   justify-content: space-evenly;
   background-color: darkslateblue;
   background: radial-gradient(circle, var(--modalHeaderBackground), rgba(251,193,29,1) 25%, var(--modalHeaderBackground) 100%);
-
 }
+
+#portrait-backgrounds{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: darkslateblue;
+  background: radial-gradient(circle, var(--modalHeaderBackground), rgba(251,193,29,1) 25%, var(--modalHeaderBackground) 100%);
+}
+
 #random-bg-container{
   width: 35%;
   height: 34%;
@@ -539,7 +559,22 @@ hr{
 }
 #random-bg-container:hover{
   background-color: lightgray;
+}
 
+#portrait-random-bg-container{
+  width: 35%;
+  height: 34%;
+  background-color: aliceblue;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid darkgray;
+  cursor: pointer;
+}
+#portrait-random-bg-container:hover{
+  background-color: lightgray;
 }
 
 .mini-img{
@@ -551,6 +586,18 @@ hr{
 }
 
 #one-bg-container{
+  width: 95%;
+  height: 55%;
+  border: 1px solid darkgray;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+
+}
+
+#portrait-one-bg-container{
   width: 95%;
   height: 55%;
   border: 1px solid darkgray;
