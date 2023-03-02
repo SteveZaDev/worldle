@@ -1628,6 +1628,9 @@ function initPreferencesModal() {
     maxCharEl = document.getElementById("max-char")
     console.log("max-char value = " + maxCharEl.value + " max-char is " + typeof(maxCharEl.value))
     maxCharacters = Number(maxCharEl.value);
+    if (maxCharacters < 12){
+      maxCharacters = 12;
+    }
     console.log("maxCharacters converted to number = " + maxCharacters)
     window.localStorage.setItem("maxChars", Number(maxCharacters));
   });
