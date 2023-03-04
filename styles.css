@@ -14,15 +14,9 @@ html,
 body {
   height: 100%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-
-
-      background-size: cover;
-      background-size: stretch;
-     
-      background-position: top;
-
-
-
+  background-size: cover;
+  background-size: stretch;
+  background-position: top;
 }
 
 #container{
@@ -89,7 +83,7 @@ header i{
 
 .title {
   color: var(--title-color);
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: bold;
   margin: 0.4rem, 0 0.4rem 0;
   text-align: center;
@@ -382,10 +376,10 @@ button.correct-letter-in-place {
   font-size: 16px;
 }
 .portrait-modal-body {
+  height: 70vh;
   padding: 2px 12px;
   color: black;
   display: flex;
-  display: none;
   flex-direction: column;
   justify-content: center;
   font-size: 16px;
@@ -622,3 +616,7 @@ hr{
 .maxi-img:hover{
   border: 2px rgb(29, 26, 26) solid;
 }
+
+#max-char{
+  width: 50px;
+} 

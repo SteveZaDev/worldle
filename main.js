@@ -172,9 +172,13 @@ const backgroundImagesLandscape=[
   "https://images.unsplash.com/photo-1566155119454-2b581dd44c59?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fHNwcmluZ3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60"
 ]
 
-const audios=[
-  "./auds/bgmusic.mp3", "./auds/app1.wav", "./auds/app2.wav", "./auds/mahoroba.mp3", "./auds/mixkitdowntownrags.mp3", "./auds/mixkitdrivingambition.mp3" 
-]
+const audios=[ {name: "default",
+                link: "./auds/bgmusic.mp3"
+              },
+                {name: "Classical Gas",
+                link: "./auds/classicalgas.m4a"
+              }
+             ]
 
 let helpText = `This version of WORDLE, plays like a cross between Wordle and Wheel of Fortune. Instead of solving for a 5 letter word, you will be trying to figure out an item belonging to a particular category. The answer can be anywhere from 4 to 20+ characters and can include spaces. The default category is US Presidents, but you can select your own by clicking on the 2nd icon from the right. All available categories will be displayed along with the number of items in that category. The active ones will be in black, the inactive in gray. Click to toggle each category. As in the original WORDLE, stats are provided. Click on the bar-graph icon for a summary, then i, for more info. 
 TIPS - As far as difficulty goes, here a few differences from the original and some suggestions. First off, for any response over 10 characters, you will get 8 guesses. The game does not check for valid words, names, or places, so gibberish is allowed. In fact, it may be your best strategy. Long solutions will likely be multi-word solutions, and you may want to find those word breaks by entering all spaces for your first guess. (Click the duplicate icon and spaces will be filled in from your current position in the row). Green spaces will indicate the word breaks. If you select multiple categories and are flummoxed, click on the mag glass icon to display the random category chosen by the game.
@@ -183,9 +187,15 @@ Solving tip - On especially long wordles, after several guesses have been made, 
 
 let sound = true;
 let soundPlayer = "";
-soundPlayer = new Audio (audios[Math.floor(Math.random()*audios.length)]);
+let randomAudioIdx = Math.floor(Math.random()*audios.length)
+soundPlayer = new Audio (audios[randomAudioIdx].link);
+let audioName = audios[randomAudioIdx].name
 soundPlayer.loop = true;
-soundPlayer.volume = 0.065  ;
+if(audioName === "Classical Gas"){
+  soundPlayer.volume = 0.555  ;
+} else {
+  soundPlayer.volume = 0.065  ;
+}
 soundPlayer.currentTime = 1;
 const maxLettersNarrowScreen = 21;
 
@@ -205,7 +215,7 @@ let numofGuesses = 6
 let wordle = ""
 let gameInProgress = false;
 let atLeastOneGuessMade = false;
-let maxCharacters = 100;
+let maxCharacters = 35;
 
 let randomArray = 0;
 let randomWordle = 0;
@@ -234,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
     playButtonEl = document.getElementById("start")
     randCatEl = document.getElementById("randcat")
-    maxCharacters = window.localStorage.getItem("maxChars") || 100;
+   
 
     playButtonEl.addEventListener("click", ({ target }) => {
        letsPlay()
@@ -305,7 +315,7 @@ gameInProgress = true;
   randomArray = Math.floor(Math.random()*wordsArray.length);
 
   // Loop thru words in the randomly chosen array of categories until a word that is not greater than maxCharacters is found or
-  // 50 times thru  
+  // 500 times thru  
   let searchingForWord = true;
   let count = 0;
   do {
@@ -595,8 +605,11 @@ allElements.forEach((element) => {
 
       const currentStreak = window.localStorage.getItem("currentStreak") || 0;
       const maxStreak = window.localStorage.getItem("maxStreak") || 0;
+      let text = "currenStreak = " + currentStreak + " maxStreak = " + maxStreak
+      window.alert(text)
       window.localStorage.setItem("currentStreak", Number(currentStreak) + 1);
       if ((currentStreak+1) > maxStreak){
+        window.alert("updating max")
         window.localStorage.setItem("maxStreak", Number(currentStreak) + 1);
       }
       updateTotalGames();
@@ -1604,14 +1617,21 @@ function initPreferencesModal() {
   // Get the button that opens the preferences modal
   const btn = document.getElementById("preferences");
   const rndLandscapeEl = document.getElementById("random-bg-container");
+  const rndPortraitEl = document.getElementById("portrait-random-bg-container");
+  maxCharEl = document.getElementById("max-char")
+  maxCharacters = window.localStorage.getItem("maxChars") || 35;
+  maxCharEl.value = maxCharacters;
 
-  // Get the <span> element that closes the modal
+  // Get the <span> element that closes the modal 
   const span = document.getElementById("close-preferences");
 
 
   const preferencesContainerEl = document.getElementById("preferences-body")
+  const portraitPreferencesContainerEl = document.getElementById("portrait-preferences-body")
 
   const textAreaEl = document.querySelector("textarea");
+ // preferencesContainerEl.style.display="none"
+  portraitPreferencesContainerEl.style.display="none"
 
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
@@ -1664,6 +1684,16 @@ function initPreferencesModal() {
       window.localStorage.setItem('background', JSON.stringify("Random"));
     });
 
+        // When the user clicks on the random portrait - randomly change the background
+        rndPortraitEl.addEventListener("click", function (event) {
+          console.log("add code to randomly change background")
+          let randomImg = Math.floor(Math.random()*backgroundImagesLandscape.length)
+          const body = document.getElementsByTagName('body')[0];
+          body.style.backgroundImage = "url(" + backgroundImagesLandscape[randomImg] + ")"
+          window.localStorage.setItem('background', JSON.stringify("Random"));
+        });
+    
+
 
     const bgs = document.querySelectorAll(".maxi-img");
     for (let i = 0; i < bgs.length; i++) {
@@ -1676,4 +1706,40 @@ function initPreferencesModal() {
 
       });
       }
+
+
+      initBgAudios();
     }
+
+
+
+
+    
+function initBgAudios() {
+
+  const audioContainerEl = document.getElementById("audios-body")
+  let bgAudio = document.createElement("div");
+ // bgAudio.innerText = "Random"
+//  bgAudio.style.color = "gray";
+//  audioContainerEl.appendChild(bgAudio);
+  for (i=0; i<audios.length; i++){
+    let bgAudio = document.createElement("div");
+    bgAudio.innerText = audios[i].name;
+    bgAudio.id = i;
+    bgAudio.style.color = "gray";
+    audioContainerEl.appendChild(bgAudio);  
+
+
+    bgAudio.addEventListener("click", ({ target }) => {
+      soundPlayer.setAttribute('src',audios[target.id].link); //change the source
+     
+      let audioName = audios[target.id].name
+      if(audioName === "Classical Gas"){
+        soundPlayer.volume = 0.555  ;
+      } else {
+        soundPlayer.volume = 0.065  ;
+      }
+      playMusic()
+          });
+  }
+}
