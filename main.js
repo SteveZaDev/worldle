@@ -98,13 +98,13 @@ let protoWordsArray = [
     sel: false,
     parent: "Sports",
     items: ["BABE RUTH", "LOU GEHRIG", "JOE DIMAGGIO", "MICKEY MANTLE", "WHITEY FORD", "DEREK JETER", 
-  "MARIANO RIVERA", "JOE MCCARTHY", "MILLER HUGGINS", "YOGI BERRA"],
+  "MARIANO RIVERA", "JOE MCCARTHY", "MILLER HUGGINS", "YOGI BERRA", "ELSTON HOWARD", "JOE PEPITONE", "BOBBY RICHARDSON", "CLETE BOYER", "TONY KUBEK", "TOM TRESH", "ROGER MARIS", "PHIL LINZ", "HECTOR LOPEZ", "JOHNNY BLANCHARD", "PEDRO GONZALEZ", "JAKE GIBBS", "MIKE HEGAN", "ROGER REPOZ", "JIM BOUTON", "AL DOWNING", "MEL STOTTLEMYRE", "RALPH TERRY", "STAN WILLIAMS", "PETE MIKKELSEN", "HAL RENIFF", "BILL STAFFORD", "STEVE HAMILTON", "PEDRO RAMOS", "FRANK CROSETTI", "STEVE BARBER", "FRITZ PETERSON", "THAD TILLOTSON", "DOOLEY WOMACK", "FRANK FERNANDEZ", "RUBEN AMARO", "HORACE CLARKE", "DICK HOWSER", "FRANK TEPEDINO", "BILL ROBINSON", "STEVE WHITAKER", "ROY WHITE", "RALPH HOUK"],
   },
   { 
     cat: "Landrys Cowboys",
     sel: false,
     parent: "Sports",
-    items: ["TOM LANDRY", "GIL BRANDT", "TEX SCHRAMM", "CLINT MURCHISON", "BOB HAYES", "BOB LILY", "DANDY DON MEREDITH", "CRAIG MORTON", "DAN REEVES", "DON PERKINS", "LES SHY", "WALT GARRISON", "PETTIS NORMAN", "PETE GENT", "LANCE RENTZEL", "RALPH NEELY", "MIKE CLARK", "RON WIDBY", "JETHRO PUGH", "GEORGE ANDRIE", "CHUCK HOWLEY", "LEE ROY JORDAN", "LARRY COLE", "MIKE GAECHTER", "CORNELL GREEN", "MEL RENFRO", "WILLIE TOWNES", "TONY LISCIO", "JOHN NILAND", "DAVE EDWARDS", "D D LEWIS", "RAYFIELD WRIGHT","ROGER STAUBACH", "CLINT LONGLEY", "ROBERT NEWHOUSE", "CALVIN HILL", "DUANE THOMAS", "PRESTON PEARSON", "DOUG DENNISON", "GOLDEN RICHARDS", "SCOTT LAIDLAW", "DREW PEARSON", "BILLY JOE DUPREE", "BOB BREUNIG", "THOMAS HENDERSON", "CHARLIE WATERS", "TONI FRITSCH", "RANDY WHITE", "BILL GREGORY", "CLIFF HARRIS", "MARK WASHINGTON", "ED TOO TALL JONES", "RANDY HUGHES", "PAT DONOVAN", "HARVEY MARTIN", "JEAN FUGETT", "DANNY WHITE", "TONY DORSETT", "RON SPRINGS", "TONY HILL", "BUTCH JOHNSON", "DOUG COSBIE", "RAFAEL SEPTIEN", "DENNIS THURMAN", "JOHN DUTTON", "MIKE HEGMAN", "AARON MITCHELL", "BENNY BARNES", "TOM RAFFERTY", "HERSCHEL WALKER", "MICHAEL IRVIN", "NATE NEWTON", "EVERSON WALLS", "BILL BATES", "JIM JEFFCOAT", "KEN NORTON JR"],
+    items: ["TOM LANDRY", "GIL BRANDT", "TEX SCHRAMM", "CLINT MURCHISON", "BOB HAYES", "BOB LILY", "DANDY DON MEREDITH", "CRAIG MORTON", "DAN REEVES", "DON PERKINS", "LES SHY", "WALT GARRISON", "PETTIS NORMAN", "PETE GENT", "LANCE RENTZEL", "RALPH NEELY", "MIKE CLARK", "RON WIDBY", "JETHRO PUGH", "GEORGE ANDRIE", "CHUCK HOWLEY", "LEE ROY JORDAN", "LARRY COLE", "MIKE GAECHTER", "CORNELL GREEN", "MEL RENFRO", "WILLIE TOWNES", "TONY LISCIO", "JOHN NILAND", "DAVE EDWARDS", "D D LEWIS", "RAYFIELD WRIGHT","ROGER STAUBACH", "CLINT LONGLEY", "ROBERT NEWHOUSE", "CALVIN HILL", "DUANE THOMAS", "PRESTON PEARSON", "DOUG DENNISON", "GOLDEN RICHARDS", "SCOTT LAIDLAW", "DREW PEARSON", "BILLY JOE DUPREE", "BOB BREUNIG", "THOMAS HENDERSON", "CHARLIE WATERS", "TONI FRITSCH", "RANDY WHITE", "BILL GREGORY", "CLIFF HARRIS", "MARK WASHINGTON", "ED TOO TALL JONES", "RANDY HUGHES", "PAT DONOVAN", "HARVEY MARTIN", "JEAN FUGETT", "DANNY WHITE", "TONY DORSETT", "RON SPRINGS", "TONY HILL", "BUTCH JOHNSON", "DOUG COSBIE", "RAFAEL SEPTIEN", "DENNIS THURMAN", "JOHN DUTTON", "MIKE HEGMAN", "AARON MITCHELL", "BENNY BARNES", "TOM RAFFERTY", "HERSCHEL WALKER", "MICHAEL IRVIN", "NATE NEWTON", "EVERSON WALLS", "BILL BATES", "JIM JEFFCOAT", "KEN NORTON JR", "CLAXTON WELCH", "LANCE ALWORTH", "REGGIE RUCKER", "IKE THOMAS", "HERB ADDERLEY", "JOHN FITZGERALD", "RODNEY WALLACE", "BILL GREGORY", "TODY SMITH", "PAT TOOMAY"],
   },
 
   { 
@@ -173,10 +173,16 @@ const backgroundImagesLandscape=[
 ]
 
 const audios=[ {name: "default",
-                link: "./auds/bgmusic.mp3"
+                link: "./auds/bgmusic.mp3",
+                vol: .065
               },
+              {name: "Dream",
+              link: "./auds/dream.mp3",
+              vol: .900
+            },
                 {name: "Classical Gas",
-                link: "./auds/classicalgas.m4a"
+                link: "./auds/classicalgas.m4a",
+                vol: .900
               }
              ]
 
@@ -189,13 +195,9 @@ let sound = true;
 let soundPlayer = "";
 let randomAudioIdx = Math.floor(Math.random()*audios.length)
 soundPlayer = new Audio (audios[randomAudioIdx].link);
-let audioName = audios[randomAudioIdx].name
+let audioName = audios[randomAudioIdx].name;
 soundPlayer.loop = true;
-if(audioName === "Classical Gas"){
-  soundPlayer.volume = 0.555  ;
-} else {
-  soundPlayer.volume = 0.065  ;
-}
+soundPlayer.volume = audios[randomAudioIdx].vol
 soundPlayer.currentTime = 1;
 const maxLettersNarrowScreen = 21;
 
@@ -606,10 +608,10 @@ allElements.forEach((element) => {
       const currentStreak = window.localStorage.getItem("currentStreak") || 0;
       const maxStreak = window.localStorage.getItem("maxStreak") || 0;
       let text = "currenStreak = " + currentStreak + " maxStreak = " + maxStreak
-      window.alert(text)
+   //   window.alert(text)
       window.localStorage.setItem("currentStreak", Number(currentStreak) + 1);
-      if ((currentStreak+1) > maxStreak){
-        window.alert("updating max")
+      if ((Number(currentStreak)+1) > Number(maxStreak)){
+   //     window.alert("updating max")
         window.localStorage.setItem("maxStreak", Number(currentStreak) + 1);
       }
       updateTotalGames();
@@ -1727,6 +1729,7 @@ function initBgAudios() {
     bgAudio.innerText = audios[i].name;
     bgAudio.id = i;
     bgAudio.style.color = "gray";
+    bgAudio.classList.add("audio")
     audioContainerEl.appendChild(bgAudio);  
 
 
@@ -1734,11 +1737,7 @@ function initBgAudios() {
       soundPlayer.setAttribute('src',audios[target.id].link); //change the source
      
       let audioName = audios[target.id].name
-      if(audioName === "Classical Gas"){
-        soundPlayer.volume = 0.555  ;
-      } else {
-        soundPlayer.volume = 0.065  ;
-      }
+      soundPlayer.volume = audios[target.id].vol
       playMusic()
           });
   }

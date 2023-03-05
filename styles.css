@@ -17,6 +17,7 @@ body {
   background-size: cover;
   background-size: stretch;
   background-position: top;
+  box-sizing: border-box;
 }
 
 #container{
@@ -620,3 +621,7 @@ hr{
 #max-char{
   width: 50px;
 } 
+
+.audio{
+  cursor: pointer;
+}
