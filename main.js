@@ -174,15 +174,15 @@ const backgroundImagesLandscape=[
 
 const audios=[ {name: "default",
                 link: "./auds/bgmusic.mp3",
-                vol: .165
+                vol: .105
               },
               {name: "Dream",
               link: "./auds/dream.mp3",
-              vol: .55
+              vol: .25
             },
                 {name: "Classical Gas",
                 link: "./auds/classicalgas.m4a",
-                vol: .55
+                vol: .25
               }
              ]
 
