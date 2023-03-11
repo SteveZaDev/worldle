@@ -1,3 +1,10 @@
+
+html{
+  --incorrectLetter: rgb(58, 58, 60);
+  --correctLetterInPlace: rgb(83, 141, 78);
+  --correctLetter: rgb(181, 159, 59);
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -8,6 +15,7 @@
   --deepLightPurple: rgb(100, 11, 129);
   --modalHeaderColor: hsl(290, 50%, 50%); 
   --modalHeaderBackground: rgb(11, 99, 37);
+  
 }
 
 html,
@@ -185,33 +193,33 @@ h2{
 
 
 .square.incorrect-letter {
-  background-color: rgb(58, 58, 60);
+  background-color: var(--incorrectLetter);
  /* border-color: rgb(58, 58, 60);*/
 }
 
 .square.correct-letter {
-  background-color: rgb(181, 159, 59);
+  background-color: var(--correctLetter);
  /* border-color: rgb(181, 159, 59);*/
 }
 
 .square.correct-letter-in-place {
-  background-color: rgb(83, 141, 78);
+  background-color: var(--correctLetterInPlace);
  /* border-color: rgb(83, 141, 78);*/
 }
 
 button.incorrect-letter {
-  background-color: rgb(58, 58, 60);
+  background-color: var(--incorrectLetter);
   border-color: rgb(58, 58, 60);
 }
 
 
 button.correct-letter {
-  background-color: rgb(181, 159, 59);
+  background-color: var(--correctLetter);
  /* border-color: rgb(181, 159, 59);*/
 }
 
 button.correct-letter-in-place {
-  background-color: rgb(83, 141, 78);
+  background-color: var(--correctLetterInPlace);
  /* border-color: rgb(83, 141, 78);*/
 }
 
