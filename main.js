@@ -51,7 +51,7 @@ let protoWordsArray = [
       cat: "Classical",
       sel: false,
       parent: "Music",
-      items: ["JOHANN SEBASTIAN BACH", "FRANZ JOSEPH HAYDN", "GEORGE FREDRICK HANDEL", "ROBERT SCHUMAN", "LUDWIG VAN BEETHOVEN", "FRANZ SHCUBERT", "FREDERIC CHOPIN", "ODE TO JOY", "MOONLIGHT SONATA", "HEILIGER DANKGESANG", "FRANZ LIZST", "HUNGARIAN RHAPSODIES", "BRANDENBURG CONCERTOS", "CLAUDE DEBUSSY", "MODEST MUSSORGSKY", "NIGHT ON BALD MOUNTAIN", "HAMMERKLAVIER", "VLADIMIR HOROWITZ", "THE EMPEROR CONCERTO", "ARTUR RUBINSTEIN", "JASCHA HEIFETZ", "SERGEI RACHMANINOFF", "PETER ILYICH TCHAIKOVSKY", "SWAN LAKE", "SLEEPING BEAUTY", "THE NUTCRACKER SUITE", "CLAIR DE LUNE", "BOLERO", "MAURICE RAVEL", "WOLFGANG AMADEUS MOZART", "THE MARRIAG OF FIGARO", "DON GIOVANNI", "CARMEN", "GEORGE BIZET"],
+      items: ["JOHANN SEBASTIAN BACH", "FRANZ JOSEPH HAYDN", "GEORGE FREDRICK HANDEL", "ROBERT SCHUMAN", "LUDWIG VAN BEETHOVEN", "FRANZ SHCUBERT", "FREDERIC CHOPIN", "ODE TO JOY", "MOONLIGHT SONATA", "HEILIGER DANKGESANG", "FRANZ LIZST", "HUNGARIAN RHAPSODIES", "BRANDENBURG CONCERTOS", "CLAUDE DEBUSSY", "MODEST MUSSORGSKY", "NIGHT ON BALD MOUNTAIN", "HAMMERKLAVIER", "VLADIMIR HOROWITZ", "THE EMPEROR CONCERTO", "ARTUR RUBINSTEIN", "JASCHA HEIFETZ", "SERGEI RACHMANINOFF", "PETER ILYICH TCHAIKOVSKY", "SWAN LAKE", "SLEEPING BEAUTY", "THE NUTCRACKER SUITE", "CLAIR DE LUNE", "BOLERO", "MAURICE RAVEL", "WOLFGANG AMADEUS MOZART", "THE MARRIAGE OF FIGARO", "DON GIOVANNI", "CARMEN", "GEORGE BIZET", "LEONARD BERNSTEIN", "ANTONIN DVORAK", "GIACCHINO ROSSINI", "ENRICO CARUSO", "JUSSI BJORLING", "LUCIANO PAVAROTTI", "MARIA CALLAS", "LA BOHEME", "TURONDOT", "GIACAMO PUCCINI", "FUGUE", "SYMPHONY", "CONCERTO", "SONATA", "RITE OF SPRING", "EROICA"],
     },       
   { 
     cat: "Hits of the 60's",
@@ -70,7 +70,7 @@ let protoWordsArray = [
         cat: "Popular",
           sel: false,
           parent: "Music",
-          items: ["THE BEATLES", "THE ROLLING STONES", "BUDDY HOLLY", "ROY ORBISON", "DION", "SIMON AND GARFUNKLE", "CAT STEVENS", "ELTON JOHN", "NEIL DIAMOND", "JUDY COLLINS", "THE FOUR TOPS", "THE TEMPTATIONS", "THE SUPREMES", "STRAWBERRY ALARM CLOCK", "DRIFTERS", "COASTERS", "IN THE STILL OF THE NIGHT", "THE BEACH BOYS", "THE DAVE CLARK FIVE", "THE HOLLIES", "CREEDENCE CLEARWATER REVIVAL", "THE EAGLES", "DEEP PURPLE", "QUEEN", "RADIO GA GA", "WE ARE THE CHAMPIONS", "WE WILL ROCK YOU", "I GET AROUND", "GOOD VIBRATIONS", "HELP ME RHONDA", "WILD WORLD", "PEACE TRAIN", "RUBYLOVE", "PROUD MARY", "WHOLL STOP THE RAIN", "LOVE POTION NUMBER NINE", "POISON IVY", "CHARLIE BROWN", "UP ON THE ROOF", "RUNAROUND SUE", "DREAM DREAM DREAM", "WAKE UP LITTLE SUZIE", "SMOKE ON THE WATER", "BUDDY HOLLY", "PEGGY SUE"],
+          items: ["THE BEATLES", "THE ROLLING STONES", "BUDDY HOLLY", "ROY ORBISON", "DION", "SIMON AND GARFUNKLE", "CAT STEVENS", "ELTON JOHN", "NEIL DIAMOND", "JUDY COLLINS", "THE FOUR TOPS", "THE TEMPTATIONS", "THE SUPREMES", "STRAWBERRY ALARM CLOCK", "DRIFTERS", "COASTERS", "IN THE STILL OF THE NIGHT", "THE BEACH BOYS", "THE DAVE CLARK FIVE", "THE HOLLIES", "CREEDENCE CLEARWATER REVIVAL", "THE EAGLES", "DEEP PURPLE", "QUEEN", "RADIO GA GA", "WE ARE THE CHAMPIONS", "WE WILL ROCK YOU", "I GET AROUND", "GOOD VIBRATIONS", "HELP ME RHONDA", "WILD WORLD", "PEACE TRAIN", "RUBYLOVE", "PROUD MARY", "WHOLL STOP THE RAIN", "LOVE POTION NUMBER NINE", "POISON IVY", "CHARLIE BROWN", "UP ON THE ROOF", "RUNAROUND SUE", "DREAM DREAM DREAM", "WAKE UP LITTLE SUZIE", "SMOKE ON THE WATER", "BUDDY HOLLY", "PEGGY SUE", "THE MOODY BLUES", "NIGHTS IN WHITE SATIN", "HOTEL CALIFORNIA", "GORDON LIGHTFOOT", "IF YOU COULD READ MY MIND", "THE EAGLES"],
         }, 
         { 
           cat: "Others",
@@ -200,6 +200,8 @@ soundPlayer.loop = true;
 soundPlayer.volume = audios[randomAudioIdx].vol
 soundPlayer.currentTime = 1;
 const maxLettersNarrowScreen = 21;
+let chameleon = false;
+DANCE_ANIMATION_DURATION = 1500;
 
 
 let fullScreen = false;
@@ -307,6 +309,11 @@ numofLetters = 5
 numofGuesses = 6
 wordle = ""
 gameInProgress = true;
+
+
+
+  setColors();
+
 
 // END OF INIT
   
@@ -619,6 +626,7 @@ allElements.forEach((element) => {
       messageContainerEl.innerText = "Congratulations!"
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
+      danceTiles(currentWordArr, firstLetterId);
 
       resultObj.guesses = guessedWordCount;
       let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
@@ -654,7 +662,7 @@ allElements.forEach((element) => {
       updateTotalGames();
     //  removeKeyboardListeners();
      return;
-    } // END OF CORRECT WORD LOGID
+    } // END OF CORRECT WORD LOGIC
 
     if (guessedWords.length ===  numofGuesses && guessedWord !== wordle) {
       resultObj.guesses = 10;
@@ -1748,6 +1756,7 @@ function initPreferencesModal() {
 
 
       initBgAudios();
+      initChameleon();
     }
 
 
@@ -1778,4 +1787,77 @@ function initBgAudios() {
       playMusic()
           });
   }
+}
+
+
+function initChameleon() {
+
+  const chameleonEl = document.getElementById("chameleon")
+    console.log("entered initchameleon")
+
+    chameleonEl.addEventListener("click", ({ target }) => {
+      console.log("clicked initchameleon")
+        chameleon = !chameleon;
+        if (chameleon){
+          chameleonEl.style.color = 'black';
+        } else {
+          chameleonEl.style.color = 'gray'; 
+        }
+          });
+  }
+
+
+  // DANCE TILES FROM WEBDEV SIMPLIFIED
+function danceTiles(tiles, firstLetterId){
+
+  tiles.forEach((tile, index) => {
+    setTimeout(() => {
+    const letterId = firstLetterId + index;
+    const letterEl = document.getElementById(letterId);
+    letterEl.classList.add("dance")
+    letterEl.addEventListener(
+      "animationend",
+      () => {
+        letterEl.classList.remove("dance")
+        console.log("removed dance class")
+      },
+      {once: true}
+      )
+    }, index * DANCE_ANIMATION_DURATION / tiles.length)
+  })
+}
+
+function setColors(){
+  
+  // THIS WORKS IN CASE I WANT TO RANDOMIZE TILE COLORS 
+  let r = document.querySelector(':root');
+    if (chameleon){
+   
+    let colorNum1 = Math.floor(Math.random()*300);
+    let colorNum2 = Math.floor(Math.random()*300);
+    if (colorNum2 > colorNum1){
+      if ((colorNum2-colorNum1) < 50){
+        colorNum2 = colorNum2 + 50;
+      }
+    } else {
+      if ((colorNum1-colorNum2) < 50){
+        colorNum1 = colorNum1 + 50;
+      }
+    }
+    let randomColor = "";
+  //  randomColor =  "hsl(" + colorNum + ", 51%, 47%)"
+  //  r.style.setProperty('--incorrectLetter', randomColor);
+    
+    
+    randomColor =  "hsl(" + colorNum1 + ", 51%, 47%)"
+    r.style.setProperty('--correctLetter', randomColor);
+    //colorNum = colorNum + 120;
+
+    randomColor =  "hsl(" + colorNum2 + ", 51%, 47%)"
+    r.style.setProperty('--correctLetterInPlace', randomColor);
+    } else {
+      r.style.setProperty('--correctLetter', 'rgb(181, 159, 59)');
+      r.style.setProperty('--correctLetterInPlace', 'rgb(83, 141, 78)');
+   
+    }
 }
