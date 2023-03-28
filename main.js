@@ -165,7 +165,7 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["BANAL", "DO YOU WANT TO KNOW A SECRET"],
+      items: ["THE POSTMAN ALWAYS RINGS TWICE"]
       }
 
   /*,
@@ -442,6 +442,10 @@ gameInProgress = true;
   wordle = wordsArray[randomArray].items[randomWordle];
   if(window.innerWidth < 900){
     if (numofLetters > maxLettersNarrowScreen){
+      messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
+      setTimeout(function(){
+        messageContainerEl.innerText = ""
+    }, 4500);
       numofLetters = maxLettersNarrowScreen;
       wordle = wordle.slice(0, maxLettersNarrowScreen);
     }
@@ -1942,24 +1946,24 @@ function setColors(){
   
   let r = document.querySelector(':root');
   if (chameleon){
-      let colorNum1 = Math.floor(Math.random()*300);
-      let colorNum2 = Math.floor(Math.random()*300);
+      let colorNum1 = Math.floor(Math.random()*280);
+      let colorNum2 = Math.floor(Math.random()*299);
       // Make sure color hues are sufficiently different
       if (colorNum2 > colorNum1){
-        if ((colorNum2-colorNum1) < 50){
-          colorNum2 = colorNum2 + 50;
+        if ((colorNum2-colorNum1) < 60){
+          colorNum2 = colorNum2 + 60;
         }
       } else {
-        if ((colorNum1-colorNum2) < 50){
-          colorNum1 = colorNum1 + 50;
+        if ((colorNum1-colorNum2) < 60){
+          colorNum1 = colorNum1 + 60;
         }
       }
       let randomColor = "";
   
-      randomColor =  "hsl(" + colorNum1 + ", 51%, 47%)"
+      randomColor =  "hsl(" + colorNum1 + ", 60%, 55%)"
       r.style.setProperty('--correctLetter', randomColor);
   
-      randomColor =  "hsl(" + colorNum2 + ", 51%, 47%)"
+      randomColor =  "hsl(" + colorNum2 + ", 60%, 35%)"
       r.style.setProperty('--correctLetterInPlace', randomColor);
     } else { // Set default Wordle colors 
       r.style.setProperty('--correctLetter', 'rgb(181, 159, 59)');
