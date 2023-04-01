@@ -165,7 +165,7 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["THE POSTMAN ALWAYS RINGS TWICE"]
+      items: ["THE POSTMAN ALWAYS RINGS TWICE", "GO AWAY LITTLE GIRL", "GOOD VIBRATIONS"]
       }
 
   /*,
@@ -234,6 +234,7 @@ soundPlayer.currentTime = 1;
 const maxLettersNarrowScreen = 21;
 let chameleon = false;
 DANCE_ANIMATION_DURATION = 1500;
+MAX_HISTORY_ITEMS = 10;
 
 
 let fullScreen = false;
@@ -1404,6 +1405,12 @@ function buildResults(){
 
   let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
   if (resultsArrayTemp){
+      if (resultsArrayTemp.length > MAX_HISTORY_ITEMS){
+        let numToDelete = resultsArrayTemp.length - MAX_HISTORY_ITEMS;
+        resultsArrayTemp.splice(0, numToDelete)
+        window.localStorage.setItem('results', JSON.stringify(resultsArrayTemp));
+      }
+
       resultsArray = JSON.parse(window.localStorage.getItem('results'));
       console.log("resultsArray =  " + resultsArray);
       console.log("results array date = " + resultsArray[resultsArray.length-1].date)
