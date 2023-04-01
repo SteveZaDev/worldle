@@ -234,7 +234,7 @@ soundPlayer.currentTime = 1;
 const maxLettersNarrowScreen = 21;
 let chameleon = false;
 DANCE_ANIMATION_DURATION = 1500;
-MAX_HISTORY_ITEMS = 10;
+MAX_HISTORY_ITEMS = 500;
 
 
 let fullScreen = false;
