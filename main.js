@@ -165,7 +165,7 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["THE POSTMAN ALWAYS RINGS TWICE", "GO AWAY LITTLE GIRL", "GOOD VIBRATIONS"]
+      items: ["THE POSTMAN ALWAYS RINGS TWICE"]
       }
 
   /*,
