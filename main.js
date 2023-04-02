@@ -331,6 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }*/
 
 function letsPlay() {
+  messageContainerEl.innerText = ""
   // Clear the classes of the keyboard that were set in any previous Wordle
    initClasses();
 
@@ -445,7 +446,7 @@ gameInProgress = true;
     if (numofLetters > maxLettersNarrowScreen){
       messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
       setTimeout(function(){
-        messageContainerEl.innerText = ""
+   //     messageContainerEl.innerText = ""
     }, 4500);
       numofLetters = maxLettersNarrowScreen;
       wordle = wordle.slice(0, maxLettersNarrowScreen);
@@ -724,7 +725,7 @@ allElements.forEach((element) => {
       setTimeout(function(){
         playButtonEl.innerText = "Play Again?";
         playButtonEl.style.display = "block";
-        messageContainerEl.innerText = ""
+       // messageContainerEl.innerText = ""
     }, 4500);
       const totalWins = window.localStorage.getItem("totalWins") || 0;
       window.localStorage.setItem("totalWins", Number(totalWins) + 1);
@@ -760,7 +761,7 @@ allElements.forEach((element) => {
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
       updateTotalGames();     setTimeout(function(){
-        messageContainerEl.innerText = ""
+     //   messageContainerEl.innerText = ""
         playButtonEl.innerText = "Play Again?";
         playButtonEl.style.display = "block";
     }, 4500);
