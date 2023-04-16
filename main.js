@@ -165,7 +165,7 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["THE POSTMAN ALWAYS RINGS TWICE"]
+      items: ["TESTA", "TESTB", "TESTC"]
       }
 
   /*,
@@ -243,10 +243,15 @@ let keyboardClicks = false;
 
 let playButtonEl = ""
 const containerEl = document.getElementById('container')
+
+// in local storage
 let currentWordIndex = 0;
 let guessedWordCount = 0;
 let guessedWords = [[]]
 let availableSpace = 1; 
+// end local storage
+
+
 let numofLetters = 5
 let numofGuesses = 6
 let wordle = ""
@@ -352,6 +357,8 @@ gameInProgress = true;
 
 
 
+
+
   setColors();
 
 
@@ -439,9 +446,22 @@ gameInProgress = true;
   console.log("wordsArray category = " + wordsArray[randomArray].cat)
   console.log("randomWordle = " + randomWordle) 
  // console.log(wordsArray[randomArray] + "length of array = " + wordsArray[randomArray].length)
-  numofLetters = (wordsArray[randomArray].items[randomWordle]).length;
+ // numofLetters = (wordsArray[randomArray].items[randomWordle]).length;
 //  console.log(wordsArray[randomArray][randomWordle] + " has " + numofLetters + " letters in it")
-  wordle = wordsArray[randomArray].items[randomWordle];
+  //if wordle in localstorage that means game was interrupted start at the beginning with that wordle
+  // and display message to that effect
+  wordle = window.localStorage.getItem("wordle");
+  if (wordle){
+    messageContainerEl.innerText = "Last Wordle game was interrupted - will start over with the same Wordle";
+    setTimeout(function(){
+  }, 4500);
+  } else {
+    wordle = wordsArray[randomArray].items[randomWordle];
+    window.localStorage.setItem("wordle", wordle);
+  }
+
+
+  numofLetters = wordle.length;
   if(window.innerWidth < 900){
     if (numofLetters > maxLettersNarrowScreen){
       messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
@@ -707,7 +727,7 @@ allElements.forEach((element) => {
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
       danceTiles(currentWordArr, firstLetterId);
-
+      localStorage.removeItem("wordle")
       resultObj.guesses = guessedWordCount;
       let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
       if (resultsArrayTemp){
@@ -758,6 +778,7 @@ allElements.forEach((element) => {
 
       messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
       window.localStorage.setItem("currentStreak", 0);
+      localStorage.removeItem("wordle")
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
       updateTotalGames();     setTimeout(function(){
@@ -1398,6 +1419,26 @@ function initStatsModal() {
 function buildResults(){
   console.log("entered build results")
   const resultsTrayEl = document.getElementById("results-tray")
+
+
+/* 
+// TEMP CODE TO FIND 4 WORD MOVIE THAT STARTS WITH 'TH'
+for (i=0; i<protoWordsArray[4].numOfItems; i++){
+  const myArray = protoWordsArray[4].items[i].split(" ");
+  if (myArray.length != 4){
+    
+  } else {
+
+  if (myArray[0].substring(0,2) === "TH"){
+
+  let resultItemEl = document.createElement('div')
+  resultsTrayEl.appendChild(resultItemEl)
+  resultItemEl.innerText = protoWordsArray[4].items[i]
+  }
+}
+return;
+*/
+
   // LOOP THRU RESULTS IN REVERSE ORDER
 
   let resultItemEl = document.createElement('div')
