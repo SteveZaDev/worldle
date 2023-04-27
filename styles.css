@@ -2,6 +2,7 @@
 html{
   --incorrectLetter: rgb(58, 58, 60);
   --correctLetterInPlace: rgb(83, 141, 78);
+  --freeSpace: rgb(83, 141, 78);
   --correctLetter: rgb(181, 159, 59);
 }
 
@@ -191,6 +192,10 @@ h2{
 }
 
 
+.square.free-space {
+  background-color: var(--freeSpace);
+ /* border-color: rgb(58, 58, 60);*/
+}
 
 .square.incorrect-letter {
   background-color: var(--incorrectLetter);
@@ -642,6 +647,16 @@ hr{
 #chameleon:hover{
   cursor: pointer;
 }
+
+
+#free-space{
+  color: gray;
+}
+
+#free-space:hover{
+  cursor: pointer;
+}
+
 
 .dance {
   animation: dance 500ms ease-in-out;

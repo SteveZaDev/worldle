@@ -39,7 +39,7 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["CAPTAIN BLIGH", "FLETCHER CHRISTIAN", "SCARLETT OHARA", "RHETT BUTLER", "RICK BLAINE", "ILSA LUND", "VICTOR LASZLO", "CAPTAIN LOUIS RENAULT", "MAXIM DE WINTER", "MRS DANVERS", "COLONEL NICHOLSON", "COLONEL SAITO", "JOHN ROBIE", "GUY HAINES", "BRUNO ANTONY", "WILLIE STARK", "ROGER THORNHILL", "EVE KENDALL", "PHILLIP VANDAMM", "LESTER TOWNSEND", "JUDAH BEN HUR", "MESSALA", "QUINTUS ARIUS", "BOO RADLEY", "ATTICUS FINCH", "SCOUT FINCH", "JEM FINCH", "TOM ROBINSON", "ROBERT E LEE EWELL", "MAYELLA VIOLET EWELL", "T E LAWRENCE", "MARIA VON TRAPP", "HENRY HIGGINS", "ELIZA DOOLITTLE", "SAM SPADE", "MILES ARCHER", "JOEL CAIRO", "THOMAS MOORE", "HENRY VIII", "RICHARD RICH", "VIRGIL TIBBS", "CHIEF GILLESPIE", "GEORGE S PATTON", "VITO CORLEONE", "ROCKY BALBOA", "RAYMOND BABBIT", "CHARLIE BABBIT", "GEORGE KIRBY", "MARIAN KIRBY", "COSMO TOPPER", "ROBIN HOOD", "LITTLE JOHN", "FRIAR TUCK", "MAID MARIAN", "GUY OF GISBOURNE", "PRINCE JOHN", "DAPHNE", "JOSEPHINE", "SUGAR", "MISS FROI", "TOM DESTRY", "GUNGA DIN", "RUDYARD KIPLING", "QUASIMODO", "ESMERALDA", "JEFFERSON SMITH", "SENATOR JOSEPH PAINE", "DOROTHY GALE", "THE SCARECROW", "THE COWARDLY LION", "THE TIN MAN", "WICKED WITCH OF THE WEST", "ALMIRA GULCH"]
+      items: ["CAPTAIN BLIGH", "FLETCHER CHRISTIAN", "SCARLETT OHARA", "RHETT BUTLER", "RICK BLAINE", "ILSA LUND", "VICTOR LASZLO", "CAPTAIN LOUIS RENAULT", "MAXIM DE WINTER", "MRS DANVERS", "COLONEL NICHOLSON", "COLONEL SAITO", "JOHN ROBIE", "GUY HAINES", "BRUNO ANTONY", "WILLIE STARK", "ROGER THORNHILL", "EVE KENDALL", "PHILLIP VANDAMM", "LESTER TOWNSEND", "JUDAH BEN HUR", "MESSALA", "QUINTUS ARIUS", "BOO RADLEY", "ATTICUS FINCH", "SCOUT FINCH", "JEM FINCH", "TOM ROBINSON", "ROBERT E LEE EWELL", "MAYELLA VIOLET EWELL", "T E LAWRENCE", "MARIA VON TRAPP", "HENRY HIGGINS", "ELIZA DOOLITTLE", "SAM SPADE", "MILES ARCHER", "JOEL CAIRO", "THOMAS MOORE", "HENRY VIII", "RICHARD RICH", "VIRGIL TIBBS", "CHIEF GILLESPIE", "GEORGE S PATTON", "VITO CORLEONE", "ROCKY BALBOA", "RAYMOND BABBIT", "CHARLIE BABBIT", "GEORGE KIRBY", "MARIAN KIRBY", "COSMO TOPPER", "ROBIN HOOD", "LITTLE JOHN", "FRIAR TUCK", "MAID MARIAN", "GUY OF GISBOURNE", "PRINCE JOHN", "DAPHNE", "JOSEPHINE", "SUGAR", "MISS FROI", "TOM DESTRY", "GUNGA DIN", "RUDYARD KIPLING", "QUASIMODO", "ESMERALDA", "JEFFERSON SMITH", "SENATOR JOSEPH PAINE", "DOROTHY GALE", "THE SCARECROW", "THE COWARDLY LION", "THE TIN MAN", "WICKED WITCH OF THE WEST", "ALMIRA GULCH", "HEATHCLIFF", "DON DIEGO DE LA VEGA", "TOM JOAD", "MA JOAD", "CHARLES FOSTER KANE"]
     },
     { 
       cat: "Music", 
@@ -102,7 +102,7 @@ let protoWordsArray = [
 
   { 
     cat: "Presidents",
-    sel: true,
+    sel: false,
     parent: "",
     numOfItems: 0,
     items: ["GEORGE WASHINGTON", "JOHN ADAMS", "THOMAS JEFFERSON", "JAMES MADISON", "JAMES MONROE", "JOHN QUINCY ADAMS", "ANDREW JACKSON", "MARTIN VAN BUREN", "WILLIAM HENRY HARRISON", "JOHN TYLER", "JAMES K POLK", 
@@ -150,14 +150,14 @@ let protoWordsArray = [
       sel: false,
       parent: "",
       numOfItems: 0,
-      items: ["THE ADVENTURES OF SUPERMAN", "I LOVE LUCY", "LEAVE IT TO BEAVER", "FATHER KNOWS BEST", "THE DANNY THOMAS SHOW", "THE HONEYMOONERS", "BURNS AND ALLEN", "OZZIE AND HARRIET", "HOWDY DOODY", "THE LONE RANGER", "THE ROY ROGERS SHOW", "LASSIE", "GUNSMOKE", "PERRY MASON", "MAVERICK", "CHEYENNE", "THE DONNA REED SHOW", "OUR MISS BROOKS", "AMOS N ANDY", "WAGON TRAIN", "HAVE GUN WILL TRAVEL", "THE ANDY GRIFFITH SHOW", "THE REAL MCCOYS", "RAWHIDE", "CANDID CAMERA", "THE UNTOUCHABLES", "THE PRICE IS RIGHT","THE JACK BENNY SHOW", "DENNIS THE MENACE", "MY THREE SONS", "THE ED SULLIVAN SHOW", "BONANZA", "THE FLINTSTONES", "THE RED SKELTON SHOW", "GENERAL ELECTRIC THEATER", "CHECKMATE", "WHATS MY LINE", "THE MANY LOVES OF DOBIE GILLIS", "THE RIFLEMAN", "PETER GUNN", "HAZEL", "DR KILDARE", "SING ALONG WITH MITCH", "THE BEVERLY HILLBILLIES", "THE LUCY SHOW", "BEN CASEY", "THE DICK VAN DYKE SHOW", "WHATS MY LINE", "IVE GOT A SECRET", "THE JACKIE GLEASON SHOW", "THE DEFENDERS", "TO TELL THE TRUTH", "WAGON TRAIN", "THE VIRGINIAN", "PETTICOAT JUNCTION", "MY FAVORITE MARTIAN", "THE PATTY DUKE SHOW", "MCHALES NAVY", "THE FUGITIVE", "THE DANNY KAYE SHOW", "BEWITCHED", "GOMER PYLe USMC", "COMBAT", "BRANDED", "THE MUNSTERS", "GILLIGANS ISLAND", "PEYTON PLACE", "THE ADDAMS FAMILY", "FLIPPER", "THE LAWRENCE WELK SHOW","BATMAN", "HOGANS HEROES", "GREEN ACRES", "GET SMART", "THE MAN FROM UNCLE", "DAKTARI", "THE WILD WILD WEST", "DANIEL BOONE", "I DREAM OF JEANNIE", "FAMILY AFFAIR", "THE SMOTHERS BROTHERS", "DRAGNET", "TARZAN", "I SPY", "THE FBI", "GENTLE BEN", "ROWAN AND MARTINS LAUGH IN", "IRONSIDE", "THE CAROL BURNETT SHOW", "IT TAKES A THIEF", "MAYBERRY RFD", "JULIA", "HERES LUCY", "MISSION IMPOSSIBLE", "THE MOD SQUAD", "MARCUS WELBY MD", "THE JIM NABORS HOUR", "HAWAII FIVE O", "HEE HAW", "MANNIX", "ALL IN THE FAMILY", "THE FLIP WILSON SHOW", "SANFORD AND SON", "THE MARY TYLER MOORE SHOW", "MEDICAL CENTER", "THE PARTRIDGE FAMILY", "CANNON", "MAUDE", "BRIDGET LOVES BERNIE", "THE BOB NEWHART SHOW", "THE WALTONS", "THE ROOKIES", "BARNABY JONES", "KUNG FU", "KOJAK", "HAPPY DAYS", "GOOD TIMES", "THE STREETS OF SAN FRANCISCO", "CHICO AND THE MAN", "THE JEFFERSONS", "RHODA", "THE ROCKFORD FILES", "LITTLE HOUSE ON THE PRAIRIE", "POLICE WOMAN", "EMERGENCY", "LAVERNE AND SHIRLEY", "THE BIONIC WOMAN", "THE SIX MILLION DOLLAR MAN", "ONE DAY AT A TIME", "STARSKY AND HUTCH", "BARETTA", "DONNY AND MARIE", "POLICE WOMAN", "CHARLIES ANGELS", "THREES COMPANY", "WELCOME BACK KOTTER", "BARNEY MILLER", "EIGHT IS ENOUGH", "WHATS HAPPENING", "THE TONY RANDALL SHOW", "ALICE", "THE LOVE BOAT", "FANTASY ISLAND", "THE INCREDIBLE HULK", "MORK AND MINDY", "THE DUKES OF HAZZARD", "CHIPS", "DIFFERENT STROKES", "LOU GRANT", "DALLAS", "ARCHIE BUNKERS PLACE", "TRAPPER JOHN MD", "WKRP IN CINCINNATI", "BENSON", "KNOTS LANDING", "THE ORIGINAL AMATEUR HOUR", "YOUR SHOW OF SHOWS", "HOPALONG CASSIDY", "YOU BET YOUR LIFE", "RACKET SQUAD", "THE LIFE OF RILEY", "THE MILTON BERLE SHOW", "I MARRIED JOAN", "THIS IS YOUR LIFE", "THE MILLIONAIRE", "THE ADVENTURES OF RIN TIN TIN", "TOPPER", "THE LORETTA YOUNG SHOW", "MY LITTLE MARGIE", "ALFRED HITCHCOCK PRESENTS", "THE GALE STORM SHOW", "ZORRO", "TALES OF WELLS FARGO", "WANTED DEAD OR ALIVE", "THE ANN SOTHERN SHOW", "MAGNUM PI", "HART TO HART", "TOO CLOSE FROM COMFORT", "DYNASTY", "THE FALL GUY", "HILL STREET BLUES", "TJ HOOKER", "SIMON AND SIMON", "THE A TEAM", "NEWHART", "ONE DAY AT A TIME", "KATE AND ALLIE", "HOTEL", "CAGNEY AND LACEY", "SCARECROW AND MRS KING", "WEBSTER", "KNIGHT RIDER", "FAMILY TIES", "MURDER SHE WROTE", "HIGHWAY TO HEAVEN", "NIGHT COURT", "REMINGTON STEELE", "CHEERS", "THE GOLDEN GIRLS", "MIAMI VICE", "GROWING PAINS", "MOONLIGHTING", "MATLOCK", "HUNTER", "HEAD OF THE CLASS", "THE WONDER YEARS", "IN THE HEAT OF THE NIGHT", "ROSEANNE", "EMPTY NEST", "UNSOLVED MYSTERIES", "FULL HOUSE", "DESIGNING WOMEN", "MURPHY BROWN", "DOOGIE HOWSER MD"]
+      items: ["THE ADVENTURES OF SUPERMAN", "I LOVE LUCY", "LEAVE IT TO BEAVER", "FATHER KNOWS BEST", "THE DANNY THOMAS SHOW", "THE HONEYMOONERS", "BURNS AND ALLEN", "OZZIE AND HARRIET", "HOWDY DOODY", "THE LONE RANGER", "THE ROY ROGERS SHOW", "LASSIE", "GUNSMOKE", "PERRY MASON", "MAVERICK", "CHEYENNE", "THE DONNA REED SHOW", "OUR MISS BROOKS", "AMOS N ANDY", "WAGON TRAIN", "HAVE GUN WILL TRAVEL", "THE ANDY GRIFFITH SHOW", "THE REAL MCCOYS", "RAWHIDE", "CANDID CAMERA", "THE UNTOUCHABLES", "THE PRICE IS RIGHT","THE JACK BENNY SHOW", "DENNIS THE MENACE", "MY THREE SONS", "THE ED SULLIVAN SHOW", "BONANZA", "THE FLINTSTONES", "THE RED SKELTON SHOW", "GENERAL ELECTRIC THEATER", "CHECKMATE", "WHATS MY LINE", "THE MANY LOVES OF DOBIE GILLIS", "THE RIFLEMAN", "PETER GUNN", "HAZEL", "DR KILDARE", "SING ALONG WITH MITCH", "THE BEVERLY HILLBILLIES", "THE LUCY SHOW", "BEN CASEY", "THE DICK VAN DYKE SHOW", "WHATS MY LINE", "IVE GOT A SECRET", "THE JACKIE GLEASON SHOW", "THE DEFENDERS", "TO TELL THE TRUTH", "WAGON TRAIN", "THE VIRGINIAN", "PETTICOAT JUNCTION", "MY FAVORITE MARTIAN", "THE PATTY DUKE SHOW", "MCHALES NAVY", "THE FUGITIVE", "THE DANNY KAYE SHOW", "BEWITCHED", "GOMER PYLE USMC", "COMBAT", "BRANDED", "THE MUNSTERS", "GILLIGANS ISLAND", "PEYTON PLACE", "THE ADDAMS FAMILY", "FLIPPER", "THE LAWRENCE WELK SHOW","BATMAN", "HOGANS HEROES", "GREEN ACRES", "GET SMART", "THE MAN FROM UNCLE", "DAKTARI", "THE WILD WILD WEST", "DANIEL BOONE", "I DREAM OF JEANNIE", "FAMILY AFFAIR", "THE SMOTHERS BROTHERS", "DRAGNET", "TARZAN", "I SPY", "THE FBI", "GENTLE BEN", "ROWAN AND MARTINS LAUGH IN", "IRONSIDE", "THE CAROL BURNETT SHOW", "IT TAKES A THIEF", "MAYBERRY RFD", "JULIA", "HERES LUCY", "MISSION IMPOSSIBLE", "THE MOD SQUAD", "MARCUS WELBY MD", "THE JIM NABORS HOUR", "HAWAII FIVE O", "HEE HAW", "MANNIX", "ALL IN THE FAMILY", "THE FLIP WILSON SHOW", "SANFORD AND SON", "THE MARY TYLER MOORE SHOW", "MEDICAL CENTER", "THE PARTRIDGE FAMILY", "CANNON", "MAUDE", "BRIDGET LOVES BERNIE", "THE BOB NEWHART SHOW", "THE WALTONS", "THE ROOKIES", "BARNABY JONES", "KUNG FU", "KOJAK", "HAPPY DAYS", "GOOD TIMES", "THE STREETS OF SAN FRANCISCO", "CHICO AND THE MAN", "THE JEFFERSONS", "RHODA", "THE ROCKFORD FILES", "LITTLE HOUSE ON THE PRAIRIE", "POLICE WOMAN", "EMERGENCY", "LAVERNE AND SHIRLEY", "THE BIONIC WOMAN", "THE SIX MILLION DOLLAR MAN", "ONE DAY AT A TIME", "STARSKY AND HUTCH", "BARETTA", "DONNY AND MARIE", "POLICE WOMAN", "CHARLIES ANGELS", "THREES COMPANY", "WELCOME BACK KOTTER", "BARNEY MILLER", "EIGHT IS ENOUGH", "WHATS HAPPENING", "THE TONY RANDALL SHOW", "ALICE", "THE LOVE BOAT", "FANTASY ISLAND", "THE INCREDIBLE HULK", "MORK AND MINDY", "THE DUKES OF HAZZARD", "CHIPS", "DIFFERENT STROKES", "LOU GRANT", "DALLAS", "ARCHIE BUNKERS PLACE", "TRAPPER JOHN MD", "WKRP IN CINCINNATI", "BENSON", "KNOTS LANDING", "THE ORIGINAL AMATEUR HOUR", "YOUR SHOW OF SHOWS", "HOPALONG CASSIDY", "YOU BET YOUR LIFE", "RACKET SQUAD", "THE LIFE OF RILEY", "THE MILTON BERLE SHOW", "I MARRIED JOAN", "THIS IS YOUR LIFE", "THE MILLIONAIRE", "THE ADVENTURES OF RIN TIN TIN", "TOPPER", "THE LORETTA YOUNG SHOW", "MY LITTLE MARGIE", "ALFRED HITCHCOCK PRESENTS", "THE GALE STORM SHOW", "ZORRO", "TALES OF WELLS FARGO", "WANTED DEAD OR ALIVE", "THE ANN SOTHERN SHOW", "MAGNUM PI", "HART TO HART", "TOO CLOSE FROM COMFORT", "DYNASTY", "THE FALL GUY", "HILL STREET BLUES", "TJ HOOKER", "SIMON AND SIMON", "THE A TEAM", "NEWHART", "ONE DAY AT A TIME", "KATE AND ALLIE", "HOTEL", "CAGNEY AND LACEY", "SCARECROW AND MRS KING", "WEBSTER", "KNIGHT RIDER", "FAMILY TIES", "MURDER SHE WROTE", "HIGHWAY TO HEAVEN", "NIGHT COURT", "REMINGTON STEELE", "CHEERS", "THE GOLDEN GIRLS", "MIAMI VICE", "GROWING PAINS", "MOONLIGHTING", "MATLOCK", "HUNTER", "HEAD OF THE CLASS", "THE WONDER YEARS", "IN THE HEAT OF THE NIGHT", "ROSEANNE", "EMPTY NEST", "UNSOLVED MYSTERIES", "FULL HOUSE", "DESIGNING WOMEN", "MURPHY BROWN", "DOOGIE HOWSER MD"]
       },
   { 
         cat: "TV Characters",
         sel: false,
         parent: "",
         numOfItems: 0,
-        items: ["CLARK KENT", "LOIS LANE", "JIMMY OLSEN", "PERRY WHITE", "INSPECTOR HENDERSON", "MARA VAN CLEAVER", "SYLVESTER J SUPERMAN", "LUCY RICARDO", "RICKY RICARDO", "FRED MERTZ", "ETHEL MERTZ", "BEAVER CLEAVER", "WARD CLEAVER", "JUNE CLEAVER", "WALLY CLEAVER", "EDDIE HASKELL", "LUMPY RUTHERFORD", "RALPH KRAMDEN", "ALICE KRAMDEN", "ED NORTON", "TRIXIE NORTON", "TONTO", "MATT DILLON", "PERRY MASON", "HAMILTON BURGER", "DELLA STREET", "PAUL DRAKE", "LT ARTHUR TRAGG", "ANDY TAYLOR", "OPIE TAYLOR", "BARNEY FIFE", "BEA TAYLOR", "GOMER PYLE", "GOOBER PYLE", "HELEN CRUMP", "BEN CARTWRIGHT", "ADAM CARTWRIGHT", "HOSS CARTWRIGHT", "JOE CARTWRIGHT", "FRED FLINTSTONE", "WILMA FLINTSTONE", "BARNEY RUBBLE", "BETTY RUBBLE", "PEBBLES", "BAM BAM", "DOBIE GILLIS", "ZELDA GILROY", "MAYNARD G KREBS", "ELLIOT NESS", "MR WILSON", "HAZEL BURKE", "JAMES KILDARE", "LEONARD GILLESPIE", "ROB PETRIE", "LAURA PETRIE", "ALAN BRADY", "BUDDY SORREL", "SALLY RODGERS", "JERRY HALPER", "MILLIE HALPER", "MEL COOLIE", "JED CLAMPETT", "GRANNY CLAMPETT", "ELLY MAY CLAMPETT", "JETHRO BODINE", "MILBURN DRYSDALE", "JANE HATHAWAY", "UNCLE MARTIN", "HERMAN MUNSTER", "LILY MUNSTER"]
+        items: ["CLARK KENT", "LOIS LANE", "JIMMY OLSEN", "PERRY WHITE", "INSPECTOR HENDERSON", "MARA VAN CLEAVER", "SYLVESTER J SUPERMAN", "LUCY RICARDO", "RICKY RICARDO", "FRED MERTZ", "ETHEL MERTZ", "BEAVER CLEAVER", "WARD CLEAVER", "JUNE CLEAVER", "WALLY CLEAVER", "EDDIE HASKELL", "LUMPY RUTHERFORD", "RALPH KRAMDEN", "ALICE KRAMDEN", "ED NORTON", "TRIXIE NORTON", "TONTO", "MATT DILLON", "PERRY MASON", "HAMILTON BURGER", "DELLA STREET", "PAUL DRAKE", "LT ARTHUR TRAGG", "ANDY TAYLOR", "OPIE TAYLOR", "BARNEY FIFE", "BEA TAYLOR", "GOMER PYLE", "GOOBER PYLE", "HELEN CRUMP", "BEN CARTWRIGHT", "ADAM CARTWRIGHT", "HOSS CARTWRIGHT", "JOE CARTWRIGHT", "FRED FLINTSTONE", "WILMA FLINTSTONE", "BARNEY RUBBLE", "BETTY RUBBLE", "PEBBLES", "BAM BAM", "DOBIE GILLIS", "ZELDA GILROY", "MAYNARD G KREBS", "ELLIOT NESS", "MR WILSON", "HAZEL BURKE", "JAMES KILDARE", "LEONARD GILLESPIE", "ROB PETRIE", "LAURA PETRIE", "ALAN BRADY", "BUDDY SORREL", "SALLY RODGERS", "JERRY HALPER", "MILLIE HALPER", "MEL COOLIE", "JED CLAMPETT", "GRANNY CLAMPETT", "ELLY MAY CLAMPETT", "JETHRO BODINE", "MILBURN DRYSDALE", "JANE HATHAWAY", "UNCLE MARTIN", "HERMAN MUNSTER", "LILY MUNSTER", "SAMANTHA STEVENS", "DARREN STEVENS", "ENDORA", "SERGEANT CARTER", "GOMEZ ADDAMS", "MORTICIA ADDAMS", "PUGSLEY ADDAMS", "WEDNESDAY ADDAMS", "LURCH", "UNCLE FESTER", "GRAND MA MA", "GILLIGAN", "GINGER GRANT", "THE SKIPPER", "THE PROFESSOR", "MARY ANN", "THURSTON HOWELL III", "BATMAN", "ROBIN", "ALFRED", "AUNT HARRIET", "MAXWELL SMART", "MR WAVERLY", "NAPOLEON SOLO", "ILYA KURYAKIN", "JAMES WEST", "ARTEMIS GORDON", "JEANNIE", "ANTHONY NELSON", "UNCLE BILL", "JOE FRIDAY", "BILL GANNON"]
       },
   { 
     cat: "U.S. Cities",
@@ -183,7 +183,7 @@ let protoWordsArray = [
     }, 
     { 
       cat: "Testing",
-      sel: false,
+      sel: true,
       parent: "",
       numOfItems: 0,
       items: ["TESTA", "TESTB", "TESTC"]
@@ -239,6 +239,7 @@ TIPS - As far as game play goes, here a few differences from the original and so
 --If you prefer shorter WORLDLES to solve, you can limit the maximum number of characters to anything 5 and over, the lower you go, available categories will be limited.
 --Set your background audio to any of those listed. You can always turn off your background audio via the audio icon (third from the right.)
 --Chameleon Mode offers an additional twist to your play. Instead of the traditional Wordle tile colors of dark gray, yellow and green, Chameleon Mode will set random colors for those tiles that are usually yellow and green. Dark gray for 'incorrect' will remain as usual, but the tile color for correctly placed letters and those that are contained within the word but not correctly placed will vary, and you have to figure that out.
+--Free Spaces Reveal - Selecting this option will let you reveal all spaces in the wordle without using up a guess.
 ----------------
 ----------------
 `
@@ -279,6 +280,8 @@ let wordle = ""
 let gameInProgress = false;
 let atLeastOneGuessMade = false;
 let maxCharacters = 35;
+let gameActive = true;
+let freeSpaces = false;
 
 let randomArray = 0;
 let randomWordle = 0;
@@ -348,6 +351,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
     function initLocalStorage() {
+      Ian needed to store his current index cause the way he moved from one word to the
+      next was via the small array of words he had hard coded.
+
       const storedCurrentWordIndex = window.localStorage.getItem('currentWordIndex')
       if (!storedCurrentWordIndex){
         window.localStorage.setItem('currentWordIndex', currentWordIndex)
@@ -471,6 +477,8 @@ gameInProgress = true;
 //  console.log(wordsArray[randomArray][randomWordle] + " has " + numofLetters + " letters in it")
   //if wordle in localstorage that means game was interrupted start at the beginning with that wordle
   // and display message to that effect
+
+  /*
   wordle = window.localStorage.getItem("wordle");
   if (wordle){
     messageContainerEl.innerText = "Last Wordle game was interrupted - will start over with the same Wordle";
@@ -479,26 +487,23 @@ gameInProgress = true;
   } else {
     wordle = wordsArray[randomArray].items[randomWordle];
     window.localStorage.setItem("wordle", wordle);
-  }
+  }*/
+
+  guessedWords = [[]]
+  availableSpace = 1; 
 
 
-  numofLetters = wordle.length;
-  if(window.innerWidth < 900){
-    if (numofLetters > maxLettersNarrowScreen){
-      messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
-      setTimeout(function(){
-   //     messageContainerEl.innerText = ""
-    }, 4500);
-      numofLetters = maxLettersNarrowScreen;
-      wordle = wordle.slice(0, maxLettersNarrowScreen);
-    }
-  }
-  console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
- // let guessedWordCount = 0;
-  numofGuesses = 6;
-  if (numofLetters > 10){
-    numofGuesses = 8;
-  }
+ // calcLettersandGuesses();
+
+
+  loadLocalStorage();
+
+  //createSquares();
+
+  
+
+
+  
 
   function initClasses(){
   /*  let keys = document.getElementsByClassName('correct-letter-in-place');
@@ -520,7 +525,9 @@ allElements.forEach((element) => {
 
   }
  
-  createSquares();
+ // createSquares();
+
+//  loadLocalStorage();
   // Check to see if keyboard click event listener has already been set via the first game of the session  
   if (!keyboardClicks){
     console.log("about to call addKeyboard")
@@ -531,8 +538,10 @@ allElements.forEach((element) => {
       });
   }
 
+  /* pinned off on 4/25
   guessedWords = [[]]
   availableSpace = 1; 
+  */
 
   const keys = document.querySelectorAll('.keyboard-row button')
 
@@ -543,7 +552,9 @@ allElements.forEach((element) => {
   }
 
   function updateGuessedLetters(letter){
+    console.log("guessedwordsA = " + guessedWords)
     console.log("updateGuessedLetter letter = " + letter)
+    console.log("availableSpace = " + availableSpace)
     const currentWordArr = getCurrentWordArr()
     console.log('current array = ' + currentWordArr)
     console.log("numofLetters = " + numofLetters )
@@ -617,13 +628,14 @@ allElements.forEach((element) => {
     console.log("entered handlesubmitword ")
     const currentWordArr = getCurrentWordArr();
     const guessedWord = currentWordArr.join("");
+    console.log("guessedwords1 = " + guessedWords)
     if (guessedWord.length !== numofLetters){
       messageContainerEl.innerText = (`You entered ${currentWordArr.length} characters which is less than the ${numofLetters} needed`);
       return;
     }
     window.navigator.vibrate(450);
     //flipTile();
-
+    gameActive = true;
     atLeastOneGuessMade = true;
     let checkWordle = wordle;
     const guess = [];
@@ -632,7 +644,7 @@ allElements.forEach((element) => {
       console.log("pushing letter onto guess array - letter = " + tile)
     //  guess.push({letter: tile, color: 'dontknow'});
       guess.push({letter: tile, color: 'incorrect-letter'});
-    })
+    } )
 
     console.log("");
     console.log("");
@@ -690,12 +702,14 @@ allElements.forEach((element) => {
 
 
 
+
   
     let result = guessedWord.toUpperCase();
 
     const firstLetterId = guessedWordCount * numofLetters + 1;
     let interval = 2500 / numofLetters;
 
+    localStorage.setItem("availableSpace", availableSpace);
 
 
 
@@ -730,11 +744,19 @@ allElements.forEach((element) => {
     console.log ("keyboardEl = " + keyboardEl + " tile = " + tile);
     keyboardEl.classList.add(guess[index].color);
 
+        if (index === (numofLetters-1)){
+          if (gameActive){
+            preserveGameState();
+          }
+        }
+
       }, interval * index)
   
     })
 
     guessedWordCount += 1;
+    window.localStorage.setItem('guessedWordCount', guessedWordCount);
+
     let date = new  Date();
 //    resultObj.date = date.toString()
     resultObj.date = new Date();
@@ -745,10 +767,11 @@ allElements.forEach((element) => {
     let guessedWordUpper = guessedWord.toUpperCase();
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
+      gameActive = false;
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
       danceTiles(currentWordArr, firstLetterId);
-      localStorage.removeItem("wordle")
+     // localStorage.removeItem("wordle")
       resultObj.guesses = guessedWordCount;
       let resultsArrayTemp = JSON.parse(window.localStorage.getItem('results'));
       if (resultsArrayTemp){
@@ -781,6 +804,7 @@ allElements.forEach((element) => {
         window.localStorage.setItem("maxStreak", Number(currentStreak) + 1);
       }
       updateTotalGames();
+      resetGameState();
     //  removeKeyboardListeners();
      return;
     } // END OF CORRECT WORD LOGIC
@@ -798,8 +822,9 @@ allElements.forEach((element) => {
       }
 
       messageContainerEl.innerText = (`Sorry, no more guesses. The wordle is ${wordle}`)
+      gameActive = false;
       window.localStorage.setItem("currentStreak", 0);
-      localStorage.removeItem("wordle")
+    //  localStorage.removeItem("wordle")
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
       updateTotalGames();     setTimeout(function(){
@@ -808,7 +833,7 @@ allElements.forEach((element) => {
         playButtonEl.style.display = "block";
     }, 4500);
 
-
+    resetGameState();
 
 
     //  removeKeyboardListeners();
@@ -824,8 +849,9 @@ allElements.forEach((element) => {
 
 
 
-
+    console.log("guessedwords2 = " + guessedWords)
     guessedWords.push([]);
+    console.log("guessedwords3 = " + guessedWords)
     console.log("Guessedwords length = " + guessedWords.length)
 
 
@@ -881,50 +907,7 @@ allElements.forEach((element) => {
   }
 
 
-  function createSquares(){
-    let screenWidth = window.innerWidth;
-    if (screenWidth > 700){
-      screenWidth = 700;
-    }
-    let screenHeight = window.innerHeight;
 
-    console.log ("createSquares  screenWidth = " + screenWidth + "  screenHeight = " + screenHeight);
-
-    const gameBoard = document.getElementById("board")
-
-
-    // Clear out any elements of class "square"
-    let squares = document.getElementsByClassName('square');
-    while (squares[0]){
-      squares[0].parentNode.removeChild(squares[0]);
-    }
-
-    for (let i = 0; i < (numofLetters*numofGuesses); i++) {
-      let square = document.createElement("div");
-      square.classList.add("square");
-      square.classList.add("animate__animated");
-      square.setAttribute("id", i + 1);
-      gameBoard.appendChild(square)
-    }  
-
-    //  FROM HERE TO END OF FUNCTION ADDED BECAUSE NUMBER OF LETTERS IN WORDLE CAN VARY
-    const board = document.getElementById("board")
-    const square = document.querySelectorAll(".square")
-    console.log(square)
-    square.forEach(square => {
-      square.style.width = (screenWidth / (numofLetters + 4) + 'px');
-      square.style.height = ((screenHeight / 15) + 'px');
-      square.style.height = (screenWidth / (numofLetters + 4) + 'px');
-      square.style.fontSize = (screenWidth / (numofLetters + 4) + 'px');
-      if (screenWidth > screenHeight){
-        square.style.height = ((screenHeight / 15) + 'px');
-        square.style.fontSize = ((screenHeight / 20) + 'px');
-
-      }
-    });
-    board.style.gridTemplateColumns = 'repeat(' + numofLetters + ', 1fr)'
-  
-  } // END OF createSquares
 
   function handleDelete(){
     const currentWordArr = getCurrentWordArr()
@@ -997,6 +980,7 @@ allElements.forEach((element) => {
       const titleEl = document.querySelector(".title")
       titleEl.addEventListener("click", ({ target }) => {
       if (!atLeastOneGuessMade){
+         console.log("site thinks no guesses have been made")
          return;
         }
         populateRow();
@@ -1059,12 +1043,25 @@ function initMisc(){
       console.log("duping spaces");
    //   const audio = new Audio ("./auds/hard-keypress.wav");  
    //   audio.play()
+      if (freeSpaces){
+        showSpacesForFree();
+      } else {
+
       for (i=1; i<maxCharacters; i++){
         updateGuessedLetters(' ');
       }
       console.log("done with loop of spaces");
       // submit all the spaces
       handleSubmitWord();
+    }
+/*      
+      availableSpace = availableSpace - numofLetters;
+      console.log("guessedWords dup1 = " + guessedWords)
+  
+      console.log("guessedWords dup2 = " + guessedWords)
+      guessedWordCount--;
+*/
+       
   }
   }
 }
@@ -1928,6 +1925,7 @@ function initPreferencesModal() {
 
       initBgAudios();
       initChameleon();
+      initFreeSpaces();
     }
 
 
@@ -1989,6 +1987,40 @@ function initChameleon() {
         }
           });
   }
+
+
+  function initFreeSpaces() {
+
+    console.log("entered initFreeSpaces")
+
+    freeSpaces = window.localStorage.getItem("freeSpaces");
+    const freeSpaceEl = document.getElementById("free-space")
+    if (freeSpaces){
+      freeSpaceEl.style.color = 'black';
+      freeSpaceEl.style.fontWeight = 'bold';
+    } else {
+      freeSpaceEl.style.color = 'gray'; 
+      freeSpaceEl.style.fontWeight = 'normal';
+    }
+
+      
+      freeSpaceEl.addEventListener("click", ({ target }) => {
+        console.log("clicked freeSpace")
+          freeSpaces = !freeSpaces;
+          window.localStorage.setItem("freeSpaces", freeSpaces);
+          if (freeSpaces){
+            freeSpaceEl.style.color = 'black';
+            freeSpaceEl.style.fontWeight = 'bold';
+            const audio = new Audio ("./auds/shortgood.mp3");
+            audio.play()
+          } else {
+            freeSpaceEl.style.color = 'gray'; 
+            freeSpaceEl.style.fontWeight = 'normal';
+            const audio = new Audio ("./auds/pop39222.mp3");
+            audio.play() 
+          }
+            });
+    }
 
 
 
@@ -2061,3 +2093,182 @@ function initCategories(){
 
 
 }
+
+function preserveGameState(){
+  console.log("entered preserveGameState")
+  window.localStorage.setItem('guessedWords', JSON.stringify(guessedWords));
+  const keyboardContainer = document.getElementById('keyboard-container');
+  window.localStorage.setItem("keyboardContainer", keyboardContainer.innerHTML);
+  const boardContainer = document.getElementById('board-container');
+  window.localStorage.setItem("boardContainer", boardContainer.innerHTML);
+  const board = document.getElementById('board');
+  window.localStorage.setItem("board", board.innerHTML);
+  
+}
+
+function loadLocalStorage(){
+  let kContainer = window.localStorage.getItem("keyboardContainer");
+  wordle =window.localStorage.getItem("wordle");
+  if (kContainer){
+    calcLettersandGuesses();
+    messageContainerEl.innerText = "Last Wordle game was interrupted - continue at point it was lost";
+    atLeastOneGuessMade = true;
+    setTimeout(function(){
+  }, 4500);
+  } else {
+    wordle = wordsArray[randomArray].items[randomWordle];
+    window.localStorage.setItem("wordle", wordle);
+    calcLettersandGuesses();
+    createSquares();
+  }
+
+  guessedWordCount = Number(window.localStorage.getItem('guessedWordCount')) || guessedWordCount
+  availableSpace = Number(window.localStorage.getItem('availableSpace')) || availableSpace
+  console.log("available space = " + availableSpace)
+  guessedWords = JSON.parse(window.localStorage.getItem('guessedWords')) || guessedWords
+  
+
+  const storedBoardContainer = window.localStorage.getItem("boardContainer");
+  if (storedBoardContainer){
+    document.getElementById("board-container").innerHTML = storedBoardContainer;
+  }
+
+  const storedBoard = window.localStorage.getItem("board");
+  if (storedBoard){
+    document.getElementById("board").innerHTML = storedBoard;
+  }
+
+  const storedKeyboardContainer = window.localStorage.getItem("keyboardContainer");
+  if (storedKeyboardContainer){
+    document.getElementById("keyboard-container").innerHTML = storedKeyboardContainer;
+  }
+
+
+
+
+}
+
+function resetGameState(){
+  console.log("entered resetGameState")
+  localStorage.removeItem('wordle')
+  localStorage.removeItem('guessedWordCount')
+  localStorage.removeItem('keyboardContainer')
+  localStorage.removeItem('boardContainer')
+  localStorage.removeItem('board')
+  localStorage.removeItem('availableSpace')
+  localStorage.removeItem('guessedWords')
+}
+
+function calcLettersandGuesses(){
+
+  numofLetters = wordle.length;
+  if(window.innerWidth < 900){
+    if (numofLetters > maxLettersNarrowScreen){
+      messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
+      setTimeout(function(){
+   //     messageContainerEl.innerText = ""
+    }, 4500);
+      numofLetters = maxLettersNarrowScreen;
+      wordle = wordle.slice(0, maxLettersNarrowScreen);
+    }
+  }
+  console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
+ // let guessedWordCount = 0;
+  numofGuesses = 6;
+  if (numofLetters > 10){
+    numofGuesses = 8;
+  }
+
+
+}
+
+
+
+  function createSquares(){
+    console.log("entered createSquares")
+    let screenWidth = window.innerWidth;
+    if (screenWidth > 700){
+      screenWidth = 700;
+    }
+    let screenHeight = window.innerHeight;
+
+    console.log ("createSquares  screenWidth = " + screenWidth + "  screenHeight = " + screenHeight);
+
+    const gameBoard = document.getElementById("board")
+
+
+    // Clear out any elements of class "square"
+    let squares = document.getElementsByClassName('square');
+    while (squares[0]){
+      squares[0].parentNode.removeChild(squares[0]);
+    }
+
+    for (let i = 0; i < (numofLetters*numofGuesses); i++) {
+      let square = document.createElement("div");
+      square.classList.add("square");
+      square.classList.add("animate__animated");
+      square.setAttribute("id", i + 1);
+      gameBoard.appendChild(square)
+    }  
+
+    //  FROM HERE TO END OF FUNCTION ADDED BECAUSE NUMBER OF LETTERS IN WORDLE CAN VARY
+    const board = document.getElementById("board")
+    const square = document.querySelectorAll(".square")
+    console.log(square)
+    square.forEach(square => {
+      square.style.width = (screenWidth / (numofLetters + 4) + 'px');
+      square.style.height = ((screenHeight / 15) + 'px');
+      square.style.height = (screenWidth / (numofLetters + 4) + 'px');
+      square.style.fontSize = (screenWidth / (numofLetters + 4) + 'px');
+      if (screenWidth > screenHeight){
+        square.style.height = ((screenHeight / 15) + 'px');
+        square.style.fontSize = ((screenHeight / 20) + 'px');
+
+      }
+    });
+    board.style.gridTemplateColumns = 'repeat(' + numofLetters + ', 1fr)'
+  
+  } // END OF createSquares 
+
+  function showSpacesForFree(){
+    console.log ("add free space logic")
+
+    let checkWordle = wordle;
+    const guess = [];
+  
+    // set guess equal to an array of numofletters spaces
+    for (i=0; i<numofLetters; i++){
+      guess.push({letter: ' ', color: 'incorrect-letter'});
+    }
+
+  
+    console.log("About to loop thru to look for Greens")
+    guess.forEach((guess, index) => {
+      console.log("guess letter = " + guess.letter + "   wordle letter = " + wordle[index])
+      if (guess.letter == wordle[index].toLowerCase()){
+        console.log ("free space")
+        guess.color = 'free-space'
+      }
+    })
+
+
+    const firstLetterId = guessedWordCount * numofLetters + 1;
+
+    guess.forEach((tile, index) => {
+    
+   
+        const letterId = firstLetterId + index;
+        const letterEl = document.getElementById(letterId);
+        letterEl.classList.add(guess[index].color)
+    //    addColorToKey(guess[index].letter, guess[index].color)
+        if (tile === " "){
+          tile = "space"
+        }
+
+    })
+
+
+
+
+
+  }
