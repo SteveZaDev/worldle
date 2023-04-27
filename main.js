@@ -1992,10 +1992,16 @@ function initChameleon() {
   function initFreeSpaces() {
 
     console.log("entered initFreeSpaces")
-
-    freeSpaces = window.localStorage.getItem("freeSpaces");
+    let freeSpacesLit = window.localStorage.getItem("freeSpaces");
+    if (freeSpacesLit === "true"){
+      freeSpaces = true;
+    } else {
+      freeSpaces = false;
+    }
+    console.log ("freeSpaces = " + freeSpaces + "type = " + typeof(freeSpaces))
     const freeSpaceEl = document.getElementById("free-space")
     if (freeSpaces){
+      console.log ("setting freeSpaces style to bold in initFreeSpaces")
       freeSpaceEl.style.color = 'black';
       freeSpaceEl.style.fontWeight = 'bold';
     } else {
