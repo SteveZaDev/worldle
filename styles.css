@@ -15,7 +15,7 @@ html{
   --keyboard-letter-color: rgb(215, 218, 220);
   --deepLightPurple: rgb(100, 11, 129);
   --modalHeaderColor: hsl(290, 50%, 50%); 
-  --modalHeaderBackground: rgb(11, 99, 37);
+  --modalHeaderBackground: rgb(10, 72, 5);
   
 }
 
@@ -83,7 +83,7 @@ header i{
 
 #game{
   width: 100%;
-  max-width: 750px;
+  max-width: 950px;
   height: 100%;
   display: flex;
   flex-direction: column;
