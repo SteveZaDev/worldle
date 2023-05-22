@@ -200,7 +200,7 @@ let protoWordsArray = [
       sel: true,
       parent: "",
       numOfItems: 0,
-      items: ["THE WRECK OF THE EDMUND FITZGERALD", "TESTB", "TESTC"]
+      items: ["THE WRECK OF THE EDMUND FITZGERALD"]
       }
 
   /*,
@@ -1863,6 +1863,21 @@ function initPreferencesModal() {
  // preferencesContainerEl.style.display="none"
   portraitPreferencesContainerEl.style.display="none"
 
+
+  
+
+let randomImagesEl = document.querySelectorAll('#random-bg-container img');
+for (i=0; i<6; i++){
+  randomImagesEl[i].src = backgroundImagesLandscape[i];
+}
+
+
+let oneImagesEl = document.querySelectorAll('#one-bg-container img');
+for (i=0; i<6; i++){
+  oneImagesEl[i].src = backgroundImagesLandscape[i];
+}
+
+
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
     console.log("just clicked on preferences button")
@@ -2198,6 +2213,7 @@ function calcLettersandGuesses(){
     }, 4500);
       numofLetters = maxLettersNarrowScreen;
       wordle = wordle.slice(0, maxLettersNarrowScreen);
+      window.localStorage.setItem("wordle", wordle);
     }
   }
   console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
@@ -2294,9 +2310,9 @@ function calcLettersandGuesses(){
         }
 
     })
+}
 
 
 
 
 
-  }
