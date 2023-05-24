@@ -2148,10 +2148,23 @@ function preserveGameState(){
   
 }
 
+
 function loadLocalStorage(){
+  // Added the following on 5/22/23  to prevent game freeze if interrupted game orientation
+  // differs from current orientation
+  let currentOrientation = "Landscape"
+  let storedOrientation = window.localStorage.getItem("orientation");
+  if(window.innerWidth < 900){
+   currentOrientation = "Portrait" 
+  } 
+  if (currentOrientation !== storedOrientation){
+    console.log ("about to resetgame state    storedOrientation = " + storedOrientation )
+      resetGameState()
+  }
   let kContainer = window.localStorage.getItem("keyboardContainer");
   wordle =window.localStorage.getItem("wordle");
   if (kContainer){
+    // current orientation must match that when interrupted
     calcLettersandGuesses();
     messageContainerEl.innerText = "Last Wordle game was interrupted - continue at point it was lost";
     atLeastOneGuessMade = true;
@@ -2200,12 +2213,15 @@ function resetGameState(){
   localStorage.removeItem('availableSpace')
   localStorage.removeItem('guessedWords')
   localStorage.removeItem('randomArray')
+  localStorage.removeItem('orientation')
 }
 
 function calcLettersandGuesses(){
 
   numofLetters = wordle.length;
+  window.localStorage.setItem("orientation", "Landscape");
   if(window.innerWidth < 900){
+    window.localStorage.setItem("orientation", "Portrait");
     if (numofLetters > maxLettersNarrowScreen){
       messageContainerEl.innerText = "Mobile Screen - " + numofLetters + " character Wordle has been truncated to " + maxLettersNarrowScreen;
       setTimeout(function(){
@@ -2214,9 +2230,10 @@ function calcLettersandGuesses(){
       numofLetters = maxLettersNarrowScreen;
       wordle = wordle.slice(0, maxLettersNarrowScreen);
       window.localStorage.setItem("wordle", wordle);
+
     }
   }
-  console.log("wordle = " + wordle +  " num of letters = " + numofLetters)
+  console.log("calcing letters and guesses wordle = " + wordle +  " num of letters = " + numofLetters)
  // let guessedWordCount = 0;
   numofGuesses = 6;
   if (numofLetters > 10){
