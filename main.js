@@ -1065,7 +1065,7 @@ function initMisc(){
         showSpacesForFree();
       } else {
 
-      for (i=1; i<maxCharacters; i++){
+      for (i=1; i<maxCharacters+1; i++){
         updateGuessedLetters(' ');
       }
       console.log("done with loop of spaces");
@@ -1921,6 +1921,17 @@ for (i=0; i<6; i++){
         window.localStorage.setItem('background', JSON.stringify(textAreaEl.value));
       }
     });
+
+
+    
+    textAreaEl.addEventListener("selectionchange", function (event) {
+      //    editLandscapeImgEl.src = landscapeTextEl.value
+          const body = document.getElementsByTagName('body')[0];
+          body.style.backgroundImage = "url(" + textAreaEl.value + ")"
+          window.localStorage.setItem('background', JSON.stringify(textAreaEl.value));
+      });
+    
+    
 
 
     // When the user clicks on the random landscpape - randomly change the background
