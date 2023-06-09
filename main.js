@@ -258,6 +258,7 @@ TIPS - As far as game play goes, here a few differences from the original and so
 ----------------
 `
 
+let viewHelpText = `Welcome to WORLDLE. Please read the help(?) for info and tips about the game`
 
 let sound = true;
 let soundPlayer = "";
@@ -267,6 +268,7 @@ let audioName = audios[randomAudioIdx].name;
 soundPlayer.loop = true;
 soundPlayer.volume = audios[randomAudioIdx].vol
 soundPlayer.currentTime = 1;
+
 const maxLettersNarrowScreen = 21;
 let chameleon = false;
 DANCE_ANIMATION_DURATION = 1500;
@@ -321,6 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initPreferencesModal();
     initCategories();
     initHelpModal();
+    initViewHelpModal();
     initStatsModal();
     initCategoriesModal();
     initCategoriesModalBtn();
@@ -1334,7 +1337,8 @@ function initHelpModal() {
     helpEl = document.querySelector(".modal-body")
     helpEl.innerText = helpText + "\n" + "\n"
     const audio = new Audio ("./auds/stats.mp3");
-    audio.play()
+    audio.play() 
+    window.localStorage.setItem('viewedhelp', "viewed");
  //   helpEl.requestFullscreen();
   });
 
@@ -2344,3 +2348,25 @@ function calcLettersandGuesses(){
 
 
 
+function initViewHelpModal() {
+  const modal = document.getElementById("view-help-modal");
+  const span = document.getElementById("close-view-help");
+
+  if (!window.localStorage.getItem("viewedhelp")){
+    modal.style.display = "block";
+    helpEl = document.getElementById("view-body")
+    helpEl.innerHTML = viewHelpText
+  }
+ 
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener("click", function () {
+  modal.classList.toggle("fade-out")
+  setTimeout(function(){
+    modal.style.display = "none";
+    modal.classList.toggle("fade-out")
+   }, 2500);
+
+  });
+
+
+}
