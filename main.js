@@ -260,7 +260,7 @@ TIPS - As far as game play goes, here a few differences from the original and so
 
 let viewHelpText = `Welcome to WORLDLE. Please read the help(?) for info and tips about the game`
 
-let sound = true;
+let sound = "up";
 let soundPlayer = "";
 let randomAudioIdx = Math.floor(Math.random()*audios.length)
 soundPlayer = new Audio (audios[randomAudioIdx].link);
@@ -789,8 +789,10 @@ allElements.forEach((element) => {
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
       gameActive = false;
+      if (sound === "off" || sound === "up"){
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
+      }
       danceTiles(currentWordArr, firstLetterId);
      // localStorage.removeItem("wordle")
       resultObj.guesses = guessedWordCount;
@@ -846,8 +848,10 @@ allElements.forEach((element) => {
       gameActive = false;
       window.localStorage.setItem("currentStreak", 0);
     //  localStorage.removeItem("wordle")
+    if (sound === "off" || sound === "up"){
       const audio = new Audio ("./auds/negative.mp3");
       audio.play()
+    }
       updateTotalGames();     setTimeout(function(){
      //   messageContainerEl.innerText = ""
         playButtonEl.innerText = "Play Again?";
@@ -861,8 +865,12 @@ allElements.forEach((element) => {
       return;
     } 
 
-    const audio = new Audio ("./auds/ascending.mp3");
-    audio.play()
+ 
+    if (sound === "off" || sound === "up"){
+      const audio = new Audio ("./auds/ascending.mp3");
+      audio.play()
+    }
+
     guess.forEach(guess => {
       console.log("letter = " + guess.letter + " color = " + guess.color)
     }
@@ -1336,8 +1344,10 @@ function initHelpModal() {
     modal.style.display = "block";
     helpEl = document.querySelector(".modal-body")
     helpEl.innerText = helpText + "\n" + "\n"
+    if (sound === "off" || sound === "up"){
     const audio = new Audio ("./auds/stats.mp3");
     audio.play() 
+    }
     window.localStorage.setItem('viewedhelp', "viewed");
  //   helpEl.requestFullscreen();
   });
@@ -1360,8 +1370,10 @@ function updateStatsModal(){
   const maxStreak = window.localStorage.getItem("maxStreak");
   const totalWins = window.localStorage.getItem("totalWins");
   const totalGames = window.localStorage.getItem("totalGames");
+  if (sound === "off" || sound === "up"){
   const audio = new Audio ("./auds/stats.mp3");
   audio.play()
+  }
 
   document.getElementById('total-played').textContent = totalGames;
   document.getElementById('total-wins').textContent = totalWins;
@@ -1680,12 +1692,16 @@ function initCategoriesModal() {
        // window.alert(category.innerText + category.id)
         protoWordsArray[category.id].sel = !(protoWordsArray[category.id].sel)
         if (protoWordsArray[category.id].sel){
+          if (sound === "off" || sound === "up"){
           const audio = new Audio ("./auds/shortgood.mp3");
           audio.play()
+          }
         } 
         else {
+          if (sound === "off" || sound === "up"){
           const audio = new Audio ("./auds/pop39222.mp3");
-          audio.play()     
+          audio.play()  
+          }   
         }
         if (protoWordsArray[category.id].parent==="parent"){
           let children = document.querySelectorAll(".child"+protoWordsArray[category.id].cat)
@@ -1739,8 +1755,10 @@ function initCategoriesModalBtn(){
     btn.addEventListener("click", function () {
       console.log("just clicked on categories button")
       updateCategoriesModal();
+      if (sound === "off" || sound === "up"){
       const audio = new Audio ("./auds/stats.mp3");
       audio.play()
+      }
       modal.style.display = "block";
       helpEl = document.getElementById("categories-modal")
      });
@@ -1809,27 +1827,40 @@ function initAudio(){
 let icon = document.querySelector(".fa-volume-up");
 
 icon.onclick = function (){
-    music();
+
     console.log("classlist when clicked = " + icon.classList)
     if(icon.classList.contains("fa-volume-up")){
         icon.classList.replace("fa-volume-up", "fa-volume-off");
+        sound = "off"
     }
-    else{
-        icon.classList.replace("fa-volume-off", "fa-volume-up");
+    else if(icon.classList.contains("fa-volume-off")){
+        icon.classList.replace("fa-volume-off", "fa-volume-mute");
+        icon.classList.replace("fa", "fas");
+        sound = "mute"
     }
+    else {
+      icon.classList.replace("fa-volume-mute", "fa-volume-up");
+      icon.classList.replace("fas", "fa");
+      sound = "up"
+
+
+  }
+  music();
 }
 }
 
 
 function music(){
+  // June 11, 2023 make it a 3 way toggle  up-off-mute
   console.log("entered music toggle")
-  sound = !sound;
-  if (sound===false){
+
+  if (sound==="off" || sound==="mute"){
     if (soundPlayer){
       soundPlayer.pause();
     }
   }
-  if (sound===true){
+
+  if (sound==="up"){
     if (soundPlayer){
       soundPlayer.play();
     }
@@ -1838,7 +1869,7 @@ function music(){
 
 
 function playMusic(){
-  if (sound){
+  if (sound==="up"){
   soundPlayer.play();
   }
 }
@@ -1885,8 +1916,10 @@ for (i=0; i<6; i++){
   // When the user clicks on the button, open the modal
   btn.addEventListener("click", function () {
     console.log("just clicked on preferences button")
+    if (sound === "off" || sound === "up"){
     const audio = new Audio ("./auds/stats.mp3");
     audio.play()
+    }
     modal.style.display = "block";
     helpEl = document.getElementById("preferences-modal")
   });
@@ -2025,13 +2058,17 @@ function initChameleon() {
         if (chameleon){
           chameleonEl.style.color = 'black';
           chameleonEl.style.fontWeight = 'bold';
+          if (sound === "off" || sound === "up"){
           const audio = new Audio ("./auds/shortgood.mp3");
           audio.play()
+          }
         } else {
           chameleonEl.style.color = 'gray'; 
           chameleonEl.style.fontWeight = 'normal';
+          if (sound === "off" || sound === "up"){
           const audio = new Audio ("./auds/pop39222.mp3");
           audio.play() 
+          }
         }
           });
   }
@@ -2065,13 +2102,17 @@ function initChameleon() {
           if (freeSpaces){
             freeSpaceEl.style.color = 'black';
             freeSpaceEl.style.fontWeight = 'bold';
+            if (sound === "off" || sound === "up"){
             const audio = new Audio ("./auds/shortgood.mp3");
             audio.play()
+            }
           } else {
             freeSpaceEl.style.color = 'gray'; 
             freeSpaceEl.style.fontWeight = 'normal';
+            if (sound === "off" || sound === "up"){
             const audio = new Audio ("./auds/pop39222.mp3");
             audio.play() 
+            }
           }
             });
     }
