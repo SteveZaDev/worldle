@@ -456,10 +456,11 @@ gameInProgress = true;
   } while (!foundCategory)
 
 
-  const randomArrayWork = window.localStorage.getItem("randomArray") || 0;
+  // pinned off on June 16 2023
+  /*const randomArrayWork = window.localStorage.getItem("randomArray") || 0;
   if (randomArrayWork){
     randomArray = randomArrayWork;
-  }
+  }*/
 
   
   
@@ -654,7 +655,10 @@ allElements.forEach((element) => {
       messageContainerEl.innerText = (`You entered ${currentWordArr.length} characters which is less than the ${numofLetters} needed`);
       return;
     }
+    // June 16 bypass when all sound is off. see if it is the source of noise on mobile
+    if (sound === "off" || sound === "up"){
     window.navigator.vibrate(450);
+    }
     //flipTile();
     gameActive = true;
     atLeastOneGuessMade = true;
@@ -789,6 +793,9 @@ allElements.forEach((element) => {
     if (guessedWordUpper === wordle){
       messageContainerEl.innerText = "Congratulations!"
       gameActive = false;
+    //  June 16 2023
+      randCatEl.style.display = "block"
+      //
       if (sound === "off" || sound === "up"){
       const audio = new Audio ("./auds/success.mp3");
       audio.play()
@@ -1447,6 +1454,9 @@ function initStatsModal() {
       // When the user clicks on No, close delete modal
       noEl.addEventListener("click", function () {
         delModal.style.display = "none";
+        // June 16
+        resetGameState();
+        //
       });
       
 
@@ -1842,9 +1852,7 @@ icon.onclick = function (){
       icon.classList.replace("fa-volume-mute", "fa-volume-up");
       icon.classList.replace("fas", "fa");
       sound = "up"
-
-
-  }
+    }
   music();
 }
 }
@@ -2223,6 +2231,10 @@ function loadLocalStorage(){
     // current orientation must match that when interrupted
     calcLettersandGuesses();
     messageContainerEl.innerText = "Last Wordle game was interrupted - continue at point it was lost";
+    // add on june 16 2023 code to hide the display categories button
+    randCatEl = document.getElementById("randcat")
+    randCatEl.style.display = "none"
+    //
     atLeastOneGuessMade = true;
     setTimeout(function(){
   }, 4500);
